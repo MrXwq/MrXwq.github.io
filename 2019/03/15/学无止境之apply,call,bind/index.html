@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="创建字符串对象的方法var stringObject = new String(“hello”) 或者是： var stringObject = “hello” 寻找字符方法stringObject.charAt(index)//若index=3 则输出”l” index为字符串的索引值。 stringObjext.charCodeAt(index)//若index=1，则输出101，e的字符编码">
-<meta name="keywords" content="-js语法 -String">
+  <meta name="description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 ​    var fn = function(){     ​    } ​    var fn2 = function(){ ​    } ​    var arr = [1,2,3,4] ​    在参数可以确定的情况下，可以">
+<meta name="keywords" content="-js语法 -prototype">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学无止境之JS的String对象">
-<meta property="og:url" content="https://Mrxwq.github.io/2019/03/14/学无止境之js的String对象/index.html">
+<meta property="og:title" content="apply，call和bind">
+<meta property="og:url" content="https://Mrxwq.github.io/2019/03/15/学无止境之apply,call,bind/index.html">
 <meta property="og:site_name" content="自律使我自由">
-<meta property="og:description" content="创建字符串对象的方法var stringObject = new String(“hello”) 或者是： var stringObject = “hello” 寻找字符方法stringObject.charAt(index)//若index=3 则输出”l” index为字符串的索引值。 stringObjext.charCodeAt(index)//若index=1，则输出101，e的字符编码">
+<meta property="og:description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 ​    var fn = function(){     ​    } ​    var fn2 = function(){ ​    } ​    var arr = [1,2,3,4] ​    在参数可以确定的情况下，可以">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T16:28:18.325Z">
+<meta property="og:updated_time" content="2019-03-15T16:14:15.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学无止境之JS的String对象">
-<meta name="twitter:description" content="创建字符串对象的方法var stringObject = new String(“hello”) 或者是： var stringObject = “hello” 寻找字符方法stringObject.charAt(index)//若index=3 则输出”l” index为字符串的索引值。 stringObjext.charCodeAt(index)//若index=1，则输出101，e的字符编码">
+<meta name="twitter:title" content="apply，call和bind">
+<meta name="twitter:description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 ​    var fn = function(){     ​    } ​    var fn2 = function(){ ​    } ​    var arr = [1,2,3,4] ​    在参数可以确定的情况下，可以">
 
 
 
 
 
 
-  <link rel="canonical" href="https://Mrxwq.github.io/2019/03/14/学无止境之js的String对象/">
+  <link rel="canonical" href="https://Mrxwq.github.io/2019/03/15/学无止境之apply,call,bind/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>学无止境之JS的String对象 | 自律使我自由</title>
+  <title>apply，call和bind | 自律使我自由</title>
   
 
 
@@ -332,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/03/14/学无止境之js的String对象/">
+    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/03/15/学无止境之apply,call,bind/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MrXwq">
@@ -349,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学无止境之JS的String对象
+          <h1 class="post-title" itemprop="name headline">apply，call和bind
 
               
             
@@ -375,7 +375,7 @@
                 
               
 
-              <time title="创建时间：2019-03-14 13:27:06" itemprop="dateCreated datePublished" datetime="2019-03-14T13:27:06+08:00">2019-03-14</time>
+              <time title="创建时间：2019-03-15 23:05:13" itemprop="dateCreated datePublished" datetime="2019-03-15T23:05:13+08:00">2019-03-15</time>
             
 
             
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 00:28:18" itemprop="dateModified" datetime="2019-03-15T00:28:18+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-16 00:14:15" itemprop="dateModified" datetime="2019-03-16T00:14:15+08:00">2019-03-16</time>
               
             
           </span>
@@ -409,8 +409,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/03/14/学无止境之js的String对象/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/14/学无止境之js的String对象/" itemprop="commentCount"></span>
+                <a href="/2019/03/15/学无止境之apply,call,bind/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/15/学无止境之apply,call,bind/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.5k</span>
+                <span title="本文字数">379</span>
               
 
               
@@ -466,28 +466,17 @@
       
 
       
-        <h4 id="创建字符串对象的方法"><a href="#创建字符串对象的方法" class="headerlink" title="创建字符串对象的方法"></a>创建字符串对象的方法</h4><p>var stringObject = new String(“hello”) 或者是： var stringObject = “hello”</p>
-<h5 id="寻找字符方法"><a href="#寻找字符方法" class="headerlink" title="寻找字符方法"></a>寻找字符方法</h5><p>stringObject.charAt(index)//若index=3 则输出”l” index为字符串的索引值。</p>
-<p>stringObjext.charCodeAt(index)//若index=1，则输出101，e的字符编码为101</p>
-<h5 id="字符串操作方法"><a href="#字符串操作方法" class="headerlink" title="字符串操作方法"></a>字符串操作方法</h5><p>concat(任意多个参数):连接两个字符串，不影响原字符串，返回一个新字符串。不过一般都用+号连接字符串</p>
-<p>slice(参数1，参数2)若只有一个参数，则从这参数<strong>(字符串的索引值)</strong>开始截取字符串，到结尾，若有两个参数，参数1为开始截取的位置，参数2为结束截取的位置+1。若参数为负数，则将该参数加上字符串的长度返回，两个参数都是这样</p>
-<p>substr(参数1，参数2)若只有一个参数，则从这参数<strong>(字符串的索引值)</strong>开始截取字符串，到结尾，若有两个参数，则参数1为开始截取的位置，参数2为截取字符串的个数。若参数1为负数，则将参数1加上字符串的长度，若参数二为负数，则将负数变为零</p>
-<p>substring(参数1，参数2)若只有一个参数，则从这参数<strong>(字符串的索引值)</strong>开始截取字符串，到结尾，若有两个参数，参数1为开始截取的位置，参数2为结束截取的位置+1。他的所有负数的参数都会变为零。</p>
-<h5 id="字符串位置方法"><a href="#字符串位置方法" class="headerlink" title="字符串位置方法"></a>字符串位置方法</h5><p>indexOf(参数1，参数2)：参数1为字符串的字符，参数2(字符串的索引值)为从哪开始找，返回参数1所在的索引值，从头开始找。</p>
-<p>lastIndexOf(参数1，参数2):从尾部往前找，参数1为字符串的字符，参数2(字符串的索引值)为从哪开始往前找。返回参数1所在的索引值</p>
-<p>trim()函数会删除前后的空格并返回一个副本</p>
-<p>trimLeft()和trimRight()会分别删除左右的空格</p>
-<h5 id="字符串转换的方法"><a href="#字符串转换的方法" class="headerlink" title="字符串转换的方法"></a>字符串转换的方法</h5><p>toLowerCase()将字符串转换为小写字母toLocalLowerCase()</p>
-<p>toUpperCase()将字符串转换为大写字母toLocalLowerCase()</p>
-<h5 id="字符串匹配方法"><a href="#字符串匹配方法" class="headerlink" title="字符串匹配方法"></a>字符串匹配方法</h5><p>var str = “cat,bat,sat,fat”</p>
-<p>var pattern = /.at/</p>
-<p>var matches = str.match(pattern)实际和正则法则的exec()一样,返回一个匹配的数组</p>
-<p>var matches = str.search(pattern)返回找到的字符的索引值，这个二九为0，若pattern = /at/则为1</p>
-<p>replace(参数1，参数2)参数1可以为字符串，也可以为正则表达式，第二个参数为字符串，若第一个参数为字符串，则只会用参数2替换一个，而用正则表达式，匹配全局，则可以全部符合的都替换</p>
-<p>它的第二个参数也可以是一个函数，函数里有三个参数，第一个为字符串的匹配项，第二个为匹配到的字符所在的索引值，第三个为原始字符串</p>
-<p>split(参数1，参数2)找到字符串中等于参数1的值，用逗号替换该匹配项，返回一个数组，若第一个就为匹配项，最后一个也是匹配项，则数组第一个值和第二个值都是空字符串，参数2为数组的大小</p>
-<p>str.localCompare(参数1)：用参数1与str比较，若参数1应该在该字符串的字母该放在str的前面则返回1，若相同不用换，则返回0，若应该放在后面则返回-1.</p>
-<p>alert(String.formCharCode(104，101，108，108，111))//输出hello，做的事情和charCodeAt()相反</p>
+        <p>​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法</p>
+<p>​    其实三者的方法都差不多，都是改变this的指向</p>
+<p>​    var fn = function(){    </p>
+<p>​    }</p>
+<p>​    var fn2 = function(){</p>
+<p>​    }</p>
+<p>​    var arr = [1,2,3,4]</p>
+<p>​    在参数可以确定的情况下，可以使用fn.call(fn2,1,2,3,4)call的其他参数可以是任意字符</p>
+<p>​    在不确认参数个数的时候可以使用fn.apply(fn2,arr)apply的第二个参数必须是一个数组</p>
+<p>​    这两种方法都是立马调用返回一个数的</p>
+<p>​    若不想直接调用，只是改变this的指向，则可以使用var fn3 = fn.bind(fn2) fn3(参数)</p>
 
       
     </div>
@@ -511,7 +500,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js语法-String/" rel="tag"># -js语法 -String</a>
+            <a href="/tags/js语法-prototype/" rel="tag"># -js语法 -prototype</a>
           
         </div>
       
@@ -524,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/07/Web前端之路/" rel="next" title="学无止境之JS的Array对象">
-                <i class="fa fa-chevron-left"></i> 学无止境之JS的Array对象
+              <a href="/2019/03/14/学无止境之js的String对象/" rel="next" title="学无止境之JS的String对象">
+                <i class="fa fa-chevron-left"></i> 学无止境之JS的String对象
               </a>
             
           </div>
@@ -533,10 +522,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/15/学无止境之apply,call,bind/" rel="prev" title="apply，call和bind">
-                apply，call和bind <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -585,17 +570,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -686,23 +662,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建字符串对象的方法"><span class="nav-number">1.</span> <span class="nav-text">创建字符串对象的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#寻找字符方法"><span class="nav-number">1.1.</span> <span class="nav-text">寻找字符方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串操作方法"><span class="nav-number">1.2.</span> <span class="nav-text">字符串操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串位置方法"><span class="nav-number">1.3.</span> <span class="nav-text">字符串位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串转换的方法"><span class="nav-number">1.4.</span> <span class="nav-text">字符串转换的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串匹配方法"><span class="nav-number">1.5.</span> <span class="nav-text">字符串匹配方法</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
