@@ -96,25 +96,27 @@
 
 
 
-  <meta name="description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
-<meta name="keywords" content="-js语法 -数组">
+  <meta name="description" content="使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性 Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可返回所有实例属性，包括不可枚举的属性例如constructor() 原型的动态性12345var person1 = new Person()Person.prototype.sayHi =">
+<meta name="keywords" content="-js -原型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学无止境之JS的Array对象">
-<meta property="og:url" content="https://Mrxwq.github.io/2019/03/07/Web前端之路/index.html">
+<meta property="og:title" content="学无止境之js原型">
+<meta property="og:url" content="https://Mrxwq.github.io/2019/03/17/学无止境之js原型/index.html">
 <meta property="og:site_name" content="自律使我自由">
-<meta property="og:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
+<meta property="og:description" content="使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性 Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可返回所有实例属性，包括不可枚举的属性例如constructor() 原型的动态性12345var person1 = new Person()Person.prototype.sayHi =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T05:28:08.801Z">
+<meta property="og:image" content="c:/Users/qq972/AppData/Roaming/Typora/typora-user-images/1552809922064.png">
+<meta property="og:updated_time" content="2019-03-17T08:32:17.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学无止境之JS的Array对象">
-<meta name="twitter:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
+<meta name="twitter:title" content="学无止境之js原型">
+<meta name="twitter:description" content="使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性 Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可返回所有实例属性，包括不可枚举的属性例如constructor() 原型的动态性12345var person1 = new Person()Person.prototype.sayHi =">
+<meta name="twitter:image" content="c:/Users/qq972/AppData/Roaming/Typora/typora-user-images/1552809922064.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://Mrxwq.github.io/2019/03/07/Web前端之路/">
+  <link rel="canonical" href="https://Mrxwq.github.io/2019/03/17/学无止境之js原型/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>学无止境之JS的Array对象 | 自律使我自由</title>
+  <title>学无止境之js原型 | 自律使我自由</title>
   
 
 
@@ -332,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/03/07/Web前端之路/">
+    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/03/17/学无止境之js原型/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MrXwq">
@@ -349,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学无止境之JS的Array对象
+          <h1 class="post-title" itemprop="name headline">学无止境之js原型
 
               
             
@@ -375,24 +377,12 @@
                 
               
 
-              <time title="创建时间：2019-03-07 14:55:14" itemprop="dateCreated datePublished" datetime="2019-03-07T14:55:14+08:00">2019-03-07</time>
+              <time title="创建时间：2019-03-17 16:29:41 / 修改时间：16:32:17" itemprop="dateCreated datePublished" datetime="2019-03-17T16:29:41+08:00">2019-03-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-14 13:28:08" itemprop="dateModified" datetime="2019-03-14T13:28:08+08:00">2019-03-14</time>
               
             
           </span>
@@ -409,8 +399,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/03/07/Web前端之路/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/07/Web前端之路/" itemprop="commentCount"></span>
+                <a href="/2019/03/17/学无止境之js原型/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/17/学无止境之js原型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,7 +422,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.4k</span>
+                <span title="本文字数">2.3k</span>
               
 
               
@@ -446,7 +436,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -466,39 +456,26 @@
       
 
       
-        <h3 id="前端开始之路"><a href="#前端开始之路" class="headerlink" title="前端开始之路"></a>前端开始之路</h3><p>​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。</p>
-<h3 id="腾讯的面试"><a href="#腾讯的面试" class="headerlink" title="腾讯的面试"></a>腾讯的面试</h3><p>​    一个是线上的能力测试，一次是视频面试，经过这两次面试，我可算是真的受到打击了，深刻的认识到自己的不足。自己编程的能力真的是差，对js的了解也真的是太少了，所以我打算对js再好好的研究一番。</p>
-<h3 id="首先是数组对象"><a href="#首先是数组对象" class="headerlink" title="首先是数组对象"></a>首先是数组对象</h3><p>typeof()返回类型</p>
-<p>a instanceof Object 返回true 或 false</p>
-<h5 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h5><p>var array = new Array()</p>
-<p>var array = new Array(20)</p>
-<p>var array = []</p>
-<h5 id="判断："><a href="#判断：" class="headerlink" title="判断："></a>判断：</h5><p>array.isArray(value)</p>
-<h5 id="转换方法："><a href="#转换方法：" class="headerlink" title="转换方法："></a>转换方法：</h5><p>array.valueOf()返回数组本身</p>
-<p>array.toString()返回数组中的每一项，每一项中带逗号（jion（）方法可以自定义带什么符号），返回一个字符串</p>
-<h5 id="推入栈方法："><a href="#推入栈方法：" class="headerlink" title="推入栈方法："></a>推入栈方法：</h5><p>push()可以添加任意数量的参数，将他添加到数组的末尾，并返回添加后的数组</p>
-<p>pop()可以取得最后一项，并返回取出后的数组</p>
-<p>shift()取出第一项，并返回取出后的数组</p>
-<p>unshift()添加任意项在前端，并返回添加后的数组</p>
-<h5 id="排列方法："><a href="#排列方法：" class="headerlink" title="排列方法："></a>排列方法：</h5><p>reverse()返回相反的数组</p>
-<p>sort()升序排列数组项</p>
-<h5 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h5><p>concat()创建当前数组的一个副本，再将其参数加入到该副本，然后返回</p>
-<p>slice()有两参数，一个是起始位置，一个是结束位置，起始位置算入，而末尾位置不返回，不会影响原数组</p>
-<p>splice()</p>
-<p>删除的话，只需两个参数，第一个，是位置，从哪开始删，第二个是个数，删除多少个参数</p>
-<p>插入的话，任意参数，但前两参数跟前面的一样，后面的参数都将插入到删除之后的数组，若第二个参数为零的话，那么就不删除，直接添加。</p>
-<h5 id="查找位置方法"><a href="#查找位置方法" class="headerlink" title="查找位置方法"></a>查找位置方法</h5><p>indexOf()有两个参数，第一个参数是你要查的数，第二个参数是你要从什么位置开始查找，从头开始查找</p>
-<p>lastIndexOf()一样，只是从末尾开始向前找</p>
-<p>没有找到的话返回-1</p>
-<h5 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h5><p>这几种方法都是对数组的遍历，里面的参数都是一个函数，函数里都是三个参数，第一个该数组的值，第二个该数组的值的位置，第三个，该数组</p>
-<p>some()，遍历所有，若有返回true的，则返回true</p>
-<p>every()，遍历数组，遍历到只要有不返回true的则返回false</p>
-<p>filter(),遍历所有，返回该数组符合条件的所有值</p>
-<p>map(),遍历所有，返回根据公式改变后的数组</p>
-<p>forEach(),遍历所有，然后在里面做其他相关的事</p>
-<h5 id="归并方法"><a href="#归并方法" class="headerlink" title="归并方法"></a>归并方法</h5><p>reduce()里面有两个参数，一个是函数，另一个是初始值(函数里的第一个参数值)只用一次，函数里有四个参数，第一个是前一个值（若没有定义reduce的第二个参数，则第一个参数为数组里的第一个值），第二个是当前值(如果没定义reduce的第二个参数，则为数组里的第二个值)，第三个是值的索引值，第四个是该数组；</p>
-<p>document.write会重绘整个页面</p>
-<p>document.innerHTML只会重绘所指定的元素内容</p>
+        <p>使用delete可以删除实例属性</p>
+<p>hasOwnProperty可以检测实例是否有这个属性</p>
+<p>Oject.keys()返回一个包含所有可枚举属性的字符串数组</p>
+<p>Oject.getOwnPropertyNames()可返回所有实例属性，包括不可枚举的属性例如constructor()</p>
+<h5 id="原型的动态性"><a href="#原型的动态性" class="headerlink" title="原型的动态性"></a>原型的动态性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person()</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hi"</span>)</span><br><span class="line">&#125;</span><br><span class="line">person1.sayHi()</span><br></pre></td></tr></table></figure>
+<p>实例与原型之间的松散连接关系，即使是实例是在添加新方法之前创建的，仍可以访问到这方法，但重写该构造函数就不行了</p>
+<h5 id="原生对象的原型"><a href="#原生对象的原型" class="headerlink" title="原生对象的原型"></a>原生对象的原型</h5><p>可以在Array.prototype找到sort(),可以在String.prototype找到subString()方法</p>
+<h5 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="headerlink" title="组合使用构造函数模式和原型模式"></a>组合使用构造函数模式和原型模式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.name = name;</span><br><span class="line">				<span class="keyword">this</span>.age = age;</span><br><span class="line">				<span class="keyword">this</span>.job = job;</span><br><span class="line">				<span class="keyword">this</span>.friends = [<span class="string">"dong"</span>,<span class="string">"pei"</span>]</span><br><span class="line">			&#125;</span><br><span class="line">			Person.prototype=&#123;</span><br><span class="line">				construtor:Person,</span><br><span class="line">				sayName()&#123;</span><br><span class="line">					alert(<span class="string">"hi"</span>)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"a"</span>,<span class="number">1</span>,<span class="string">"aa"</span>);</span><br><span class="line">			<span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"b"</span>,<span class="number">1</span>,<span class="string">"bb"</span>);</span><br><span class="line">			person1.friends.push(<span class="string">"van"</span>);</span><br><span class="line">			<span class="built_in">console</span>.log(person1.friends);<span class="comment">//"dong","pei","van"</span></span><br><span class="line">			<span class="built_in">console</span>.log(person2.friends);<span class="comment">//"dong","pei"</span></span><br><span class="line">			<span class="built_in">console</span>.log(person1.friends === person2.friends)</span><br><span class="line">			<span class="built_in">console</span>.log(person1.sayName === person2.sayName)</span><br></pre></td></tr></table></figure>
+<h5 id="确定原型和实例的关系"><a href="#确定原型和实例的关系" class="headerlink" title="确定原型和实例的关系"></a>确定原型和实例的关系</h5><p>实例 instanceof 实例所继承的构造函数或Object</p>
+<p>使用isPrototyOf()方法，只要是原型链中出现过的原型，都可以说是该原型链所派生的实例的原型</p>
+<p>例如：Object.prototype.isPrototyOf(instance)</p>
+<h5 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h5><p>SuperType.call/apply（subType）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">				<span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">				F.prototype = o;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">inheritProtitype</span>(<span class="params">child,father</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">var</span> prototype = object(father.prototype);</span><br><span class="line">				prototype.constructor = child;</span><br><span class="line">				child.prototype = prototype;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.faName = <span class="string">"father"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			father.prototype.getfaName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="keyword">this</span>.faName);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">args</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.chName = <span class="string">'child'</span>;</span><br><span class="line">				father.apply(<span class="keyword">this</span>,[]);</span><br><span class="line">			&#125;</span><br><span class="line">			inheritProtitype(child,father);</span><br><span class="line">			child.prototype.getchName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(<span class="keyword">this</span>.chName);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">console</span>.log(child.prototype.isPrototypeOf(<span class="keyword">new</span> father()));<span class="comment">//false</span></span><br><span class="line">			<span class="built_in">console</span>.log(child.prototype.isPrototypeOf(<span class="keyword">new</span> child()));<span class="comment">//true</span></span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">new</span> child() <span class="keyword">instanceof</span> child)<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h5 id="原型链实现继承"><a href="#原型链实现继承" class="headerlink" title="原型链实现继承"></a>原型链实现继承</h5><p>1.重写子类的原型 等于 父类的一个实例，（父类的实例属相变成子类的原型属性）如果父类包含引用类型的属性，那么子类所有实例都会共享该属性</p>
+<p>2.在创建子类实例时，不能向父类的构造函数传递参数</p>
+<h5 id="原型连继承和借用构造函数-组合实现继承"><a href="#原型连继承和借用构造函数-组合实现继承" class="headerlink" title="原型连继承和借用构造函数 组合实现继承"></a>原型连继承和借用构造函数 组合实现继承</h5><p>两次调用父类构造函数：（第一次是在创建子类原型的时候，第二次是在子类构造函数内部）。子类继承父类的属性，一组在子类实例上，一组在子类原型上（在子类原型上创建不必要的多余的属性）（实例上的屏蔽原型上的同名属性），同时效率低。</p>
+<h5 id="寄生组合继承"><a href="#寄生组合继承" class="headerlink" title="寄生组合继承"></a>寄生组合继承</h5><p>1.只调用一次父类的构造函数,避免了在子类原型上创建不必要的，多余的属性</p>
+<p>2.原型链保持不变</p>
+<p><img src="C:\Users\qq972\AppData\Roaming\Typora\typora-user-images\1552809922064.png" alt="1552809922064"></p>
+<p>这个如果没有constructor：Add,则this.a指向的是原型 </p>
 
       
     </div>
@@ -522,7 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js语法-数组/" rel="tag"># -js语法 -数组</a>
+            <a href="/tags/js-原型/" rel="tag"># -js -原型</a>
           
         </div>
       
@@ -535,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/18/自建博客之路/" rel="next" title="自建博客之路">
-                <i class="fa fa-chevron-left"></i> 自建博客之路
+              <a href="/2019/03/15/学无止境之apply,call,bind/" rel="next" title="apply，call和bind">
+                <i class="fa fa-chevron-left"></i> apply，call和bind
               </a>
             
           </div>
@@ -544,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/14/学无止境之js的String对象/" rel="prev" title="学无止境之JS的String对象">
-                学无止境之JS的String对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -710,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转换方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">转换方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#推入栈方法："><span class="nav-number">3.0.4.</span> <span class="nav-text">推入栈方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.5.</span> <span class="nav-text">排列方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.6.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.7.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法"><span class="nav-number">3.0.8.</span> <span class="nav-text">迭代方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.9.</span> <span class="nav-text">归并方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型的动态性"><span class="nav-number">1.</span> <span class="nav-text">原型的动态性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原生对象的原型"><span class="nav-number">2.</span> <span class="nav-text">原生对象的原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合使用构造函数模式和原型模式"><span class="nav-number">3.</span> <span class="nav-text">组合使用构造函数模式和原型模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#确定原型和实例的关系"><span class="nav-number">4.</span> <span class="nav-text">确定原型和实例的关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寄生式继承"><span class="nav-number">5.</span> <span class="nav-text">寄生式继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链实现继承"><span class="nav-number">6.</span> <span class="nav-text">原型链实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型连继承和借用构造函数-组合实现继承"><span class="nav-number">7.</span> <span class="nav-text">原型连继承和借用构造函数 组合实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寄生组合继承"><span class="nav-number">8.</span> <span class="nav-text">寄生组合继承</span></a></li></ol></div>
             
 
           </div>
