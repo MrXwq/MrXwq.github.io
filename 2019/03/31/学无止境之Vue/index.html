@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sword_32px_1163574_easyicon.net.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sword_16px_1163574_easyicon.net.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="简单的vue模板1234567891011121314151617181920212223242526&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;		&amp;lt;script src=&quot;js/vue.js&quot;&amp;gt;&amp;lt;/scrip">
+<meta name="keywords" content="-Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学无止境之Vue">
+<meta property="og:url" content="https://Mrxwq.github.io/2019/03/31/学无止境之Vue/index.html">
+<meta property="og:site_name" content="自律使我自由">
+<meta property="og:description" content="简单的vue模板1234567891011121314151617181920212223242526&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;		&amp;lt;script src=&quot;js/vue.js&quot;&amp;gt;&amp;lt;/scrip">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://mrxwq.github.io/images/1553753746719.png">
+<meta property="og:updated_time" content="2019-03-31T06:20:57.178Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学无止境之Vue">
+<meta name="twitter:description" content="简单的vue模板1234567891011121314151617181920212223242526&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&quot;utf-8&quot; /&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;		&amp;lt;script src=&quot;js/vue.js&quot;&amp;gt;&amp;lt;/scrip">
+<meta name="twitter:image" content="https://mrxwq.github.io/images/1553753746719.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://Mrxwq.github.io/2019/03/31/学无止境之Vue/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>学无止境之Vue | 自律使我自由</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">自律使我自由</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/MrXwq" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/03/31/学无止境之Vue/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MrXwq">
+      <meta itemprop="description" content="只要弄不死我，我就在一直变强">
+      <meta itemprop="image" content="/images/IMG_0467.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自律使我自由">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学无止境之Vue
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-31 14:18:09 / 修改时间：14:20:57" itemprop="dateCreated datePublished" datetime="2019-03-31T14:18:09+08:00">2019-03-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2019/03/31/学无止境之Vue/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/学无止境之Vue/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="简单的vue模板"><a href="#简单的vue模板" class="headerlink" title="简单的vue模板"></a>简单的vue模板</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- Vue控制的这个区域就是V--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123; &#123;msg&#125; &#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"> </span></span><br><span class="line"><span class="javascript">		<span class="comment">/* var的这整个就是VM 调度者*/</span></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">				el:<span class="string">'#app'</span>,</span></span><br><span class="line"><span class="javascript">				<span class="comment">/* data里面的就是M 数据*/</span></span></span><br><span class="line"><span class="undefined">				data:&#123;</span></span><br><span class="line"><span class="javascript">					msg:<span class="string">'欢迎学习Vue'</span></span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;)</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="v-cloak-去除插值表达式得闪烁问题"><a href="#v-cloak-去除插值表达式得闪烁问题" class="headerlink" title="v-cloak 去除插值表达式得闪烁问题"></a>v-cloak 去除插值表达式得闪烁问题</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">			<span class="selector-attr">[v-cloak]</span>&#123;</span></span><br><span class="line"><span class="undefined">				display: none;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h5><p>默认没闪烁，但会覆盖元素中得原本内容{ {mes} }</p>
+<h5 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h5><p>会把数据当html表达式放入</p>
+<h5 id="v-bind：-："><a href="#v-bind：-：" class="headerlink" title="v-bind： | ："></a>v-bind： | ：</h5><p>用于绑定属性的指令,例如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"click"</span> <span class="attr">:title</span> = <span class="string">"titlemes+123"</span> /&gt;</span></span><br><span class="line">data:&#123;</span><br><span class="line">	titlemes:'显示title信息'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="v-on"><a href="#v-on" class="headerlink" title="v-on | @"></a>v-on | @</h5><p>事件绑定机制</p>
+<p>第一次打：v-on：show，应该是v-on：click=”show” 也可以@click=”show“</p>
+<blockquote>
+<p>在VM实例中，要调用data上数据或者methods上的数据，必须通过this.属性名或this.方法名</p>
+</blockquote>
+<h5 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h5><p>双向数据绑定，只用于表单元素</p>
+<p>做计算器的时候错误：data{}里的数据用了”;”隔开，应该是用”,”</p>
+<p>switch中，参数用了opt，应该是this.opt</p>
+<p>case中因为输入text里面的东西是字符串，所以得用parseInt()函数转换</p>
+<h5 id="标签绑定class"><a href="#标签绑定class" class="headerlink" title="标签绑定class"></a>标签绑定class</h5><p>：class=”sty”</p>
+<p>vue中data：{</p>
+<pre><code>sty：{类名：true/false，类名：true/false，类名：true/false}
+
+}
+</code></pre><h5 id="标签绑定style"><a href="#标签绑定style" class="headerlink" title="标签绑定style"></a>标签绑定style</h5><p>：style = “[aobj1,aobj2]”</p>
+<p>aobj1:{color:red;’font-style’:…}/有横线的需要加引号/</p>
+<p>aobj2:{font-size:2em}</p>
+<h5 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h5><p>unshift添加到开头</p>
+<p>循环的时候，必须使用number获取string</p>
+<p>key在使用的时候，必须使用v-bind属性绑定形式</p>
+<h5 id="v-if和v-show"><a href="#v-if和v-show" class="headerlink" title="v-if和v-show"></a>v-if和v-show</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data&#123;</span><br><span class="line">	flag:true//在这，我加了个';'结果报错了，看来，结尾不用加</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>v-if是直接注释调元素而v-for是加了个display:none;</p>
+<p>所以如果频繁切换的话，推荐v-show 减少性能消耗</p>
+<p>如果永远都不会被看到了的话，推荐v-if 减少渲染消耗</p>
+<h5 id="品牌添加项目"><a href="#品牌添加项目" class="headerlink" title="品牌添加项目"></a>品牌添加项目</h5><p>品牌添加时在push函数中，里面的数据一开始，我是这样的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">push(&#123;<span class="string">'id:'</span>+<span class="keyword">this</span>.id+<span class="string">'name:'</span>+<span class="keyword">this</span>.name+<span class="string">'time:'</span><span class="built_in">Date</span>()&#125;)</span><br></pre></td></tr></table></figure>
+<p>但其实，只要这样就行，跟data{}里面数据一样的格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">push(&#123;<span class="attr">id</span>:<span class="keyword">this</span>.id,<span class="attr">name</span>:<span class="keyword">this</span>.name,<span class="attr">time</span>:<span class="keyword">new</span> <span class="built_in">Date</span>()&#125;)</span><br></pre></td></tr></table></figure>
+<p>在这个功能中，我用到了bootstrap</p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class = "table table-striped(为每一行增加斑马线，但我觉得没啥变化。。。) table-bordered(为每个单元格增加边框) table-hover(对鼠标移动有悬停作用，但我没看出有啥作用) table-condensed(为每行的padding减半)"</span><br></pre></td></tr></table></figure>
+<h6 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span> = <span class="string">"form-inline"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> = <span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span> = <span class="string">"form-control"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h5><p>some(function(item,i))</p>
+<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>function(currentValue, index,arr)</em></td>
+<td style="text-align:left">必须。函数，数组中的每个元素都会执行这个函数 函数参数: 参数描述<em>currentValue</em>必须。当前元素的值<em>index</em>可选。当前元素的索引值<em>arr</em>可选。当前元素属于的数组对象</td>
+</tr>
+<tr>
+<td><em>thisValue</em></td>
+<td style="text-align:left">可选。对象作为该执行回调时使用，传递给函数，用作 “this” 的值。 如果省略了 thisValue ，”this” 的值为 “undefined”</td>
+</tr>
+</tbody>
+</table>
+<h5 id="搜索关键字实现"><a href="#搜索关键字实现" class="headerlink" title="搜索关键字实现"></a>搜索关键字实现</h5><p>在输入框绑定v-model</p>
+<p>这个时候tbody上的数据就不能固定了，需要添加一个方法，search(keywords)需要在这方法中返回的数组中去循环得到数据，同时还得在data中添加keywords数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">search(keywords)&#123;</span><br><span class="line">    <span class="keyword">var</span> newmes = [];</span><br><span class="line">    <span class="keyword">this</span>.mes.forEach(<span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(item.name.indexOf(keywords)!=<span class="number">-1</span>)&#123;</span><br><span class="line">            newmes.push(item)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> newmes</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者可以用filter()方法加ES6的新方法includes()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>.mes.filter(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(item.name.include(keywords))&#123;</span><br><span class="line">        <span class="keyword">return</span> item;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><p>{ {} }里面的数据加个’| 过滤器的名称(‘需要变换的数据’,’用来变换的数据’,’用来变换的数据’。。。)’</p>
+<p>在script上添加Vue.filter(‘过滤器的名称’,(需要变化的数据,参数，参数。。。)=&gt;{</p>
+<pre><code>return 
+</code></pre><p>})</p>
+<p>使用时间过滤器的时候，return那需要用<code></code>而不是’’,$后面不是用（）而是用{}</p>
+<p>定义私有过滤器：一个filters:{‘’一个是过滤器名称，()=&gt;{}一个是处理函数}</p>
+<h5 id="自定义全局按键修饰符"><a href="#自定义全局按键修饰符" class="headerlink" title="自定义全局按键修饰符"></a>自定义全局按键修饰符</h5><p>在标签添加@keyup.f2 = “add”</p>
+<p>在javaScript中添加</p>
+<p>Vue.config.keyCodes.f2 = 113</p>
+<h5 id="自定义绑定"><a href="#自定义绑定" class="headerlink" title="自定义绑定"></a>自定义绑定</h5><p>比如:获取焦点</p>
+<p>在标签上添加一个v-focus</p>
+<p>在script中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'focus'</span>,&#123;</span><br><span class="line">    bind:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    inserted:<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line">        el.focus();</span><br><span class="line">    &#125;,</span><br><span class="line">    update:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>el:指被绑定的那个元素,原生的JS对象</p>
+<p>和js行为有关的,写入inserted</p>
+<p>和样式有关的,写入bind中,只要绑定了,就会有内联样式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">directives:&#123;</span><br><span class="line">    fontsize:<span class="function"><span class="keyword">function</span>(<span class="params">el,binding</span>)</span>&#123;</span><br><span class="line">        el.style.fontSize = <span class="built_in">parseInt</span>(binding.value)+<span class="string">'px'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要单位的，需要加parseInt函数转换</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">	<span class="selector-class">.v-enter</span>,</span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-leave-to</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transform</span><span class="selector-pseudo">:translateX(100px)</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">opacity</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-enter-active</span>,</span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-leave-active</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transition</span><span class="selector-pseudo">:all</span> 0<span class="selector-class">.5s</span> <span class="selector-tag">ease</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"button"</span> <span class="attr">value</span> = <span class="string">"toggle"</span> @<span class="attr">click</span> = <span class="string">"flag =!flag"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        这是一个好</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果不想用v-开头，可以在transition上加个name属性，里面是啥，你就用啥开头</p>
+<h5 id="第三方类"><a href="#第三方类" class="headerlink" title="第三方类"></a>第三方类</h5><p>animate</p>
+<p>这样就不用写自己写style样式了</p>
+<p>可以直接在网上找，然后在transition标签上加上enter-active-class 和leave-active-class</p>
+<p>加个:duration = “{enter:时间,leave:时间}”可以设置进场时间和离场时间</p>
+<p>Vue.filter(‘datechange’,function(datec,daa){</p>
+<p>Vue.component(‘button-counter’, {<br>data: function () {</p>
+<h5 id="动画的钩子函数，动画的生命周期函数"><a href="#动画的钩子函数，动画的生命周期函数" class="headerlink" title="动画的钩子函数，动画的生命周期函数"></a>动画的钩子函数，动画的生命周期函数</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--这里一开始我写成了transform,现在想一想也知道应该是这个 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">transtion</span></span></span><br><span class="line">           &lt;!--这里一开始我写成了beforeEnter --&gt;</span><br><span class="line">           @before-enter = "beforeEmter"</span><br><span class="line">           @enter = "enter"</span><br><span class="line">           @after-enter = "afterEnter"&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">transtion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    enter(el,done)&#123;</span></span><br><span class="line"><span class="javascript">        el.offsetWidth<span class="comment">//这个也一定要写，不要动画不会动</span></span></span><br><span class="line"><span class="javascript">        done()<span class="comment">//这个最后一定需要调用，这是调用afterEnter函数</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="列表动画"><a href="#列表动画" class="headerlink" title="列表动画"></a>列表动画</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//这两个配合着用，能够实现列表后续的动画</span><br><span class="line">.v-move&#123;</span><br><span class="line">	transition:1s all ease;</span><br><span class="line">&#125;</span><br><span class="line">.v-leave-active&#123;</span><br><span class="line">	position:absoluty//这个时候若li没有设高度，则会以撑开的宽度消失</span><br><span class="line">&#125;</span><br><span class="line">//列表的动画需要这个，appear一开始打开的时候会有出现的画面</span><br><span class="line"><span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">appear</span> <span class="attr">tag</span> = <span class="string">"ul"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> "(<span class="attr">item</span>,<span class="attr">i</span>) <span class="attr">in</span> <span class="attr">mes</span>" <span class="attr">:key</span> = <span class="string">"item.id"</span> @<span class="attr">click</span> = <span class="string">"del(i)"</span>&gt;</span></span><br><span class="line">    	&#123; &#123;item.id&#125; &#125;-----------------&#123; &#123;item.name&#125; &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h5><h6 id="全局："><a href="#全局：" class="headerlink" title="全局："></a>全局：</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id = <span class="string">"mycom"</span>&gt;</span><br><span class="line">    &lt;h1&gt;</span><br><span class="line">    	登陆组件</span><br><span class="line">    &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt; </span><br><span class="line"><span class="keyword">var</span> component = &#123;<span class="string">'com'</span>,</span><br><span class="line">                 template:<span class="string">'#mycom'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="私有："><a href="#私有：" class="headerlink" title="私有："></a>私有：</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data:&#123;&#125;,</span><br><span class="line">    methods:&#123;&#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        comm:&#123;</span><br><span class="line">            template:<span class="string">'#mycom2'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="组件的数据和方法"><a href="#组件的数据和方法" class="headerlink" title="组件的数据和方法"></a>组件的数据和方法</h6><p>组件中的数据不能像vue的实例一样，组件中的需要创建一个函数返回一个对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">        mes:<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="组件动画切换"><a href="#组件动画切换" class="headerlink" title="组件动画切换"></a>组件动画切换</h6><p>在div外</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href = <span class="string">""</span> @click.prevent = <span class="string">"this.comName = 'login'"</span>&gt;login&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&lt;a href = "" @click.prevent = "this.comName = 'register'"&gt;register&lt;/</span>a&gt;</span><br><span class="line"></span><br><span class="line">&lt;transition mode = <span class="string">"out-in"</span>&gt;</span><br><span class="line">    &lt;component :is = <span class="string">"comName"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/transition&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/下面定义两个属性</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/实例中data：&#123;</span></span><br><span class="line"><span class="regexp">	comName:'login'/</span><span class="regexp">/默认展示登陆组件</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h6 id="父组件向子组件传数据"><a href="#父组件向子组件传数据" class="headerlink" title="父组件向子组件传数据"></a>父组件向子组件传数据</h6><p>需要在子组件上进行数据绑定 (:parentmes = “mes”)</p>
+<p>然后子组件上有个props:[parentmes]</p>
+<p>这个时候就可以在template上使用父组件的值了</p>
+<h6 id="路由："><a href="#路由：" class="headerlink" title="路由："></a>路由：</h6><p>hash是实现单页面程序中的页面跳转的，前端路由</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to = <span class="string">'/login?id=10'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span></span><br><span class="line">&lt;router-link to = '/register'&gt;&lt;/router-link&gt;</span><br><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;h1&gt;登陆组件-----&#123; &#123;$route.query.id&#125; &#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;h1&gt;注册组件&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">var router = new VueRouter(&#123;</span><br><span class="line">    routes[</span><br><span class="line">    &#123;path:'/login',component:login&#125;,</span><br><span class="line">    &#123;path:'/register',component:register&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    router:router</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>第二种路由传值方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to = <span class="string">'/login/10'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span></span><br><span class="line">&lt;router-link to = '/register'&gt;&lt;/router-link&gt;</span><br><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;h1&gt;登陆组件-----&#123; &#123;$route.params.id&#125; &#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;h1&gt;注册组件&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">var router = new VueRouter(&#123;</span><br><span class="line">    routes[</span><br><span class="line">    &#123;path:'/login/:id',component:login&#125;,</span><br><span class="line">    &#123;path:'/register',component:register&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    router:router</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>路由嵌套</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes:[</span><br><span class="line">        &#123;<span class="attr">path</span>:<span class="string">'/all'</span>,<span class="attr">component</span>:all,</span><br><span class="line">         childrens:[</span><br><span class="line">         &#123;<span class="attr">path</span>:<span class="string">'login'</span>,<span class="attr">component</span>:login&#125;,</span><br><span class="line">         &#123;<span class="attr">path</span>:<span class="string">'register'</span>,<span class="attr">component</span>:register&#125;</span><br><span class="line">         ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="watch监听"><a href="#watch监听" class="headerlink" title="watch监听"></a>watch监听</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watch:&#123;</span><br><span class="line">    <span class="string">'firstname'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">newName,oldName</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName = newName +<span class="string">'-'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="string">'lastname'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">newName,oldName</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName =<span class="keyword">this</span>.firstname+newName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">    <span class="string">'firstname'</span>:<span class="string">''</span>,</span><br><span class="line">    <span class="string">'lastname'</span>:<span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line">computed:&#123;</span><br><span class="line">    <span class="string">'fullname'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstname+<span class="string">'-'</span>+<span class="keyword">this</span>.lastname</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在input上v-model之后，不用在data中定义数据了，只要在computed上监听到fullname的改变就调用</p>
+<p><img src="\images\1553753746719.png" alt="1553753746719"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># -Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/31/学无止境之webpack初识/" rel="next" title="学无止境之webpack初识">
+                <i class="fa fa-chevron-left"></i> 学无止境之webpack初识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/IMG_0467.JPG" alt="MrXwq">
+            
+              <p class="site-author-name" itemprop="name">MrXwq</p>
+              <p class="site-description motion-element" itemprop="description">只要弄不死我，我就在一直变强</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/MrXwq" title="GitHub &rarr; https://github.com/MrXwq" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:972197784@qq.com" title="E-Mail &rarr; mailto:972197784@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#简单的vue模板"><span class="nav-number">1.</span> <span class="nav-text">简单的vue模板</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-cloak-去除插值表达式得闪烁问题"><span class="nav-number">2.</span> <span class="nav-text">v-cloak 去除插值表达式得闪烁问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-text"><span class="nav-number">3.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-html"><span class="nav-number">4.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-bind：-："><span class="nav-number">5.</span> <span class="nav-text">v-bind： | ：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-on"><span class="nav-number">6.</span> <span class="nav-text">v-on | @</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-model"><span class="nav-number">7.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标签绑定class"><span class="nav-number">8.</span> <span class="nav-text">标签绑定class</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标签绑定style"><span class="nav-number">9.</span> <span class="nav-text">标签绑定style</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-for"><span class="nav-number">10.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-if和v-show"><span class="nav-number">11.</span> <span class="nav-text">v-if和v-show</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#品牌添加项目"><span class="nav-number">12.</span> <span class="nav-text">品牌添加项目</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#表格"><span class="nav-number">12.1.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#表单"><span class="nav-number">12.2.</span> <span class="nav-text">表单</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#some"><span class="nav-number">13.</span> <span class="nav-text">some()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参数说明"><span class="nav-number">14.</span> <span class="nav-text">参数说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#搜索关键字实现"><span class="nav-number">15.</span> <span class="nav-text">搜索关键字实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过滤器"><span class="nav-number">16.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义全局按键修饰符"><span class="nav-number">17.</span> <span class="nav-text">自定义全局按键修饰符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义绑定"><span class="nav-number">18.</span> <span class="nav-text">自定义绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三方类"><span class="nav-number">19.</span> <span class="nav-text">第三方类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动画的钩子函数，动画的生命周期函数"><span class="nav-number">20.</span> <span class="nav-text">动画的钩子函数，动画的生命周期函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表动画"><span class="nav-number">21.</span> <span class="nav-text">列表动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组件"><span class="nav-number">22.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#全局："><span class="nav-number">22.1.</span> <span class="nav-text">全局：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#私有："><span class="nav-number">22.2.</span> <span class="nav-text">私有：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#组件的数据和方法"><span class="nav-number">22.3.</span> <span class="nav-text">组件的数据和方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#组件动画切换"><span class="nav-number">22.4.</span> <span class="nav-text">组件动画切换</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#父组件向子组件传数据"><span class="nav-number">22.5.</span> <span class="nav-text">父组件向子组件传数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#路由："><span class="nav-number">22.6.</span> <span class="nav-text">路由：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#watch监听"><span class="nav-number">22.7.</span> <span class="nav-text">watch监听</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#computed"><span class="nav-number">22.8.</span> <span class="nav-text">computed</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrXwq</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">29k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">26 分钟</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xM8mpPkjOdmfaFsc591FW9gi-gzGzoHsz',
+    appKey: '1c1gbu71euKPia87WyWhfW4x',
+    placeholder: '请疯狂吐槽，谢谢',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
