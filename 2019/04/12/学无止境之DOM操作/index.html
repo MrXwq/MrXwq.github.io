@@ -96,31 +96,25 @@
 
 
 
-  <meta name="description" content="webpack安装全局： npm i webpack -g 项目安装：npm i webpack –save-dev  文件名别webpack在webpack1文件中创一个src文件夹，放我们的源代码 dist文件夹，我们发布完的都放dist去，到时直接把dist拷给用户就行 main.js 以后导包都在这import $ from ‘jquery’ vscode中，先npm init -y初始化">
-<meta name="keywords" content="-webpack">
+  <meta name="description" content="常用方法:   获取节点： document.getElementById(idName)          //通过id号来获取元素，返回一个元素对象 document.getElementsByName(name)       //通过name属性获取id号，返回元素对象数组 document.getElementsByClassName(className)   //通过class来获取元">
+<meta name="keywords" content="-js -DOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学无止境之webpack初识">
-<meta property="og:url" content="https://Mrxwq.github.io/2019/03/31/学无止境之webpack初识/index.html">
+<meta property="og:title" content="学无止境之DOM操作">
+<meta property="og:url" content="https://Mrxwq.github.io/2019/04/12/学无止境之DOM操作/index.html">
 <meta property="og:site_name" content="自律使我自由">
-<meta property="og:description" content="webpack安装全局： npm i webpack -g 项目安装：npm i webpack –save-dev  文件名别webpack在webpack1文件中创一个src文件夹，放我们的源代码 dist文件夹，我们发布完的都放dist去，到时直接把dist拷给用户就行 main.js 以后导包都在这import $ from ‘jquery’ vscode中，先npm init -y初始化">
+<meta property="og:description" content="常用方法:   获取节点： document.getElementById(idName)          //通过id号来获取元素，返回一个元素对象 document.getElementsByName(name)       //通过name属性获取id号，返回元素对象数组 document.getElementsByClassName(className)   //通过class来获取元">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://mrxwq.github.io/images/1.png">
-<meta property="og:image" content="https://mrxwq.github.io/images/2.png">
-<meta property="og:image" content="https://mrxwq.github.io/images/3.png">
-<meta property="og:image" content="https://mrxwq.github.io/images/4.png">
-<meta property="og:image" content="https://mrxwq.github.io/images/5.png">
-<meta property="og:updated_time" content="2019-04-02T15:58:39.114Z">
+<meta property="og:updated_time" content="2019-04-12T15:21:08.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学无止境之webpack初识">
-<meta name="twitter:description" content="webpack安装全局： npm i webpack -g 项目安装：npm i webpack –save-dev  文件名别webpack在webpack1文件中创一个src文件夹，放我们的源代码 dist文件夹，我们发布完的都放dist去，到时直接把dist拷给用户就行 main.js 以后导包都在这import $ from ‘jquery’ vscode中，先npm init -y初始化">
-<meta name="twitter:image" content="https://mrxwq.github.io/images/1.png">
+<meta name="twitter:title" content="学无止境之DOM操作">
+<meta name="twitter:description" content="常用方法:   获取节点： document.getElementById(idName)          //通过id号来获取元素，返回一个元素对象 document.getElementsByName(name)       //通过name属性获取id号，返回元素对象数组 document.getElementsByClassName(className)   //通过class来获取元">
 
 
 
 
 
 
-  <link rel="canonical" href="https://Mrxwq.github.io/2019/03/31/学无止境之webpack初识/">
+  <link rel="canonical" href="https://Mrxwq.github.io/2019/04/12/学无止境之DOM操作/">
 
 
 
@@ -130,7 +124,7 @@
   };
 </script>
 
-  <title>学无止境之webpack初识 | 自律使我自由</title>
+  <title>学无止境之DOM操作 | 自律使我自由</title>
   
 
 
@@ -338,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/03/31/学无止境之webpack初识/">
+    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/04/12/学无止境之DOM操作/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MrXwq">
@@ -355,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学无止境之webpack初识
+          <h1 class="post-title" itemprop="name headline">学无止境之DOM操作
 
               
             
@@ -381,24 +375,12 @@
                 
               
 
-              <time title="创建时间：2019-03-31 13:33:19" itemprop="dateCreated datePublished" datetime="2019-03-31T13:33:19+08:00">2019-03-31</time>
+              <time title="创建时间：2019-04-12 22:49:59 / 修改时间：23:21:08" itemprop="dateCreated datePublished" datetime="2019-04-12T22:49:59+08:00">2019-04-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-02 23:58:39" itemprop="dateModified" datetime="2019-04-02T23:58:39+08:00">2019-04-02</time>
               
             
           </span>
@@ -415,8 +397,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/03/31/学无止境之webpack初识/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/学无止境之webpack初识/" itemprop="commentCount"></span>
+                <a href="/2019/04/12/学无止境之DOM操作/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/12/学无止境之DOM操作/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -438,7 +420,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.7k</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -472,56 +454,65 @@
       
 
       
-        <h6 id="webpack安装"><a href="#webpack安装" class="headerlink" title="webpack安装"></a>webpack安装</h6><p>全局： npm i webpack -g</p>
-<p>项目安装：npm i webpack –save-dev</p>
-<p><img src="\images\1.png" alt=""></p>
-<h6 id="文件名别webpack"><a href="#文件名别webpack" class="headerlink" title="文件名别webpack"></a>文件名别webpack</h6><p>在webpack1文件中创一个src文件夹，放我们的源代码</p>
-<p>dist文件夹，我们发布完的都放dist去，到时直接把dist拷给用户就行</p>
-<p>main.js 以后导包都在这import $ from ‘jquery’</p>
-<p>vscode中，先npm init -y初始化</p>
-<p><img src="\images\2.png" alt=""></p>
-<p> 然后需要什么包可以直接安装，比如jquery ：npm i jquery -S</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'li:odd'</span>).css(<span class="string">'backgroundColor'</span>,<span class="string">'lightblue'</span>)</span><br><span class="line">    $(<span class="string">'li:even'</span>).css(<span class="string">'backgroundColor'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'#'</span>+<span class="string">'D97634'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h6 id="终端："><a href="#终端：" class="headerlink" title="终端："></a>终端：</h6><p>返回上一层目录，cd ..</p>
-<p>cls清空</p>
-<h6 id="自建一个webpack-config-js"><a href="#自建一个webpack-config-js" class="headerlink" title="自建一个webpack.config.js:"></a>自建一个webpack.config.js:</h6><p>const path = require(‘path’);</p>
-<p>module.exports = {</p>
-<pre><code>entry: &apos;.\src\index.js&apos;,
-
-mode: &apos;development&apos;,
-
-output: {
-
-    filename: &apos;main.js&apos;,
-</code></pre><p>  path: path.resolve(__dirname,’dist’)</p>
-<pre><code>}
-</code></pre><p>  }</p>
-<p>在4.0之后的版本需要npm i -D webpack-cli安装一个命令行工具</p>
-<p>需要安装一个生产环境 npm i lodash -P</p>
-<p>运行npx webpack执行</p>
-<h6 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h6><p>alt+b打开浏览器</p>
-<p>ctrl+·打开终端</p>
-<p><img src="\images\3.png" alt=""></p>
-<p><img src="\images\4.png" alt=""></p>
-<p>也可以在webpack.config.js上配置</p>
-<p><img src="\images\5.png" alt=""></p>
-<p>npm run dev执行</p>
-<p>这样，只要代码变了，就不用我们每次都npx webpack执行了；</p>
-<h5 id="处理费js烈性的文件，需要手动安装合适的第三方loader加载器"><a href="#处理费js烈性的文件，需要手动安装合适的第三方loader加载器" class="headerlink" title="处理费js烈性的文件，需要手动安装合适的第三方loader加载器"></a>处理费js烈性的文件，需要手动安装合适的第三方loader加载器</h5><h6 id="处理css"><a href="#处理css" class="headerlink" title="处理css"></a>处理css</h6><p>npm i -D style-loader css-loader</p>
-<p>style-loader可以将文件中依赖的css文件生产一个style标签库，最终注入到html中</p>
-<h6 id="处理less"><a href="#处理less" class="headerlink" title="处理less"></a>处理less</h6><p>先cnpm i less-loader -D</p>
-<p>再cnpm i less -D</p>
-<h6 id="在内存生成html页面的插件"><a href="#在内存生成html页面的插件" class="headerlink" title="在内存生成html页面的插件"></a>在内存生成html页面的插件</h6><p>cnpm i html-webpack-plugin -D把页面也放入到内存里</p>
-<p>在webpack.config.js中导入这个插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const htmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)</span><br></pre></td></tr></table></figure>
-<p>只要是插件，都要放入到plugins节点中去</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Plugins: [</span><br><span class="line">      <span class="keyword">new</span> htmlWebpackPlugin(&#123;\\创建一个在内存中生辰html页面的插件</span><br><span class="line">        template:path.join(__dirname,<span class="string">'.\index.html'</span>),\\指定模板页面</span><br><span class="line">        filename:<span class="string">'index.html'</span>\\指定生成的页面的名称</span><br><span class="line">      &#125;)</span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
-<h6 id="处理图片"><a href="#处理图片" class="headerlink" title="处理图片"></a>处理图片</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i url-loader file-loader -D</span><br></pre></td></tr></table></figure>
-<p>ES6中的一些高级语法，webpack还处理不了，需要导入第三方loader包，帮助webpack将高级语法转为低级语法</p>
-<p>1.在webpack中可以运行如下两套命令</p>
-<p>1.1 第一套包：cnpm i babel-core babel-loader babel-plugin-transform-runtime -D</p>
-<p>1.2第二套包：cnpm i babel-preset-env babel-preset-stage-0 -D</p>
-<p>2.在配置文件中配置</p>
+        <ul>
+<li><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法:"></a>常用方法:</h4></li>
+</ul>
+<ol>
+<li><p>获取节点：</p>
+<p>document.<strong>getElementById</strong>(idName)          //通过id号来获取元素，返回一个元素对象</p>
+<p>document.<strong>getElementsByName</strong>(name)       //通过name属性获取id号，返回元素对象数组</p>
+<p>document.<strong>getElementsByClassName</strong>(className)   //通过class来获取元素，返回元素对象数组（ie8以上才有）</p>
+<p>document.<strong>getElementsByTagName</strong>(tagName)       //通过标签名获取元素，返回元素对象数组</p>
+</li>
+<li><p>获取/设置元素的属性值</p>
+<p>element.<strong>getAttribute</strong>(attributeName)     //括号传入属性名，返回对应属性的属性值</p>
+<p>element.<strong>setAttribute</strong>(attributeName,attributeValue)    //传入属性名及设置的值</p>
+</li>
+<li><p>创建节点Node：</p>
+<p>document.<strong>createElement</strong>(“h3”)       //创建一个html元素，这里以创建h3元素为例</p>
+<p>document.<strong>createTextNode</strong>(String); //创建一个文本节点；</p>
+<p>document.<strong>createAttribute</strong>(“class”); //创建一个属性节点，这里以创建class属性为例</p>
+</li>
+<li><p>增添节点：</p>
+<p>element.<strong>appendChild</strong>(Node);   //往element内部最后面添加一个节点，参数是节点类型</p>
+<p>elelment.<strong>insertBefore</strong>(newNode,existingNode); //在element内部的中在existingNode前面插入newNode</p>
+</li>
+<li><p>删除节点：</p>
+<p>element.<strong>removeChild</strong>(Node)    //删除当前节点下指定的子节点，删除成功返回该被删除的节点，否则返回null</p>
+<p>element.<strong>replaceChild</strong>(newNode,existingNode) 替换节点</p>
+<h6 id="bj-parentNode-removeChild-bj-常用语法"><a href="#bj-parentNode-removeChild-bj-常用语法" class="headerlink" title="bj.parentNode.removeChild(bj)常用语法"></a>bj.parentNode.removeChild(bj)常用语法</h6><p>city.innerHtml += “<li>广州</li>“ </p>
+</li>
+</ol>
+<ul>
+<li><h4 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性:"></a>常用属性:</h4></li>
+</ul>
+<ol>
+<li><p>获取当前元素的父节点 ：</p>
+<p>element.<strong>parentNode</strong>     //返回当前元素的父节点对象</p>
+</li>
+<li><p>获取当前元素的子节点：</p>
+<p>element.<strong>children</strong>        //返回当前元素所有子元素节点对象，只返回HTML节点</p>
+<p>element.<strong>childNodes</strong>   //返回当前元素多有子节点，包括文本，HTML，属性节点。（回车也会当做一个节点）</p>
+<p>element.<strong>firstChild</strong>      //返回当前元素的第一个子节点对象，包括文本</p>
+<p>element.<strong>lastChild</strong>       //返回当前元素的最后一个子节点对象</p>
+</li>
+<li><p>获取当前元素的同级元素：</p>
+<p>element.<strong>nextSibling</strong>          //返回当前元素的下一个同级元素 没有就返回null 能获取空格 <strong>nextElementSibling</strong></p>
+<p>element.<strong>previousSibling</strong>   //返回当前元素上一个同级元素 没有就返回null 能获取空格</p>
+</li>
+<li><p>获取当前元素的文本：</p>
+<p>element.<strong>innerHTML</strong>   //返回元素的所有文本，包括html代码</p>
+<p>element.<strong>innerText</strong>     //返回当前元素的自身及子代所有文本值，只是文本内容，不包括html代码</p>
+</li>
+<li><p>获取当前节点的节点类型：node.<strong>nodeType</strong>   //返回节点的类型,数字形式（1-12）常见几个1：元素节点，2：属性节点，3：文本节点。</p>
+</li>
+<li><p>设置样式：element.<strong>style</strong>.color=“#eea”;      //设置元素的样式时使用style，这里以设置文字颜色为例。</p>
+</li>
+</ol>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>大家都会觉得用jQuery来操作dom会更加的方便且好用，因为jq对js的dom进行了封装，使得我们Write Less, Do More。但是我觉得还是要总结一下原生js的dom，从根本上了解js对dom的操作，只会有利而无害。</p>
+<p>docment.all获取页面所有元素</p>
+<p>document.querySelector(“.box”)根据一个css选择器查询一个元素节点对象 IE8中也可用</p>
+<p>document.querySelectorAll(“.box”)</p>
 
       
     </div>
@@ -545,7 +536,7 @@ output: {
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># -webpack</a>
+            <a href="/tags/js-DOM/" rel="tag"># -js -DOM</a>
           
         </div>
       
@@ -558,8 +549,8 @@ output: {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/26/学无止境之flex/" rel="next" title="学无止境之flex">
-                <i class="fa fa-chevron-left"></i> 学无止境之flex
+              <a href="/2019/04/09/学无止境之h5/" rel="next" title="学无止境之h5">
+                <i class="fa fa-chevron-left"></i> 学无止境之h5
               </a>
             
           </div>
@@ -567,10 +558,6 @@ output: {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/31/学无止境之Vue/" rel="prev" title="学无止境之Vue">
-                学无止境之Vue <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -749,7 +736,7 @@ output: {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#webpack安装"><span class="nav-number">1.</span> <span class="nav-text">webpack安装</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#文件名别webpack"><span class="nav-number">2.</span> <span class="nav-text">文件名别webpack</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#终端："><span class="nav-number">3.</span> <span class="nav-text">终端：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#自建一个webpack-config-js"><span class="nav-number">4.</span> <span class="nav-text">自建一个webpack.config.js:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#vscode"><span class="nav-number">5.</span> <span class="nav-text">vscode</span></a></li></ol><li class="nav-item nav-level-5"><a class="nav-link" href="#处理费js烈性的文件，需要手动安装合适的第三方loader加载器"><span class="nav-number"></span> <span class="nav-text">处理费js烈性的文件，需要手动安装合适的第三方loader加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#处理css"><span class="nav-number">1.</span> <span class="nav-text">处理css</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#处理less"><span class="nav-number">2.</span> <span class="nav-text">处理less</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在内存生成html页面的插件"><span class="nav-number">3.</span> <span class="nav-text">在内存生成html页面的插件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#处理图片"><span class="nav-number">4.</span> <span class="nav-text">处理图片</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用方法"><span class="nav-number">1.</span> <span class="nav-text">常用方法:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#bj-parentNode-removeChild-bj-常用语法"><span class="nav-number">1.0.1.</span> <span class="nav-text">bj.parentNode.removeChild(bj)常用语法</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#常用属性"><span class="nav-number">2.</span> <span class="nav-text">常用属性:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">3.</span> <span class="nav-text">总结：</span></a></li></div>
             
 
           </div>
