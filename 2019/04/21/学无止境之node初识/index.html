@@ -104,10 +104,12 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="查看node环境：node –version 或者 node -v 端口被占用的错误提示：EADDRNUSE：：： 浏览器默认为80端口号，在网页不输入则默认80 当采用无分号风格时，只需注意以下情况就不会有问题了 当一行代码是以： (  [ ` 开头时则需要在前面补上一个分号避免一些语法解析错误。 简单的模块化a.js 123console.log(&apos;a start&apos;);require(&apos;./b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-21T15:43:05.114Z">
+<meta property="og:image" content="f:/study/blogtest/source/images/1555947602311.png">
+<meta property="og:updated_time" content="2019-04-22T15:41:43.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之node初识">
 <meta name="twitter:description" content="查看node环境：node –version 或者 node -v 端口被占用的错误提示：EADDRNUSE：：： 浏览器默认为80端口号，在网页不输入则默认80 当采用无分号风格时，只需注意以下情况就不会有问题了 当一行代码是以： (  [ ` 开头时则需要在前面补上一个分号避免一些语法解析错误。 简单的模块化a.js 123console.log(&apos;a start&apos;);require(&apos;./b">
+<meta name="twitter:image" content="f:/study/blogtest/source/images/1555947602311.png">
 
 
 
@@ -375,12 +377,24 @@
                 
               
 
-              <time title="创建时间：2019-04-21 23:42:11 / 修改时间：23:43:05" itemprop="dateCreated datePublished" datetime="2019-04-21T23:42:11+08:00">2019-04-21</time>
+              <time title="创建时间：2019-04-21 23:42:11" itemprop="dateCreated datePublished" datetime="2019-04-21T23:42:11+08:00">2019-04-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-22 23:41:43" itemprop="dateModified" datetime="2019-04-22T23:41:43+08:00">2019-04-22</time>
               
             
           </span>
@@ -420,7 +434,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.8k</span>
+                <span title="本文字数">4.5k</span>
               
 
               
@@ -434,7 +448,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -490,6 +504,25 @@
 <h5 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h5><p>服务器最好把每次响应的数据是什么内容都告诉客户端，而且要正确的告诉</p>
 <p>不同的资源对应的Content-Type是不一样的</p>
 <p>对于文本类型的数据，最好都加上编码，目的是为了放置中文解析乱码问题</p>
+<h5 id="仿造Apache"><a href="#仿造Apache" class="headerlink" title="仿造Apache"></a>仿造Apache</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> server = http.createServer()</span><br><span class="line">server.on(<span class="string">'request'</span>,(request,response)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> url = request.url</span><br><span class="line">    <span class="keyword">let</span> fullPath = <span class="string">'/index.html'</span></span><br><span class="line">    <span class="keyword">let</span> wwwDir = <span class="string">'F:/study/NodeJS/test/www'</span></span><br><span class="line">    <span class="keyword">if</span>(url !==<span class="string">'/'</span>)&#123;</span><br><span class="line">        fullPath = url</span><br><span class="line">    &#125;</span><br><span class="line">    fs.readFile(wwwDir+fullPath,(error,data)=&gt;&#123;</span><br><span class="line">        <span class="keyword">if</span>(error)&#123;</span><br><span class="line">            response.end(<span class="string">'404 page'</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            response.end(data)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器开启'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="fs-readdir-path-options-callback"><a href="#fs-readdir-path-options-callback" class="headerlink" title="fs.readdir(path[, options], callback)"></a>fs.readdir(path[, options], callback)</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">中英对照提交修改</span><br><span class="line"></span><br><span class="line">版本历史</span><br><span class="line">path &lt;string&gt; | &lt;Buffer&gt; | &lt;URL&gt;</span><br><span class="line">options &lt;string&gt; | &lt;Object&gt;</span><br><span class="line"></span><br><span class="line">encoding &lt;string&gt; 默认值: 'utf8'。</span><br><span class="line">withFileTypes &lt;boolean&gt; 默认值: false。</span><br><span class="line">callback &lt;Function&gt;</span><br><span class="line"></span><br><span class="line">err &lt;Error&gt;</span><br><span class="line">files &lt;string[]&gt; | &lt;Buffer[]&gt; | &lt;fs.Dirent[]&gt;</span><br><span class="line">异步的 readdir(3)。 读取目录的内容。 回调有两个参数 (err, files)，其中 files 是目录中的文件名的数组（不包括 '.' 和 '..'）。</span><br><span class="line"></span><br><span class="line">可选的 options 参数可以是指定编码的字符串，也可以是具有 encoding 属性的对象，该属性指定用于传给回调的文件名的字符编码。 如果 encoding 设置为 'buffer'，则返回的文件名是 Buffer 对象。</span><br><span class="line"></span><br><span class="line">如果 options.withFileTypes 设置为 true，则 files 数组将包含 fs.Dirent 对象。</span><br></pre></td></tr></table></figure>
+<h5 id="art-template"><a href="#art-template" class="headerlink" title="art-template"></a>art-template</h5><p>模板引擎</p>
+<h5 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h5><p>服务端渲染是可以被爬虫抓取到的，客户端渲染很难被爬虫抓取到</p>
+<h5 id="开启服务端简写"><a href="#开启服务端简写" class="headerlink" title="开启服务端简写"></a>开启服务端简写</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http</span><br><span class="line">    .createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">        res.end(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'服务开启了'</span>);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="浏览器收到请求"><a href="#浏览器收到请求" class="headerlink" title="浏览器收到请求"></a>浏览器收到请求</h5><p>浏览器收到html响应内容之后，就要开始从上到下一次解析，当解析的过程中，如果发现：</p>
+<p>link</p>
+<p>script</p>
+<p>img</p>
+<p>iframe</p>
+<p>video</p>
+<p>audio</p>
+<p>等带有src或者href(link)属性标签(具有外链的资源)时候，浏览器会自动对这些资源发起的请求。</p>
+<blockquote>
+<p>为了让目录结构 统一清晰，所以约定把所有的html文件都放到views(视图)目录</p>
+<p>为了方便的统一处理静态资源，所以我们约定把所有的静态资源都存放在public目录</p>
+</blockquote>
+<h5 id="require-‘url’"><a href="#require-‘url’" class="headerlink" title="require(‘url’)"></a>require(‘url’)</h5><p>url.parse出现的</p>
+<p><img src="F:\study\blogtest\source\images\1555947602311.png" alt="1555947602311"></p>
 
       
     </div>
@@ -721,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#简单的模块化"><span class="nav-number">1.</span> <span class="nav-text">简单的模块化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-使用require方法加载fs核心模块"><span class="nav-number">2.</span> <span class="nav-text">1.使用require方法加载fs核心模块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-读取文件"><span class="nav-number">2.1.</span> <span class="nav-text">//2.读取文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#写文件"><span class="nav-number">2.2.</span> <span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建编写服务器"><span class="nav-number">3.</span> <span class="nav-text">创建编写服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#根据请求url来返回"><span class="nav-number">3.1.</span> <span class="nav-text">根据请求url来返回</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ip地址和端口"><span class="nav-number">4.</span> <span class="nav-text">ip地址和端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Content-Type"><span class="nav-number">5.</span> <span class="nav-text">Content-Type</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#简单的模块化"><span class="nav-number">1.</span> <span class="nav-text">简单的模块化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-使用require方法加载fs核心模块"><span class="nav-number">2.</span> <span class="nav-text">1.使用require方法加载fs核心模块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-读取文件"><span class="nav-number">2.1.</span> <span class="nav-text">//2.读取文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#写文件"><span class="nav-number">2.2.</span> <span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建编写服务器"><span class="nav-number">3.</span> <span class="nav-text">创建编写服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#根据请求url来返回"><span class="nav-number">3.1.</span> <span class="nav-text">根据请求url来返回</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ip地址和端口"><span class="nav-number">4.</span> <span class="nav-text">ip地址和端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Content-Type"><span class="nav-number">5.</span> <span class="nav-text">Content-Type</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#仿造Apache"><span class="nav-number">6.</span> <span class="nav-text">仿造Apache</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fs-readdir-path-options-callback"><span class="nav-number">7.</span> <span class="nav-text">fs.readdir(path[, options], callback)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#art-template"><span class="nav-number">8.</span> <span class="nav-text">art-template</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SEO"><span class="nav-number">9.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开启服务端简写"><span class="nav-number">10.</span> <span class="nav-text">开启服务端简写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器收到请求"><span class="nav-number">11.</span> <span class="nav-text">浏览器收到请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#require-‘url’"><span class="nav-number">12.</span> <span class="nav-text">require(‘url’)</span></a></li></ol></div>
             
 
           </div>
@@ -753,7 +786,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">57k</span>
+    <span title="站点总字数">59k</span>
   
 
   
@@ -762,7 +795,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">52 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
   
 </div>
 
