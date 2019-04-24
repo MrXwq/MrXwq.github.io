@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T08:04:51.937Z">
+<meta property="og:updated_time" content="2019-04-23T07:15:05.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之JS的Array对象">
 <meta name="twitter:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-01 16:04:51" itemprop="dateModified" datetime="2019-04-01T16:04:51+08:00">2019-04-01</time>
+                <time title="修改时间：2019-04-23 15:15:05" itemprop="dateModified" datetime="2019-04-23T15:15:05+08:00">2019-04-23</time>
               
             
           </span>
@@ -507,6 +507,7 @@
 <p>reduce()里面有两个参数，一个是函数，另一个是初始值(函数里的第一个参数值)只用一次，函数里有四个参数，第一个是前一个值（若没有定义reduce的第二个参数，则第一个参数为数组里的第一个值），第二个是当前值(如果没定义reduce的第二个参数，则为数组里的第二个值)，第三个是值的索引值，第四个是该数组；</p>
 <p>document.write会重绘整个页面</p>
 <p>document.innerHTML只会重绘所指定的元素内容</p>
+<h6 id="slice-call"><a href="#slice-call" class="headerlink" title="[].slice.call()"></a>[].slice.call()</h6><p>这个可以让一个伪数组拥有正真的数组方法。</p>
 
       
     </div>
@@ -742,7 +743,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">排列方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.5.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法-IE8及一下都不兼容"><span class="nav-number">3.0.6.</span> <span class="nav-text">迭代方法 IE8及一下都不兼容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.7.</span> <span class="nav-text">归并方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数"><span class="nav-number">3.0.8.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join"><span class="nav-number">3.0.9.</span> <span class="nav-text">join()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">排列方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.5.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法-IE8及一下都不兼容"><span class="nav-number">3.0.6.</span> <span class="nav-text">迭代方法 IE8及一下都不兼容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.7.</span> <span class="nav-text">归并方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数"><span class="nav-number">3.0.8.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join"><span class="nav-number">3.0.9.</span> <span class="nav-text">join()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#slice-call"><span class="nav-number">3.0.9.1.</span> <span class="nav-text">[].slice.call()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -774,7 +775,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">63k</span>
   
 
   
@@ -783,7 +784,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">57 分钟</span>
   
 </div>
 

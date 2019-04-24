@@ -105,7 +105,7 @@
 <meta property="og:description" content="我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，对着原型对象 使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性（ 自身中是否有这个属性） “name” in mc 使用in检查对象，如果原型上也有则会返回true Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mrxwq.github.io/images/protype.png">
-<meta property="og:updated_time" content="2019-03-31T06:04:43.352Z">
+<meta property="og:updated_time" content="2019-04-24T09:36:03.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之js原型">
 <meta name="twitter:description" content="我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，对着原型对象 使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性（ 自身中是否有这个属性） “name” in mc 使用in检查对象，如果原型上也有则会返回true Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可">
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-31 14:04:43" itemprop="dateModified" datetime="2019-03-31T14:04:43+08:00">2019-03-31</time>
+                <time title="修改时间：2019-04-24 17:36:03" itemprop="dateModified" datetime="2019-04-24T17:36:03+08:00">2019-04-24</time>
               
             
           </span>
@@ -477,7 +477,7 @@
 <h5 id="原型的动态性"><a href="#原型的动态性" class="headerlink" title="原型的动态性"></a>原型的动态性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person()</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hi"</span>)</span><br><span class="line">&#125;</span><br><span class="line">person1.sayHi()</span><br></pre></td></tr></table></figure>
 <p>实例与原型之间的松散连接关系，即使是实例是在添加新方法之前创建的，仍可以访问到这方法，但重写该构造函数就不行了</p>
 <h5 id="原生对象的原型"><a href="#原生对象的原型" class="headerlink" title="原生对象的原型"></a>原生对象的原型</h5><p>可以在Array.prototype找到sort(),可以在String.prototype找到subString()方法</p>
-<h5 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="headerlink" title="组合使用构造函数模式和原型模式"></a>组合使用构造函数模式和原型模式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">this</span>.name = name;</span><br><span class="line">				<span class="keyword">this</span>.age = age;</span><br><span class="line">				<span class="keyword">this</span>.job = job;</span><br><span class="line">				<span class="keyword">this</span>.friends = [<span class="string">"dong"</span>,<span class="string">"pei"</span>]</span><br><span class="line">			&#125;</span><br><span class="line">			Person.prototype=&#123;</span><br><span class="line">				construtor:Person,</span><br><span class="line">				sayName()&#123;</span><br><span class="line">					alert(<span class="string">"hi"</span>)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"a"</span>,<span class="number">1</span>,<span class="string">"aa"</span>);</span><br><span class="line">			<span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"b"</span>,<span class="number">1</span>,<span class="string">"bb"</span>);</span><br><span class="line">			person1.friends.push(<span class="string">"van"</span>);</span><br><span class="line">			<span class="built_in">console</span>.log(person1.friends);<span class="comment">//"dong","pei","van"</span></span><br><span class="line">			<span class="built_in">console</span>.log(person2.friends);<span class="comment">//"dong","pei"</span></span><br><span class="line">			<span class="built_in">console</span>.log(person1.friends === person2.friends)</span><br><span class="line">			<span class="built_in">console</span>.log(person1.sayName === person2.sayName)</span><br></pre></td></tr></table></figure>
+<h5 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="headerlink" title="组合使用构造函数模式和原型模式"></a>组合使用构造函数模式和原型模式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.job = job;</span><br><span class="line">	<span class="keyword">this</span>.friends = [<span class="string">"dong"</span>,<span class="string">"pei"</span>]</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">	construtor:Person,</span><br><span class="line">	sayName()&#123;</span><br><span class="line">		alert(<span class="string">"hi"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"a"</span>,<span class="number">1</span>,<span class="string">"aa"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"b"</span>,<span class="number">1</span>,<span class="string">"bb"</span>);</span><br><span class="line">person1.friends.push(<span class="string">"van"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person1.friends);<span class="comment">//"dong","pei","van"</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.friends);<span class="comment">//"dong","pei"</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.friends === person2.friends)</span><br><span class="line"><span class="built_in">console</span>.log(person1.sayName === person2.sayName)</span><br></pre></td></tr></table></figure>
 <h5 id="确定原型和实例的关系"><a href="#确定原型和实例的关系" class="headerlink" title="确定原型和实例的关系"></a>确定原型和实例的关系</h5><p>实例 instanceof 实例所继承的构造函数或Object</p>
 <p>使用isPrototyOf()方法，只要是原型链中出现过的原型，都可以说是该原型链所派生的实例的原型</p>
 <p>例如：Object.prototype.isPrototyOf(instance)</p>
@@ -757,7 +757,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">63k</span>
   
 
   
@@ -766,7 +766,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">57 分钟</span>
   
 </div>
 
