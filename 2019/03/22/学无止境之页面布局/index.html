@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="各种布局操作浮动，绝对定位，网格:若高度撑开父元素，则不能用了 flex和table布局可以。 行内元素设置margin：上下没效果，左右有用 设置padding：左右有用，上下其实是没用的，但是有效果，只是能看到，是不影响其他的 对于img来说：margin和padding都是有效的。 左右布局若左侧设置了浮动，设置了宽度大小，右侧只要margin-left大于左侧宽度就可以自适应了 使用绝对定">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-24T10:40:07.913Z">
+<meta property="og:updated_time" content="2019-05-06T15:00:41.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之页面布局">
 <meta name="twitter:description" content="各种布局操作浮动，绝对定位，网格:若高度撑开父元素，则不能用了 flex和table布局可以。 行内元素设置margin：上下没效果，左右有用 设置padding：左右有用，上下其实是没用的，但是有效果，只是能看到，是不影响其他的 对于img来说：margin和padding都是有效的。 左右布局若左侧设置了浮动，设置了宽度大小，右侧只要margin-left大于左侧宽度就可以自适应了 使用绝对定">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-24 18:40:07" itemprop="dateModified" datetime="2019-04-24T18:40:07+08:00">2019-04-24</time>
+                <time title="修改时间：2019-05-06 23:00:41" itemprop="dateModified" datetime="2019-05-06T23:00:41+08:00">2019-05-06</time>
               
             
           </span>
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -515,6 +515,7 @@
 <p>​    left，margin，padding，width参照于包含块的宽度</p>
 <p>​    translate（-50%，-50%）参照于自身的高宽</p>
 <p>​    backgrouned-position参照于图片区域减图片的位图像素值：如果只指定了一个值，该值将用于横坐标。纵坐标将默认为 50% 。如果指定了两个值，第二个值将用于纵坐标。</p>
+<h5 id="对浮动元素布局"><a href="#对浮动元素布局" class="headerlink" title="对浮动元素布局"></a>对浮动元素布局</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-id">#box</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:reletive</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:50</span>%;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-id">#item</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:reletive</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:-50</span>%;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    //如果子元素固定高宽</span></span><br><span class="line"><span class="css">    <span class="selector-id">#item</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:reletive</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin-left</span><span class="selector-pseudo">:50</span>%;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:-5px</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"item"</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -752,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#各种布局操作"><span class="nav-number">1.</span> <span class="nav-text">各种布局操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#行内元素"><span class="nav-number">1.1.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#左右布局"><span class="nav-number">1.2.</span> <span class="nav-text">左右布局</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#定位"><span class="nav-number">1.3.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position"><span class="nav-number">1.4.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#浮动"><span class="nav-number">1.5.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#height"><span class="nav-number">1.6.</span> <span class="nav-text">height</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#margin和padding"><span class="nav-number">1.7.</span> <span class="nav-text">margin和padding</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#居中"><span class="nav-number">2.</span> <span class="nav-text">居中</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#line-height：100px；"><span class="nav-number">2.1.</span> <span class="nav-text">line-height：100px；</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#弹性布局居中"><span class="nav-number">2.2.</span> <span class="nav-text">弹性布局居中</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#百分比计算"><span class="nav-number">2.3.</span> <span class="nav-text">百分比计算</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#各种布局操作"><span class="nav-number">1.</span> <span class="nav-text">各种布局操作</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#行内元素"><span class="nav-number">1.1.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#左右布局"><span class="nav-number">1.2.</span> <span class="nav-text">左右布局</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#定位"><span class="nav-number">1.3.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position"><span class="nav-number">1.4.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#浮动"><span class="nav-number">1.5.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#height"><span class="nav-number">1.6.</span> <span class="nav-text">height</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#margin和padding"><span class="nav-number">1.7.</span> <span class="nav-text">margin和padding</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#居中"><span class="nav-number">2.</span> <span class="nav-text">居中</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#line-height：100px；"><span class="nav-number">2.1.</span> <span class="nav-text">line-height：100px；</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#弹性布局居中"><span class="nav-number">2.2.</span> <span class="nav-text">弹性布局居中</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#百分比计算"><span class="nav-number">2.3.</span> <span class="nav-text">百分比计算</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对浮动元素布局"><span class="nav-number">3.</span> <span class="nav-text">对浮动元素布局</span></a></li></ol></div>
             
 
           </div>
@@ -784,7 +785,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">90k</span>
   
 
   
@@ -793,7 +794,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:20</span>
+    <span title="站点阅读时长">1:22</span>
   
 </div>
 
