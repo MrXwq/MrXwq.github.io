@@ -96,19 +96,23 @@
 
 
 
-  <meta name="description" content="创建一个文件：git touch 你要建的文件名字 提交到暂存区：git add “要提交的文件名” 将暂存区的文件提交到git仓库：git commit -m ‘添加描述’ 添加到远程仓库：git push 复制仓库地址，然后用git下载：git clone github下复制的地址 三个区域，一个工作区，一个暂存区，一个git仓库 git commit -m “提交描述” ls:查看当前目录">
+  <meta name="description" content="创建一个文件：touch 你要建的文件名字 提交到暂存区：git add “要提交的文件名” 将暂存区的文件提交到git仓库：git commit -m ‘添加描述’ 查询仓库状态：git status 添加到远程仓库：git push 复制仓库地址，然后用git下载：git clone github下复制的地址   完整的把远程库下载到本地 创建origin远程地址别名 初始化本地库   如果">
 <meta name="keywords" content="-git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学无止境之git初识">
 <meta property="og:url" content="https://Mrxwq.github.io/2019/04/30/学无止境之git初识/index.html">
 <meta property="og:site_name" content="自律使我自由">
-<meta property="og:description" content="创建一个文件：git touch 你要建的文件名字 提交到暂存区：git add “要提交的文件名” 将暂存区的文件提交到git仓库：git commit -m ‘添加描述’ 添加到远程仓库：git push 复制仓库地址，然后用git下载：git clone github下复制的地址 三个区域，一个工作区，一个暂存区，一个git仓库 git commit -m “提交描述” ls:查看当前目录">
+<meta property="og:description" content="创建一个文件：touch 你要建的文件名字 提交到暂存区：git add “要提交的文件名” 将暂存区的文件提交到git仓库：git commit -m ‘添加描述’ 查询仓库状态：git status 添加到远程仓库：git push 复制仓库地址，然后用git下载：git clone github下复制的地址   完整的把远程库下载到本地 创建origin远程地址别名 初始化本地库   如果">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mrxwq.github.io/images/1553310112212.png">
-<meta property="og:updated_time" content="2019-04-30T15:19:37.779Z">
+<meta property="og:image" content="https://mrxwq.github.io/images/1557303256986.png">
+<meta property="og:image" content="https://mrxwq.github.io/images/1557308168232.png">
+<meta property="og:image" content="https://mrxwq.github.io/images/1557310960092.png">
+<meta property="og:image" content="https://mrxwq.github.io/images/1557311350846.png">
+<meta property="og:updated_time" content="2019-05-09T00:28:53.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之git初识">
-<meta name="twitter:description" content="创建一个文件：git touch 你要建的文件名字 提交到暂存区：git add “要提交的文件名” 将暂存区的文件提交到git仓库：git commit -m ‘添加描述’ 添加到远程仓库：git push 复制仓库地址，然后用git下载：git clone github下复制的地址 三个区域，一个工作区，一个暂存区，一个git仓库 git commit -m “提交描述” ls:查看当前目录">
+<meta name="twitter:description" content="创建一个文件：touch 你要建的文件名字 提交到暂存区：git add “要提交的文件名” 将暂存区的文件提交到git仓库：git commit -m ‘添加描述’ 查询仓库状态：git status 添加到远程仓库：git push 复制仓库地址，然后用git下载：git clone github下复制的地址   完整的把远程库下载到本地 创建origin远程地址别名 初始化本地库   如果">
 <meta name="twitter:image" content="https://mrxwq.github.io/images/1553310112212.png">
 
 
@@ -377,12 +381,24 @@
                 
               
 
-              <time title="创建时间：2019-04-30 23:17:16 / 修改时间：23:19:37" itemprop="dateCreated datePublished" datetime="2019-04-30T23:17:16+08:00">2019-04-30</time>
+              <time title="创建时间：2019-04-30 23:17:16" itemprop="dateCreated datePublished" datetime="2019-04-30T23:17:16+08:00">2019-04-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-09 08:28:53" itemprop="dateModified" datetime="2019-05-09T08:28:53+08:00">2019-05-09</time>
               
             
           </span>
@@ -422,7 +438,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">330</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -436,7 +452,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -457,11 +473,30 @@
 
       
         <p><img src="/images/1553310112212.png" alt="1553310112212"></p>
-<p>创建一个文件：git touch 你要建的文件名字</p>
-<p>提交到暂存区：git add “要提交的文件名”</p>
-<p>将暂存区的文件提交到git仓库：git commit -m ‘添加描述’</p>
-<p>添加到远程仓库：git push</p>
-<p>复制仓库地址，然后用git下载：git clone github下复制的地址</p>
+<h3 id="创建一个文件："><a href="#创建一个文件：" class="headerlink" title="创建一个文件："></a>创建一个文件：</h3><p>touch 你要建的文件名字</p>
+<h3 id="提交到暂存区："><a href="#提交到暂存区：" class="headerlink" title="提交到暂存区："></a>提交到暂存区：</h3><p>git add “要提交的文件名”</p>
+<h3 id="将暂存区的文件提交到git仓库："><a href="#将暂存区的文件提交到git仓库：" class="headerlink" title="将暂存区的文件提交到git仓库："></a>将暂存区的文件提交到git仓库：</h3><p>git commit -m ‘添加描述’</p>
+<h3 id="查询仓库状态："><a href="#查询仓库状态：" class="headerlink" title="查询仓库状态："></a>查询仓库状态：</h3><p><code>git status</code></p>
+<h3 id="添加到远程仓库："><a href="#添加到远程仓库：" class="headerlink" title="添加到远程仓库："></a>添加到远程仓库：</h3><p>git push</p>
+<h3 id="复制仓库地址，然后用git下载："><a href="#复制仓库地址，然后用git下载：" class="headerlink" title="复制仓库地址，然后用git下载："></a>复制仓库地址，然后用git下载：</h3><p>git clone github下复制的地址</p>
+<blockquote>
+<ol>
+<li>完整的把远程库下载到本地</li>
+<li>创建origin远程地址别名</li>
+<li>初始化本地库</li>
+</ol>
+</blockquote>
+<p>如果你clone了别人的仓库，这个时候你发现你可以更新他的代码，这个时候你可以git push origin master，这个时候你没有权限，别人会收到你的请求，他要是觉得你的好的话，他就会邀请你进入他的分支，这个时候你再git push origin master就可以了</p>
+<p>pull = fetch + merge</p>
+<p>原作者：</p>
+<blockquote>
+<ol>
+<li>git fetch抓取新内容进本地</li>
+<li>git merge合并</li>
+</ol>
+</blockquote>
+<p>如果操作比较简洁的话，直接pull就行了</p>
+<h3 id="如果你下的那个仓库有更新，"><a href="#如果你下的那个仓库有更新，" class="headerlink" title="如果你下的那个仓库有更新，"></a>如果你下的那个仓库有更新，</h3><p>那么只要git pull 就能把它同步了</p>
 <p>三个区域，一个工作区，一个暂存区，一个git仓库</p>
 <p>git commit -m “提交描述”</p>
 <p>ls:查看当前目录中的所有文件</p>
@@ -470,6 +505,65 @@
 <p>设置邮箱：git config -D email.name ‘你的邮箱’</p>
 <p>新建文件夹：mkdir test</p>
 <p>在文件内初始化git</p>
+<h2 id="连接github"><a href="#连接github" class="headerlink" title="连接github"></a>连接github</h2><blockquote>
+<ol>
+<li>在Git-Bash-Here 下输入 ssh-keygen获取密钥的地址</li>
+<li>在GitHub上setting下，点SSH and GPG keys下复制你的密钥地址去 SSH keys上</li>
+</ol>
+</blockquote>
+<p>在项目中 打开Git-Bash-Here 输入git init初始化一个仓库（暂存区，这相当于你的一个工作区域，有什么修改都会记录下来）</p>
+<p>如果没有显示.git文件，那么设置打开隐藏文件</p>
+<p>在github上创建了文件后，在本地电脑上创建一个文件夹和github连接</p>
+<blockquote>
+<ol>
+<li>git remote add origin github复制的地址</li>
+<li>git pull origin master （下载github上的文件）</li>
+<li>touch 你建的文件名（比如：index.html）</li>
+<li>git add ‘你要提交的文件名’（可以多个）如果要将整个目录的文件都推到暂存区，可以git add .</li>
+<li>git reset HEAD（如果你这个时候后悔了，那么可以使用这个命令返回到原来的状态，也可以指定回复的文件名）</li>
+<li>git commit -m ‘你的描述’ （提交到git仓库里）</li>
+<li>git push origin master（提交到远程仓库）</li>
+</ol>
+</blockquote>
+<p><img src="/images/1557303256986.png" alt="1557303256986"></p>
+<h3 id="查看你的git配置"><a href="#查看你的git配置" class="headerlink" title="查看你的git配置"></a>查看你的git配置</h3><p>git config –list</p>
+<h3 id="查看历史提交"><a href="#查看历史提交" class="headerlink" title="查看历史提交"></a>查看历史提交</h3><p>git log</p>
+<p>查看完要退出 q</p>
+<h3 id="版本对比"><a href="#版本对比" class="headerlink" title="版本对比"></a>版本对比</h3><p>git diff</p>
+<h3 id="更改提交的备注"><a href="#更改提交的备注" class="headerlink" title="更改提交的备注"></a>更改提交的备注</h3><p>git commit –amend</p>
+<p>(这样历史提交就不会多一个了)</p>
+<h3 id="恢复工作区删除的文件-从暂存区拷贝到工作目录"><a href="#恢复工作区删除的文件-从暂存区拷贝到工作目录" class="headerlink" title="恢复工作区删除的文件 从暂存区拷贝到工作目录"></a>恢复工作区删除的文件 从暂存区拷贝到工作目录</h3><p>git checkout – 你的文件名</p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>git rm 文件名</p>
+<p>git rm -f 文件名（会把暂存区和工作区的文件都删除）</p>
+<p>git rm –cached 文件名 （只删除暂存区的文件 ）</p>
+<h3 id="修改文件名"><a href="#修改文件名" class="headerlink" title="修改文件名"></a>修改文件名</h3><p>git mv 一开始的文件名 修改后的文件名</p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p>git branch 分支名字</p>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><p>git checkout 分支名 </p>
+<h3 id="创建并切换到分支"><a href="#创建并切换到分支" class="headerlink" title="创建并切换到分支"></a>创建并切换到分支</h3><p>git checkout -b feature2</p>
+<h3 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h3><p>git branch -v</p>
+<h3 id="查看所有分支修改记录"><a href="#查看所有分支修改记录" class="headerlink" title="查看所有分支修改记录"></a>查看所有分支修改记录</h3><p><code>$ git log --decorate --oneline --graph --all</code></p>
+<h3 id="分支分布"><a href="#分支分布" class="headerlink" title="分支分布"></a>分支分布</h3><p><img src="/images/1557308168232.png" alt="1557308168232"></p>
+<blockquote>
+<p>Master: 用来发布的</p>
+<p>Hotfix: 用来修补程序的bug</p>
+<p>Release：内部发布版 （测试完就发布）</p>
+<p>Develop：开发版 （开发完之后编译成可执行程序）</p>
+<p>Feature：相关的功能</p>
+</blockquote>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><p>git merge feature </p>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>git branch -d 分支名</p>
+<p><img src="/images/1557310960092.png" alt="1557310960092"></p>
+<p><img src="/images/1557311350846.png" alt="1557311350846"></p>
+<h3 id="邀请别人进分支"><a href="#邀请别人进分支" class="headerlink" title="邀请别人进分支"></a>邀请别人进分支</h3><blockquote>
+<ol>
+<li>在我们仓库中，点Settings</li>
+<li>点Collaborators 输入你想邀请的人的账户</li>
+<li>复制连接 发送给那个人</li>
+<li>那个人点击网页，然后点接受</li>
+</ol>
+</blockquote>
+<h3 id="如果想有自己的代码想合并到别人的代码中"><a href="#如果想有自己的代码想合并到别人的代码中" class="headerlink" title="如果想有自己的代码想合并到别人的代码中"></a>如果想有自己的代码想合并到别人的代码中</h3><p>先fork，在自己的远程仓库fork进来了一份，然后git clone下来本地，对他进行了一系列操作，操作之后，上传到自己的远程仓库，Pull   requests 点击 Create pull request,</p>
+<p>这个时候，原作者审核代码，互相交流，最后再合并。</p>
 
       
     </div>
@@ -567,8 +661,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -690,6 +793,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个文件："><span class="nav-number">1.</span> <span class="nav-text">创建一个文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交到暂存区："><span class="nav-number">2.</span> <span class="nav-text">提交到暂存区：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将暂存区的文件提交到git仓库："><span class="nav-number">3.</span> <span class="nav-text">将暂存区的文件提交到git仓库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询仓库状态："><span class="nav-number">4.</span> <span class="nav-text">查询仓库状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加到远程仓库："><span class="nav-number">5.</span> <span class="nav-text">添加到远程仓库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制仓库地址，然后用git下载："><span class="nav-number">6.</span> <span class="nav-text">复制仓库地址，然后用git下载：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果你下的那个仓库有更新，"><span class="nav-number">7.</span> <span class="nav-text">如果你下的那个仓库有更新，</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#连接github"><span class="nav-number"></span> <span class="nav-text">连接github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看你的git配置"><span class="nav-number">1.</span> <span class="nav-text">查看你的git配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史提交"><span class="nav-number">2.</span> <span class="nav-text">查看历史提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本对比"><span class="nav-number">3.</span> <span class="nav-text">版本对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改提交的备注"><span class="nav-number">4.</span> <span class="nav-text">更改提交的备注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#恢复工作区删除的文件-从暂存区拷贝到工作目录"><span class="nav-number">5.</span> <span class="nav-text">恢复工作区删除的文件 从暂存区拷贝到工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件"><span class="nav-number">6.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件名"><span class="nav-number">7.</span> <span class="nav-text">修改文件名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支"><span class="nav-number"></span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支"><span class="nav-number">1.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换分支"><span class="nav-number">2.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建并切换到分支"><span class="nav-number">3.</span> <span class="nav-text">创建并切换到分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看所有分支"><span class="nav-number">4.</span> <span class="nav-text">查看所有分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看所有分支修改记录"><span class="nav-number">5.</span> <span class="nav-text">查看所有分支修改记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支分布"><span class="nav-number">6.</span> <span class="nav-text">分支分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并分支"><span class="nav-number">7.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除分支"><span class="nav-number">8.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邀请别人进分支"><span class="nav-number">9.</span> <span class="nav-text">邀请别人进分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果想有自己的代码想合并到别人的代码中"><span class="nav-number">10.</span> <span class="nav-text">如果想有自己的代码想合并到别人的代码中</span></a></li></ol></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -715,7 +835,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">96k</span>
   
 
   
@@ -724,7 +844,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:25</span>
+    <span title="站点阅读时长">1:27</span>
   
 </div>
 
