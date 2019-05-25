@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="typeof操作符1234typeof NaN //numbertypeof Array //objecttypeof new Date() //object这个时候就不能用typeof来判断他们的类型了 constructor1234[1,2,3,4].constructor//ƒ Array() &amp;#123; [native code] &amp;#125;[1,2,3,4].constructor.">
+  <meta name="description" content="typeof操作符12345typeof NaN //numbertypeof Array //objecttypeof new Date() //objecttypeof undefined //undefined这个时候就不能用typeof来判断他们的类型了 constructor1234[1,2,3,4].constructor//ƒ Array() &amp;#123; [native code]">
 <meta name="keywords" content="-js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学无止境之JavaScript类型转换">
 <meta property="og:url" content="https://Mrxwq.github.io/2019/05/23/学无止境之JavaScript类型转换/index.html">
 <meta property="og:site_name" content="自律使我自由">
-<meta property="og:description" content="typeof操作符1234typeof NaN //numbertypeof Array //objecttypeof new Date() //object这个时候就不能用typeof来判断他们的类型了 constructor1234[1,2,3,4].constructor//ƒ Array() &amp;#123; [native code] &amp;#125;[1,2,3,4].constructor.">
+<meta property="og:description" content="typeof操作符12345typeof NaN //numbertypeof Array //objecttypeof new Date() //objecttypeof undefined //undefined这个时候就不能用typeof来判断他们的类型了 constructor1234[1,2,3,4].constructor//ƒ Array() &amp;#123; [native code]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-23T12:53:15.714Z">
+<meta property="og:updated_time" content="2019-05-25T11:52:24.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之JavaScript类型转换">
-<meta name="twitter:description" content="typeof操作符1234typeof NaN //numbertypeof Array //objecttypeof new Date() //object这个时候就不能用typeof来判断他们的类型了 constructor1234[1,2,3,4].constructor//ƒ Array() &amp;#123; [native code] &amp;#125;[1,2,3,4].constructor.">
+<meta name="twitter:description" content="typeof操作符12345typeof NaN //numbertypeof Array //objecttypeof new Date() //objecttypeof undefined //undefined这个时候就不能用typeof来判断他们的类型了 constructor1234[1,2,3,4].constructor//ƒ Array() &amp;#123; [native code]">
 
 
 
@@ -375,12 +375,24 @@
                 
               
 
-              <time title="创建时间：2019-05-23 20:51:21 / 修改时间：20:53:15" itemprop="dateCreated datePublished" datetime="2019-05-23T20:51:21+08:00">2019-05-23</time>
+              <time title="创建时间：2019-05-23 20:51:21" itemprop="dateCreated datePublished" datetime="2019-05-23T20:51:21+08:00">2019-05-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-25 19:52:24" itemprop="dateModified" datetime="2019-05-25T19:52:24+08:00">2019-05-25</time>
               
             
           </span>
@@ -420,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">989</span>
+                <span title="本文字数">1.3k</span>
               
 
               
@@ -454,7 +466,7 @@
       
 
       
-        <h2 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> <span class="comment">//number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Array</span> <span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>() <span class="comment">//object</span></span><br><span class="line">这个时候就不能用<span class="keyword">typeof</span>来判断他们的类型了</span><br></pre></td></tr></table></figure>
+        <h2 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> <span class="comment">//number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Array</span> <span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>() <span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">//undefined</span></span><br><span class="line">这个时候就不能用<span class="keyword">typeof</span>来判断他们的类型了</span><br></pre></td></tr></table></figure>
 <h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].constructor<span class="comment">//ƒ Array() &#123; [native code] &#125;</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].constructor.toString()<span class="comment">//"function Array() &#123; [native code] &#125;"</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].constructor.toString().indexOf(<span class="string">"Array"</span>)<span class="comment">//9</span></span><br><span class="line">所以，可以用这个来判断<span class="built_in">Array</span>和<span class="built_in">Date</span>的类型了</span><br></pre></td></tr></table></figure>
 <h2 id="全局方法String-可以将数字转换为字符串，toString-方法也是同样的效果"><a href="#全局方法String-可以将数字转换为字符串，toString-方法也是同样的效果" class="headerlink" title="全局方法String()可以将数字转换为字符串，toString()方法也是同样的效果"></a>全局方法String()可以将数字转换为字符串，toString()方法也是同样的效果</h2><h2 id="toFixed-自定义小数位数"><a href="#toFixed-自定义小数位数" class="headerlink" title="toFixed()自定义小数位数"></a>toFixed()自定义小数位数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2222.22</span>.toFixed(<span class="number">2</span>)<span class="comment">//2222.22</span></span><br><span class="line"><span class="number">2222.22</span>.toFixed(<span class="number">1</span>)<span class="comment">//2222.2</span></span><br></pre></td></tr></table></figure>
 <h2 id="指数计数法toExponential"><a href="#指数计数法toExponential" class="headerlink" title="指数计数法toExponential()"></a>指数计数法toExponential()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10000.</span>toExponential(<span class="number">1</span>)<span class="comment">//1.0e+4</span></span><br></pre></td></tr></table></figure>
@@ -466,6 +478,16 @@
 <h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">Number</span>(d)<span class="comment">//返回1970 年 1 月 1 日至今的毫秒数。</span></span><br></pre></td></tr></table></figure>
 <h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><p>返回一个浮点数</p>
 <h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><p>返回一个整数</p>
+<h3 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h3><h4 id="引用类型："><a href="#引用类型：" class="headerlink" title="引用类型："></a>引用类型：</h4><p>对象、数组、函数 都具有对象特性，都有一个_ <em>proto</em>  _ _，null除外</p>
+<p>所有的函数，都有一个prototype属性</p>
+<h4 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h4><h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>‘’,0会转换为false</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>&amp;&amp; 只要前面是false 无论后面是true还是false 都返回前面的值</p>
+<p>​    只要前面的ture 无论后面是true还是false 都返回后面的值</p>
+<p>|| 与&amp;&amp; 相反</p>
+<p>js中，除了这六种（false,’’,null,0,undefined,NaN），其他都转为true</p>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p>| 先把数字转为二进制数，然后做运算，有1则1</p>
+<p>&amp; 同时为1才为1 </p>
+<h3 id="和"><a href="#和" class="headerlink" title="==和==="></a>==和===</h3><p>===不会强制数据类型转换</p>
 
       
     </div>
@@ -703,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof操作符"><span class="nav-number">1.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">2.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局方法String-可以将数字转换为字符串，toString-方法也是同样的效果"><span class="nav-number">3.</span> <span class="nav-text">全局方法String()可以将数字转换为字符串，toString()方法也是同样的效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toFixed-自定义小数位数"><span class="nav-number">4.</span> <span class="nav-text">toFixed()自定义小数位数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数计数法toExponential"><span class="nav-number">5.</span> <span class="nav-text">指数计数法toExponential()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toPrecision"><span class="nav-number">6.</span> <span class="nav-text">toPrecision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">7.</span> <span class="nav-text">toString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">8.</span> <span class="nav-text">Number()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔值"><span class="nav-number">8.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期"><span class="nav-number">8.2.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parseFloat"><span class="nav-number">8.3.</span> <span class="nav-text">parseFloat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parseInt"><span class="nav-number">8.4.</span> <span class="nav-text">parseInt()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof操作符"><span class="nav-number">1.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">2.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局方法String-可以将数字转换为字符串，toString-方法也是同样的效果"><span class="nav-number">3.</span> <span class="nav-text">全局方法String()可以将数字转换为字符串，toString()方法也是同样的效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toFixed-自定义小数位数"><span class="nav-number">4.</span> <span class="nav-text">toFixed()自定义小数位数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数计数法toExponential"><span class="nav-number">5.</span> <span class="nav-text">指数计数法toExponential()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toPrecision"><span class="nav-number">6.</span> <span class="nav-text">toPrecision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">7.</span> <span class="nav-text">toString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">8.</span> <span class="nav-text">Number()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔值"><span class="nav-number">8.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期"><span class="nav-number">8.2.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parseFloat"><span class="nav-number">8.3.</span> <span class="nav-text">parseFloat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parseInt"><span class="nav-number">8.4.</span> <span class="nav-text">parseInt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型和引用类型"><span class="nav-number">8.5.</span> <span class="nav-text">值类型和引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引用类型："><span class="nav-number">8.5.1.</span> <span class="nav-text">引用类型：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#值类型"><span class="nav-number">8.5.2.</span> <span class="nav-text">值类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制类型转换"><span class="nav-number">8.6.</span> <span class="nav-text">强制类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">8.7.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算符"><span class="nav-number">8.8.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和"><span class="nav-number">8.9.</span> <span class="nav-text">==和===</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -735,7 +757,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">99k</span>
+    <span title="站点总字数">100k</span>
   
 
   
