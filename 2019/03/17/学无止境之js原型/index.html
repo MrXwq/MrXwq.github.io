@@ -105,7 +105,11 @@
 <meta property="og:description" content="我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，对着原型对象 使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性（ 自身中是否有这个属性） “name” in mc 使用in检查对象，如果原型上也有则会返回true Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mrxwq.github.io/images/protype.png">
-<meta property="og:updated_time" content="2019-05-26T07:00:42.618Z">
+<meta property="og:image" content="https://s1.51cto.com/images/20180717/1531791940588817.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:image" content="https://s1.51cto.com/images/20180717/1531791981858175.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:image" content="https://s1.51cto.com/images/20180717/1531792003930046.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:image" content="https://s1.51cto.com/images/20180717/1531792024585657.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:updated_time" content="2019-05-30T04:45:44.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之js原型">
 <meta name="twitter:description" content="我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，对着原型对象 使用delete可以删除实例属性 hasOwnProperty可以检测实例是否有这个属性（ 自身中是否有这个属性） “name” in mc 使用in检查对象，如果原型上也有则会返回true Oject.keys()返回一个包含所有可枚举属性的字符串数组 Oject.getOwnPropertyNames()可">
@@ -394,7 +398,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-26 15:00:42" itemprop="dateModified" datetime="2019-05-26T15:00:42+08:00">2019-05-26</time>
+                <time title="修改时间：2019-05-30 12:45:44" itemprop="dateModified" datetime="2019-05-30T12:45:44+08:00">2019-05-30</time>
               
             
           </span>
@@ -434,7 +438,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k</span>
+                <span title="本文字数">6.3k</span>
               
 
               
@@ -448,7 +452,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -474,13 +478,14 @@
 <p>“name” in mc 使用in检查对象，如果原型上也有则会返回true</p>
 <p>Oject.keys()返回一个包含所有可枚举属性的字符串数组</p>
 <p>Oject.getOwnPropertyNames()可返回所有实例属性，包括不可枚举的属性例如constructor()</p>
+<p>object1.isPrototypeOf(object2); object1是否在object2的原型中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">所有的引用类型都有可扩展属性</span><br><span class="line">所有的引用类型都有一个 __ proto __属性（隐式原型）</span><br><span class="line"></span><br><span class="line">所有的函数，都有一个prototype属性（显示原型）</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;   ---&gt; <span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype)</span><br></pre></td></tr></table></figure>
 <h5 id="原型的动态性"><a href="#原型的动态性" class="headerlink" title="原型的动态性"></a>原型的动态性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person()</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hi"</span>)</span><br><span class="line">&#125;</span><br><span class="line">person1.sayHi()</span><br></pre></td></tr></table></figure>
 <p>实例与原型之间的松散连接关系，即使是实例是在添加新方法之前创建的，仍可以访问到这方法，但重写该构造函数就不行了</p>
 <h5 id="原生对象的原型"><a href="#原生对象的原型" class="headerlink" title="原生对象的原型"></a>原生对象的原型</h5><p>可以在Array.prototype找到sort(),可以在String.prototype找到subString()方法</p>
 <h5 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="headerlink" title="组合使用构造函数模式和原型模式"></a>组合使用构造函数模式和原型模式</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.friends = [<span class="string">"dong"</span>,<span class="string">"pei"</span>]</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype=&#123;</span><br><span class="line">    construtor:Person,</span><br><span class="line">    sayName()&#123;</span><br><span class="line">        alert(<span class="string">"hi"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"a"</span>,<span class="number">1</span>,<span class="string">"aa"</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"b"</span>,<span class="number">1</span>,<span class="string">"bb"</span>);</span><br><span class="line">person1.friends.push(<span class="string">"van"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person1.friends);<span class="comment">//"dong","pei","van"</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.friends);<span class="comment">//"dong","pei"</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.friends === person2.friends)<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.sayName === person2.sayName)<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h5 id="确定原型和实例的关系"><a href="#确定原型和实例的关系" class="headerlink" title="确定原型和实例的关系"></a>确定原型和实例的关系</h5><p>实例 instanceof 实例所继承的构造函数或Object</p>
-<p>使用isPrototyOf()方法，只要是原型链中出现过的原型，都可以说是该原型链所派生的实例的原型</p>
+<p>使用isPrototypeOf方法，只要是原型链中出现过的原型，都可以说是该原型链所派生的实例的原型</p>
 <p>例如：Object.prototype.isPrototyOf(instance)</p>
 <h5 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h5><p>SuperType.call/apply（subType）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritProtitype</span>(<span class="params">child,father</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prototype = object(father.prototype);</span><br><span class="line">    prototype.constructor = child;</span><br><span class="line">    child.prototype = prototype;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.faName = <span class="string">"father"</span>;</span><br><span class="line">&#125;</span><br><span class="line">father.prototype.getfaName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.faName);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">child</span>(<span class="params">args</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.chName = <span class="string">'child'</span>;</span><br><span class="line">    father.apply(<span class="keyword">this</span>,[]);</span><br><span class="line">&#125;</span><br><span class="line">inheritProtitype(child,father);</span><br><span class="line">child.prototype.getchName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.chName);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(child.prototype.isPrototypeOf(<span class="keyword">new</span> father()));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(child.prototype.isPrototypeOf(<span class="keyword">new</span> child()));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> child() <span class="keyword">instanceof</span> child)<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
@@ -496,8 +501,70 @@
 <h2 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h2><p>定义时无法确认，只有在执行时才能确认</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">    name: <span class="string">'A'</span>,</span><br><span class="line">    fn: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">a.fn() <span class="comment">// this === a</span></span><br><span class="line">a.fn.call(&#123;<span class="attr">name</span>: <span class="string">'B'</span>&#125;) <span class="comment">// this ===&#123;name:'B'&#125;</span></span><br><span class="line"><span class="keyword">var</span> fn1 = a.fn</span><br><span class="line">fn1()<span class="comment">//this === window</span></span><br></pre></td></tr></table></figure>
 <h2 id="单纯的原型继承缺点"><a href="#单纯的原型继承缺点" class="headerlink" title="单纯的原型继承缺点"></a>单纯的原型继承缺点</h2><p>原型上的引用类型，所有实例都共用，如果其中一个实例修改了原型上的引用类型，那么，其他实例都会被修改，容易对原型上误操作</p>
-<h2 id="借用构造函数的缺点"><a href="#借用构造函数的缺点" class="headerlink" title="借用构造函数的缺点"></a>借用构造函数的缺点</h2><p>虽然解决了误修改原型上的值，每个实例都会拷贝一份原型上的方法，互不影响，但，这样复用就无从说起了，prototype本来就是要解决服用问题的，这样占用内存大</p>
+<h2 id="借用构造函数的缺点"><a href="#借用构造函数的缺点" class="headerlink" title="借用构造函数的缺点"></a>借用构造函数的缺点</h2><p>虽然解决了误修改原型上的值，每个实例都会拷贝一份原型上的方法，互不影响，但，这样复用就无从说起了，prototype本来就是要解决复用问题的，这样占用内存大</p>
 <h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a><strong>组合继承</strong></h2><p>无论在什么情况下都会调用两次超类型的构造函数</p>
+<h2 id="以下查看网上博客"><a href="#以下查看网上博客" class="headerlink" title="以下查看网上博客"></a>以下查看网上博客</h2><blockquote>
+<p>大家可以先仔细分析下该图，然后让我们进入主题</p>
+<p><img src="https://s1.51cto.com/images/20180717/1531791940588817.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="img"></p>
+<h2 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a><code>prototype</code></h2><p>首先来介绍下 <code>prototype</code> 属性。这是一个显式原型属性，只有函数才拥有该属性。基本上所有函数都有这个属性，但是也有一个例外</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; let fun = Function.prototype.bind()</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>如果你以上述方法创建一个函数，那么可以发现这个函数是不具有 <code>prototype</code> 属性的。</p>
+<h4 id="prototype-如何产生的"><a href="#prototype-如何产生的" class="headerlink" title="prototype 如何产生的"></a>prototype 如何产生的</h4><p>当我们声明一个函数时，这个属性就被自动创建了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; function Foo() &#123;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>并且这个属性的值是一个对象（也就是原型），只有一个属性 <code>constructor</code></p>
+<p><img src="https://s1.51cto.com/images/20180717/1531791981858175.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="image.png"></p>
+<p><code>constructor</code> 对应着构造函数，也就是 <code>Foo</code>。</p>
+<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p><code>constructor</code> 是一个公有且不可枚举的属性。一旦我们改变了函数的 <code>prototype</code> ，那么新对象就没有这个属性了（当然可以通过原型链取到 <code>constructor</code>）。</p>
+<p><img src="https://s1.51cto.com/images/20180717/1531792003930046.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="image.png"></p>
+<p>那么你肯定也有一个疑问，这个属性到底有什么用呢？其实这个属性可以说是一个历史遗留问题，在大部分情况下是没用的，在我的理解里，我认为他有两个作用：</p>
+<ul>
+<li>让实例对象知道是什么函数构造了它</li>
+<li>如果想给某些类库中的构造函数增加一些自定义的方法，就可以通过 <code>xx.constructor.method</code> 来扩展</li>
+</ul>
+<h2 id="proto"><a href="#proto" class="headerlink" title="_proto_"></a><code>_proto_</code></h2><p>这是每个对象都有的隐式原型属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不能访问到，所以使用 <code>_proto_</code> 来访问。</p>
+<p>因为在 JS 中是没有类的概念的，为了实现类似继承的方式，通过 <code>_proto_</code> 将对象和原型联系起来组成原型链，得以让对象可以访问到不属于自己的属性。</p>
+<h4 id="实例对象的-proto-如何产生的"><a href="#实例对象的-proto-如何产生的" class="headerlink" title="实例对象的 _proto_ 如何产生的"></a>实例对象的 <code>_proto_</code> 如何产生的</h4><p>从上图可知，当我们使用 <code>new</code> 操作符时，生成的实例对象拥有了 <code>_proto_</code>属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; function Foo() &#123;&#125;// 这个函数是 Function 的实例对象// function 就是一个语法糖// 内部调用了 new Function(...)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>所以可以说，在 <code>new</code> 的过程中，新对象被添加了 <code>_proto_</code> 并且链接到构造函数的原型上。</p>
+<h4 id="new-的过程"><a href="#new-的过程" class="headerlink" title="new 的过程"></a>new 的过程</h4><ol>
+<li>新生成了一个对象</li>
+<li>链接到原型</li>
+<li>绑定 this</li>
+<li>返回新对象</li>
+</ol>
+<p>在调用 <code>new</code> 的过程中会发生以上四件事情，我们也可以试着来自己实现一个 <code>new</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; function create() &#123;    // 创建一个空的对象</span><br><span class="line">&gt;     let obj = new Object()    // 获得构造函数</span><br><span class="line">&gt;     let Con = [].shift.call(arguments)    // 链接到原型</span><br><span class="line">&gt; obj.__proto__ = Con.prototype</span><br><span class="line">&gt;     // 绑定 this，执行构造函数</span><br><span class="line">&gt;     let result = Con.apply(obj, arguments)    // 确保 new 出来的是个对象</span><br><span class="line">&gt;     return typeof result === &apos;object&apos; ? result : obj</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>对于实例对象来说，都是通过 <code>new</code> 产生的，无论是 <code>function Foo()</code> 还是 <code>let a = { b : 1 }</code> 。</p>
+<p>对于创建一个对象来说，更推荐使用字面量的方式创建对象。因为你使用 <code>new Object()</code> 的方式创建对象需要通过作用域链一层层找到 <code>Object</code>，但是你使用字面量的方式就没这个问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; function Foo() &#123;&#125;// function 就是个语法糖// 内部等同于 new Function()let a = &#123; b: 1 &#125;// 这个字面量内部也是使用了 new Object()</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h2 id="Function-proto-Function-prototype"><a href="#Function-proto-Function-prototype" class="headerlink" title="Function.proto === Function.prototype"></a>Function.proto === Function.prototype</h2><p>对于对象来说，<code>xx.__proto__.contrcutor</code> 是该对象的构造函数，但是在图中我们可以发现 <code>Function.__proto__ === Function.prototype</code>，难道这代表着 <code>Function</code> 自己产生了自己?</p>
+<p>答案肯定是否认的，要说明这个问题我们先从 <code>Object</code> 说起。</p>
+<p>从图中我们可以发现，所有对象都可以通过原型链最终找到 <code>Object.prototype</code> ，虽然 <code>Object.prototype</code>也是一个对象，但是这个对象却不是 <code>Object</code> 创造的，而是引擎自己创建了 <code>Object.prototype</code> 。所以可以这样说，所有实例都是对象，但是对象不一定都是实例。</p>
+<p>接下来我们来看 <code>Function.prototype</code> 这个特殊的对象，如果你在浏览器将这个对象打印出来，会发现这个对象其实是一个函数。</p>
+<p><img src="https://s1.51cto.com/images/20180717/1531792024585657.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="image.png"></p>
+<p>我们知道函数都是通过 <code>new Function()</code> 生成的，难道 <code>Function.prototype</code> 也是通过 <code>new Function()</code>产生的吗？答案也是否定的，这个函数也是引擎自己创建的。首先引擎创建了 <code>Object.prototype</code> ，然后创建了 <code>Function.prototype</code> ，并且通过 <code>__proto__</code> 将两者联系了起来。这里也很好的解释了上面的一个问题，为什么 <code>let fun = Function.prototype.bind()</code> 没有 <code>prototype</code> 属性。因为 <code>Function.prototype</code>是引擎创建出来的对象，引擎认为不需要给这个对象添加 <code>prototype</code> 属性。</p>
+<p>所以我们又可以得出一个结论，不是所有函数都是 <code>new Function()</code> 产生的。</p>
+<p>有了 <code>Function.prototype</code> 以后才有了 <code>function Function()</code> ，然后其他的构造函数都是 <code>function Function()</code> 生成的。</p>
+<p>现在可以来解释 <code>Function.__proto__ === Function.prototype</code> 这个问题了。因为先有的 <code>Function.prototype</code> 以后才有的 <code>function Function()</code> ，所以也就不存在鸡生蛋蛋生鸡的悖论问题了。对于为什么 <code>Function.__proto__</code> 会等于 <code>Function.prototype</code> ，个人的理解是：其他所有的构造函数都可以通过原型链找到 <code>Function.prototype</code> ，并且 <code>function Function()</code> 本质也是一个函数，为了不产生混乱就将 <code>function Function()</code> 的 <code>__proto__</code> 联系到了 <code>Function.prototype</code> 上。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><code>Object</code> 是所有对象的爸爸，所有对象都可以通过 <code>__proto__</code> 找到它</li>
+<li><code>Function</code> 是所有函数的爸爸，所有函数都可以通过 <code>__proto__</code> 找到它</li>
+<li><code>Function.prototype</code> 和 <code>Object.prototype</code> 是两个特殊的对象，他们由引擎来创建</li>
+<li>除了以上两个特殊对象，其他对象都是通过构造器 <code>new</code> 出来的</li>
+<li>函数的 <code>prototype</code> 是一个对象，也就是原型</li>
+<li>对象的 <code>__proto__</code> 指向原型， <code>__proto__</code> 将对象和原型连接起来组成了原型链</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -741,7 +808,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型的动态性"><span class="nav-number">1.</span> <span class="nav-text">原型的动态性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原生对象的原型"><span class="nav-number">2.</span> <span class="nav-text">原生对象的原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合使用构造函数模式和原型模式"><span class="nav-number">3.</span> <span class="nav-text">组合使用构造函数模式和原型模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#确定原型和实例的关系"><span class="nav-number">4.</span> <span class="nav-text">确定原型和实例的关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寄生式继承"><span class="nav-number">5.</span> <span class="nav-text">寄生式继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链实现继承"><span class="nav-number">6.</span> <span class="nav-text">原型链实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型连继承和借用构造函数-组合实现继承"><span class="nav-number">7.</span> <span class="nav-text">原型连继承和借用构造函数 组合实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寄生组合继承"><span class="nav-number">8.</span> <span class="nav-text">寄生组合继承</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#new的过程"><span class="nav-number"></span> <span class="nav-text">new的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this的指向"><span class="nav-number"></span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单纯的原型继承缺点"><span class="nav-number"></span> <span class="nav-text">单纯的原型继承缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#借用构造函数的缺点"><span class="nav-number"></span> <span class="nav-text">借用构造函数的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合继承"><span class="nav-number"></span> <span class="nav-text">组合继承</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型的动态性"><span class="nav-number">1.</span> <span class="nav-text">原型的动态性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原生对象的原型"><span class="nav-number">2.</span> <span class="nav-text">原生对象的原型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合使用构造函数模式和原型模式"><span class="nav-number">3.</span> <span class="nav-text">组合使用构造函数模式和原型模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#确定原型和实例的关系"><span class="nav-number">4.</span> <span class="nav-text">确定原型和实例的关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寄生式继承"><span class="nav-number">5.</span> <span class="nav-text">寄生式继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链实现继承"><span class="nav-number">6.</span> <span class="nav-text">原型链实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型连继承和借用构造函数-组合实现继承"><span class="nav-number">7.</span> <span class="nav-text">原型连继承和借用构造函数 组合实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寄生组合继承"><span class="nav-number">8.</span> <span class="nav-text">寄生组合继承</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#new的过程"><span class="nav-number"></span> <span class="nav-text">new的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this的指向"><span class="nav-number"></span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单纯的原型继承缺点"><span class="nav-number"></span> <span class="nav-text">单纯的原型继承缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#借用构造函数的缺点"><span class="nav-number"></span> <span class="nav-text">借用构造函数的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合继承"><span class="nav-number"></span> <span class="nav-text">组合继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以下查看网上博客"><span class="nav-number"></span> <span class="nav-text">以下查看网上博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype"><span class="nav-number"></span> <span class="nav-text">prototype</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype-如何产生的"><span class="nav-number"></span> <span class="nav-text">prototype 如何产生的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constructor-NaN"><span class="nav-number"></span> <span class="nav-text">constructor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proto"><span class="nav-number"></span> <span class="nav-text">_proto_</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例对象的-proto-如何产生的"><span class="nav-number"></span> <span class="nav-text">实例对象的 _proto_ 如何产生的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-的过程"><span class="nav-number"></span> <span class="nav-text">new 的过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-proto-Function-prototype"><span class="nav-number"></span> <span class="nav-text">Function.proto === Function.prototype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></li></div>
             
 
           </div>
@@ -773,7 +840,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">101k</span>
+    <span title="站点总字数">105k</span>
   
 
   
@@ -782,7 +849,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:32</span>
+    <span title="站点阅读时长">1:35</span>
   
 </div>
 

@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-26T09:21:00.266Z">
+<meta property="og:updated_time" content="2019-05-26T12:56:48.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之JS的Array对象">
 <meta name="twitter:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-26 17:21:00" itemprop="dateModified" datetime="2019-05-26T17:21:00+08:00">2019-05-26</time>
+                <time title="修改时间：2019-05-26 20:56:48" itemprop="dateModified" datetime="2019-05-26T20:56:48+08:00">2019-05-26</time>
               
             
           </span>
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.4k</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -510,6 +510,7 @@
 <h6 id="slice-call"><a href="#slice-call" class="headerlink" title="[].slice.call()"></a>[].slice.call()</h6><p>这个可以让一个伪数组拥有真正的数组方法。</p>
 <h3 id="类（伪）数组使用数组方法"><a href="#类（伪）数组使用数组方法" class="headerlink" title="类（伪）数组使用数组方法"></a>类（伪）数组使用数组方法</h3><p>Javascript中存在一种名为伪数组的对象结构。比较特别的是 arguments 对象，还有像调用 getElementsByTagName , document.childNodes 之类的，它们返回NodeList对象都属于伪数组。不能应用 Array下的 push , pop 等方法。<br>但是我们能通过 Array.prototype.slice.call 转换为真正的数组的带有 length 属性的对象，这样 domNodes 就可以应用 Array 下的所有方法了。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domNodes = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">document</span>.getElementsByTagName(<span class="string">"*"</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="数组拼接"><a href="#数组拼接" class="headerlink" title="数组拼接"></a>数组拼接</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">arr1.push(arr2)<span class="comment">//[1,2,3,[4,5,6]]</span></span><br><span class="line">arr1.push(...arr2)<span class="comment">//[1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -753,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">排列方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.5.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法-IE8及一下都不兼容"><span class="nav-number">3.0.6.</span> <span class="nav-text">迭代方法 IE8及一下都不兼容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.7.</span> <span class="nav-text">归并方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数"><span class="nav-number">3.0.8.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join"><span class="nav-number">3.0.9.</span> <span class="nav-text">join()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#slice-call"><span class="nav-number">3.0.9.1.</span> <span class="nav-text">[].slice.call()</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#类（伪）数组使用数组方法"><span class="nav-number">4.</span> <span class="nav-text">类（伪）数组使用数组方法</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">排列方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.5.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法-IE8及一下都不兼容"><span class="nav-number">3.0.6.</span> <span class="nav-text">迭代方法 IE8及一下都不兼容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.7.</span> <span class="nav-text">归并方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数"><span class="nav-number">3.0.8.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join"><span class="nav-number">3.0.9.</span> <span class="nav-text">join()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#slice-call"><span class="nav-number">3.0.9.1.</span> <span class="nav-text">[].slice.call()</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#类（伪）数组使用数组方法"><span class="nav-number">4.</span> <span class="nav-text">类（伪）数组使用数组方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组拼接"><span class="nav-number">5.</span> <span class="nav-text">数组拼接</span></a></li></div>
             
 
           </div>
@@ -785,7 +786,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">101k</span>
+    <span title="站点总字数">105k</span>
   
 
   
@@ -794,7 +795,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:32</span>
+    <span title="站点阅读时长">1:35</span>
   
 </div>
 
