@@ -473,7 +473,7 @@
 <h4 id="非布尔值时："><a href="#非布尔值时：" class="headerlink" title="非布尔值时："></a>非布尔值时：</h4><p>一开始没动过property的话，会同步，一旦动了之后，修改property不会同步attribute</p>
 <h4 id="用户操作的是property，浏览器也是认property"><a href="#用户操作的是property，浏览器也是认property" class="headerlink" title="用户操作的是property，浏览器也是认property"></a>用户操作的是property，浏览器也是认property</h4><p>所以，一般我们修改布尔值类型，最好操作attribute方法</p>
 <p>操作非布尔值属性，最好操作property方法</p>
-<h5 id="最好都用property"><a href="#最好都用property" class="headerlink" title="最好都用property"></a>最好都用property</h5><h4 id="修改类"><a href="#修改类" class="headerlink" title="修改类"></a>修改类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> testNode = <span class="built_in">document</span>.querySelector(<span class="string">"#test"</span>);</span><br><span class="line">testNode.className.add(<span class="string">"test1"</span>);<span class="comment">//增加class</span></span><br><span class="line">testNode.className.remove(<span class="string">"test2"</span>);<span class="comment">//删除class</span></span><br><span class="line">testNode.className.toggle(<span class="string">"test3"</span>);<span class="comment">//如果有则删除，无则添加</span></span><br><span class="line"><span class="comment">//自定义属性data-*</span></span><br><span class="line">&lt;div id = <span class="string">'test'</span> data-shengri&gt;&lt;div&gt;</span><br><span class="line">    var test = document.selectQuery('#test')</span><br><span class="line">	test.dataSet.shengri = '1999-12-12'</span><br></pre></td></tr></table></figure>
+<h5 id="最好都用property"><a href="#最好都用property" class="headerlink" title="最好都用property"></a>最好都用property</h5><h4 id="修改类"><a href="#修改类" class="headerlink" title="修改类"></a>修改类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> testNode = <span class="built_in">document</span>.querySelector(<span class="string">"#test"</span>);</span><br><span class="line">testNode.className.add(<span class="string">"test1"</span>);<span class="comment">//增加class</span></span><br><span class="line">testNode.className.remove(<span class="string">"test2"</span>);<span class="comment">//删除class</span></span><br><span class="line">testNode.className.toggle(<span class="string">"test3"</span>);<span class="comment">//如果有则删除，无则添加</span></span><br><span class="line"><span class="comment">//自定义属性data-*</span></span><br><span class="line">&lt;div id = <span class="string">'test'</span> data-shengri&gt;<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    var test = document.selectQuery('#test')</span></span><br><span class="line"><span class="xml">	test.dataSet.shengri = '1999-12-12'</span></span><br></pre></td></tr></table></figure>
 <h4 id="可编辑文本"><a href="#可编辑文本" class="headerlink" title="可编辑文本"></a>可编辑文本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = &quot;test&quot; contenteditable=&quot;true&quot;&gt;</span><br><span class="line">	fdsa</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="浏览器的模式"><a href="#浏览器的模式" class="headerlink" title="浏览器的模式"></a>浏览器的模式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.compatMode)<span class="comment">//</span></span><br></pre></td></tr></table></figure>
 <h4 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h4><p>hgroup:放h1-h6</p>
@@ -646,7 +646,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -703,7 +703,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -797,7 +799,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">106k</span>
+    <span title="站点总字数">107k</span>
   
 
   
@@ -806,7 +808,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:37</span>
   
 </div>
 
