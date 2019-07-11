@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="debugger查看数据获取 attribute和propertyarrtribute：html标签的预定义和自定义属性 propertyjs原声对象的直接属性 布尔值时： property和attribute会同步 非布尔值时：一开始没动过property的话，会同步，一旦动了之后，修改property不会同步attribute 用户操作的是property，浏览器也是认property所以，一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-04T09:18:10.407Z">
+<meta property="og:updated_time" content="2019-07-11T13:33:15.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之h5">
 <meta name="twitter:description" content="debugger查看数据获取 attribute和propertyarrtribute：html标签的预定义和自定义属性 propertyjs原声对象的直接属性 布尔值时： property和attribute会同步 非布尔值时：一开始没动过property的话，会同步，一旦动了之后，修改property不会同步attribute 用户操作的是property，浏览器也是认property所以，一">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-04 17:18:10" itemprop="dateModified" datetime="2019-06-04T17:18:10+08:00">2019-06-04</time>
+                <time title="修改时间：2019-07-11 21:33:15" itemprop="dateModified" datetime="2019-07-11T21:33:15+08:00">2019-07-11</time>
               
             
           </span>
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.5k</span>
+                <span title="本文字数">3.6k</span>
               
 
               
@@ -479,8 +479,8 @@
 <h4 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h4><p>hgroup:放h1-h6</p>
 <p>header:页面头部</p>
 <p>nav:主导航</p>
-<p>section:页面上一块独立的内容</p>
-<p>article:文章</p>
+<p>section: 一段主题性内容</p>
+<p>article: 可以脱离上下文，作为完整的独立存在的一段内容</p>
 <p>aside:文章里的侧边栏</p>
 <h5 id="对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用-article。"><a href="#对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用-article。" class="headerlink" title="对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 article。"></a>对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 article。</h5><h4 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h4><p>默认有width：300px； height：150px；画布的高宽一定要在；默认背景颜色是body的背景，不是白色</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);</span><br><span class="line">        <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="comment">//同步思想</span></span><br><span class="line">        ctx.fillStyle = <span class="string">"red"</span>;</span><br><span class="line">		ctx.strokeStyle = <span class="string">"grid"</span>;</span><br><span class="line">		ctx.lineWidth = <span class="number">50</span>;</span><br><span class="line">		ctx.lineJoin = <span class="string">"round/bevel/miter"</span>;<span class="comment">//只设置strokeRect的四角，圆/斜/直角</span></span><br><span class="line"><span class="comment">//覆盖思想，后面画的会覆盖前面的</span></span><br><span class="line">        ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">		ctx.strokeRect(<span class="number">50.5</span>,<span class="number">50.5</span>,<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">		<span class="comment">//这样也能话出一像素</span></span><br><span class="line">		ctx.strokeRect(<span class="number">50</span>,<span class="number">50</span>,<span class="number">50</span>,<span class="number">50</span>);</span><br><span class="line">		ctx.clearRect(<span class="number">50</span>,<span class="number">50</span>,<span class="number">50</span>,<span class="number">50</span>);</span><br></pre></td></tr></table></figure>
@@ -805,7 +805,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">128k</span>
+    <span title="站点总字数">129k</span>
   
 
   
