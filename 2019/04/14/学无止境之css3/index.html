@@ -104,10 +104,12 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="浏览器渲染是从右往左的 为什么？因为算法复杂度比较低，有机会一次选中 css重置12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849/*	淘宝*/html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T14:59:24.973Z">
+<meta property="og:image" content="https://mrxwq.github.io/images/1563350355470.png">
+<meta property="og:updated_time" content="2019-07-17T14:46:52.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之css3">
 <meta name="twitter:description" content="浏览器渲染是从右往左的 为什么？因为算法复杂度比较低，有机会一次选中 css重置12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849/*	淘宝*/html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5">
+<meta name="twitter:image" content="https://mrxwq.github.io/images/1563350355470.png">
 
 
 
@@ -392,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 22:59:24" itemprop="dateModified" datetime="2019-07-16T22:59:24+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-17 22:46:52" itemprop="dateModified" datetime="2019-07-17T22:46:52+08:00">2019-07-17</time>
               
             
           </span>
@@ -432,7 +434,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.4k</span>
+                <span title="本文字数">10k</span>
               
 
               
@@ -446,7 +448,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 分钟</span>
+                <span title="阅读时长">10 分钟</span>
               
             </div>
           
@@ -584,19 +586,64 @@
 <p>transition-function: ease（先加速后减速）/ lineaar(匀速) / ease-in（加速）/ ease-out（减速）/ ease-in-out（先加速后减速）/ cubic-bezier（贝塞尔曲线）/ step-start（一步过去）/ step-end（时间结束一步）/ step（步数，开始跳还是结束跳）</p>
 <p>transition-delay：延迟多少秒开始</p>
 </blockquote>
-<p>过度完后会产生一个时间transitioned，它是根据属性来触发的，有多少属性边就触发多少次，display为none的话，就不会触发事件了</p>
-<h6 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h6><p>可以改变基点，10px 10px / 10% 10% /top left</p>
-<h6 id="tranform"><a href="#tranform" class="headerlink" title="tranform"></a>tranform</h6><p>只能作用于块级与元素。</p>
-<p>组合计算从右往左，底层是矩阵</p>
-<p>在首次渲染未完成时，是不会发生过渡的。</p>
-<p>在变换函数时，若个数不相同也不会发生过渡。变换组合的位置也得一样</p>
-<h6 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h6><p>景深：让3d场景有近大远小的效果（我们肉眼距离屏幕的距离）是一个不可继承属性，但它作用于后代元素（不作用于本身）perspertive：100px；</p>
-<p>原理：景深越大，灭点越远，元素变形更小</p>
-<p>景深几点：视角的位置 perspective-orrgin：left top；千万不要出现景深叠加</p>
-<p>transform-style：preserve-3d；搭建3d舞台，只作用于子元素</p>
-<p>backface-visibility隐藏元素背面</p>
-<h6 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation</span>：<span class="selector-tag">all</span> 1<span class="selector-tag">s</span> <span class="selector-tag">liner</span> <span class="selector-tag">forword</span> <span class="comment">/* 保持动画最后的状态，默认的是backwords*/</span></span><br></pre></td></tr></table></figure>
-<h6 id="做动画得用块级元素"><a href="#做动画得用块级元素" class="headerlink" title="做动画得用块级元素"></a>做动画得用块级元素</h6><p>​    steps（帧数，end/start）end看不到最后一帧，start看不到第一帧</p>
+<p>过渡完后会产生一个时间transitioned，它是根据属性来触发的，有多少属性边就触发多少次，display为none的话，就不会触发事件了</p>
+<h5 id="过渡的天坑"><a href="#过渡的天坑" class="headerlink" title="过渡的天坑"></a>过渡的天坑</h5><ol>
+<li>按常理来说，进去，应该是width先变化，出去应该height变化，但是，解析到div1时，width要变化，但css解析很快，比浏览器渲染块，一移进去的时候，发现height，马上改为height，所以，移进去是height变化，移出来是width变化</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div1</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">transition-property</span>: width;</span><br><span class="line">    <span class="attribute">transition-duration</span>: <span class="number">2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">div1</span> &#123;</span><br><span class="line">    <span class="attribute">tansition-property</span>: height;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在元素首次渲染还没有结束的情况下是不会触发的</p>
+<p>window.onload是在渲染完页面之后才执行的</p>
+<p>下面这样是不会产生动画的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = <span class="built_in">document</span>.getElementById(<span class="string">'test'</span>)</span><br><span class="line">test.style.width = <span class="string">'300px'</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在变换函数时，若个数不相同也不会发生过渡。变换组合的位置也得一样</li>
+</ol>
+<h3 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h3><h4 id="2d变形"><a href="#2d变形" class="headerlink" title="2d变形"></a>2d变形</h4><p><strong>tranform</strong></p>
+<blockquote>
+<p>rotate（270deg）旋转</p>
+<p>translate（）两个参数，x轴和y轴，只写一个代表x轴 基点变化不会对位移造成影响</p>
+<p>skew（）沿着那边拉多少度，只有一个值则为X轴</p>
+<p>scale（）缩放，不带单位 ，两个都缩</p>
+<p>transform-origin 可以改变基点，10px 10px （根据左上角向下移和左移）/ 10% 10% （根据左上角向下移和左移）/top left（左上角）center（中间）</p>
+</blockquote>
+<p><strong>变换组合</strong></p>
+<p>变换组合是从右往左计算的，位置不一样，行为也不一样</p>
+<p>原理是矩阵，从右往左计算，但我们看的时候可以直接从左往右看，第一个，缩小0.5我们可以看成是连坐标系也缩小了，所以，向x轴移100px相当于移50px，rotate旋转我们也可以当成把坐标系也旋转了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div1</span>, <span class="selector-tag">div2</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">div1</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.5) <span class="built_in">translate</span>(100px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">div2</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(100px) <span class="built_in">scale</span>(0.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只能作用于块级与元素。</p>
+<p>组合计算从右往左，底层是矩阵 transform：matrix</p>
+<h4 id="3d变形"><a href="#3d变形" class="headerlink" title="3d变形"></a>3d变形</h4><p>景深：让3d场景有近大远小的效果（我们肉眼距离屏幕的距离）是一个不可继承属性，但它作用于后代元素（不作用于本身）</p>
+<p>perspective：100px；作用于后代元素</p>
+<p>perspect-origin: left top; 控制景深基点，现在基点在左上角，眼睛也往左上角看，默认值50%，50%</p>
+<p>transform-style：preserve-3d；搭建3d舞台，只作用于子元素，营造有层级的3d效果</p>
+<p>transform: perspertive(100px) ratateX(0deg); 只能放在首位，作用于自身，不能单独放</p>
+<p>backface-visibility：hidden；隐藏元素背面</p>
+<p>transform-origin：center center -50px 可以改变基点</p>
+<p>尽量避免景深叠加</p>
+<p><strong>3d旋转</strong></p>
+<p>rotate3d：（x,y,z,deg）x轴就是按着头，Y轴就是按着右手边</p>
+<p><strong>3d平移</strong></p>
+<p>下面这样，wrap离我们100px远，向Z轴走100px的话，会向我们走来</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span> &#123;</span><br><span class="line">    <span class="attribute">perspactive</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">inner</span> &#123;</span><br><span class="line">    <span class="comment">/*没有百分比*/</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3d缩放</strong></p>
+<p>需要我们组合使用,单独使用无用</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">inner</span> &#123;</span><br><span class="line">   <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(100px) <span class="built_in">scaleZ</span>(2);<span class="comment">/*这个缩放也会缩放坐标轴*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：景深越大，灭点越远<img src="/images/1563350355470.png" alt="1563350355470">，元素变形更小</p>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p><strong>animation</strong></p>
+<blockquote>
+<p>animation-name: 动画的名字</p>
+<p>animation-duration: 动画持续时间</p>
+<p>animation-timing-function: 动画方式 steps（帧数，end/start）end看不到最后一帧，start看不到第一帧</p>
+<p>animation-direction: reverse; 动画方向，<strong>反转的是关键帧和animation-timing-function</strong> alternate(from-to-from) alternate-reverse(to-from-to)</p>
+<p>animation-delay: 延迟时间(<strong>这个是动画外的属性</strong>)</p>
+<p>animation-iteration-count: 3; 做三次动画（只作用域动画内）infinite（无限次）</p>
+<p>animation-fill-mode:  backwards(开始的位置和from里面的位置保持一致) forwards（结束的位置和to里面的位置保持一致） both（backwards+forwards）(<strong>这个是动画外的属性</strong>)</p>
+<p>animation-play-state: paused; 使动画暂停 默认值：running</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation</span>：<span class="selector-tag">all</span> 1<span class="selector-tag">s</span> <span class="selector-tag">liner</span> <span class="selector-tag">forword</span> <span class="comment">/* 保持动画最后的状态，默认的是backwords*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> name &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;&#125;,</span><br><span class="line">    <span class="selector-tag">to</span> &#123;&#125;</span><br><span class="line">    <span class="comment">/*时间*/</span></span><br><span class="line">    0 &#123;&#125;,</span><br><span class="line">    50% &#123;&#125;</span><br><span class="line">    100% &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>做动画得用块级元素</strong></p>
+<p>​    </p>
 <h6 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h6><p>@media only screen and (min-width:800px){</p>
 <p>​    //规则</p>
 <p>​    #wrap{</p>
@@ -861,7 +908,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#css重置"><span class="nav-number">1.</span> <span class="nav-text">css重置</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number"></span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.</span> <span class="nav-text">基本选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#父-gt-子"><span class="nav-number">1.1.</span> <span class="nav-text">父 &gt; 子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">+</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#-1"><span class="nav-number">1.3.</span> <span class="nav-text">~</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性选择器"><span class="nav-number">2.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类与伪选择器"><span class="nav-number">3.</span> <span class="nav-text">伪类与伪选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#结构性伪类"><span class="nav-number">3.1.</span> <span class="nav-text">结构性伪类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#nth-child-n"><span class="nav-number">3.1.1.</span> <span class="nav-text">:nth-child(n)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#nth-of-type-n"><span class="nav-number">3.1.2.</span> <span class="nav-text">nth-of-type(n)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dom树以外伪元素选择器"><span class="nav-number">3.2.</span> <span class="nav-text">dom树以外伪元素选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#选择器优先级"><span class="nav-number">3.2.1.</span> <span class="nav-text">选择器优先级</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#chrome转换颜色表示方式"><span class="nav-number">3.2.2.</span> <span class="nav-text">chrome转换颜色表示方式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文字"><span class="nav-number">3.3.</span> <span class="nav-text">文字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#盒模型"><span class="nav-number">3.4.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#层级"><span class="nav-number">3.4.1.</span> <span class="nav-text">层级</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增ui"><span class="nav-number"></span> <span class="nav-text">新增ui</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#边框"><span class="nav-number">1.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渐变"><span class="nav-number">3.</span> <span class="nav-text">渐变</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线性渐变"><span class="nav-number">3.1.</span> <span class="nav-text">线性渐变</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#镜像渐变"><span class="nav-number">3.2.</span> <span class="nav-text">镜像渐变</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡"><span class="nav-number"></span> <span class="nav-text">过渡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transition"><span class="nav-number">1.</span> <span class="nav-text">transition</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#transform-origin"><span class="nav-number">1.0.1.</span> <span class="nav-text">transform-origin</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#tranform"><span class="nav-number">1.0.2.</span> <span class="nav-text">tranform</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3D"><span class="nav-number">1.0.3.</span> <span class="nav-text">3D</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#animation"><span class="nav-number">1.0.4.</span> <span class="nav-text">animation</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#做动画得用块级元素"><span class="nav-number">1.0.5.</span> <span class="nav-text">做动画得用块级元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#媒体查询"><span class="nav-number">1.0.6.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字"><span class="nav-number">1.0.7.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position"><span class="nav-number">1.0.8.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#单位"><span class="nav-number">1.0.9.</span> <span class="nav-text">单位</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#css重置"><span class="nav-number">1.</span> <span class="nav-text">css重置</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number"></span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.</span> <span class="nav-text">基本选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#父-gt-子"><span class="nav-number">1.1.</span> <span class="nav-text">父 &gt; 子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">+</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#-1"><span class="nav-number">1.3.</span> <span class="nav-text">~</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性选择器"><span class="nav-number">2.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类与伪选择器"><span class="nav-number">3.</span> <span class="nav-text">伪类与伪选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#结构性伪类"><span class="nav-number">3.1.</span> <span class="nav-text">结构性伪类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#nth-child-n"><span class="nav-number">3.1.1.</span> <span class="nav-text">:nth-child(n)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#nth-of-type-n"><span class="nav-number">3.1.2.</span> <span class="nav-text">nth-of-type(n)</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dom树以外伪元素选择器"><span class="nav-number">3.2.</span> <span class="nav-text">dom树以外伪元素选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#选择器优先级"><span class="nav-number">3.2.1.</span> <span class="nav-text">选择器优先级</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#chrome转换颜色表示方式"><span class="nav-number">3.2.2.</span> <span class="nav-text">chrome转换颜色表示方式</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文字"><span class="nav-number">3.3.</span> <span class="nav-text">文字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#盒模型"><span class="nav-number">3.4.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#层级"><span class="nav-number">3.4.1.</span> <span class="nav-text">层级</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增ui"><span class="nav-number"></span> <span class="nav-text">新增ui</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#边框"><span class="nav-number">1.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渐变"><span class="nav-number">3.</span> <span class="nav-text">渐变</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线性渐变"><span class="nav-number">3.1.</span> <span class="nav-text">线性渐变</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#镜像渐变"><span class="nav-number">3.2.</span> <span class="nav-text">镜像渐变</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过渡"><span class="nav-number"></span> <span class="nav-text">过渡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transition"><span class="nav-number">1.</span> <span class="nav-text">transition</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#过渡的天坑"><span class="nav-number">1.1.</span> <span class="nav-text">过渡的天坑</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变形"><span class="nav-number"></span> <span class="nav-text">变形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2d变形"><span class="nav-number">1.</span> <span class="nav-text">2d变形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3d变形"><span class="nav-number">2.</span> <span class="nav-text">3d变形</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画"><span class="nav-number"></span> <span class="nav-text">动画</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#媒体查询"><span class="nav-number">0.0.1.</span> <span class="nav-text">媒体查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#关键字"><span class="nav-number">0.0.2.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position"><span class="nav-number">0.0.3.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#单位"><span class="nav-number">0.0.4.</span> <span class="nav-text">单位</span></a></li></ol></li></div>
             
 
           </div>
@@ -893,7 +940,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">138k</span>
+    <span title="站点总字数">141k</span>
   
 
   
@@ -902,7 +949,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:06</span>
+    <span title="站点阅读时长">2:08</span>
   
 </div>
 
