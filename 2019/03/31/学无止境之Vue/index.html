@@ -105,7 +105,7 @@
 <meta property="og:description" content="生命周期函数  beforeCreate()刚初始化了一个Vue空的对象，只有默认的一些生命周期函数和默认的事件，数据和方法都没有获取到  Cerated()数据和方法都已经在内存中了，想要调用methods中的方法，或者操作data中的数据，最早只能在created中操作 然后就是编译模板放到内存  发ajax要提前，在这个时候就调，这样的话，，     beforeMount()执行这步的时候">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mrxwq.github.io/images/1553753746719.png">
-<meta property="og:updated_time" content="2019-07-26T11:34:40.483Z">
+<meta property="og:updated_time" content="2019-07-28T12:59:22.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之Vue">
 <meta name="twitter:description" content="生命周期函数  beforeCreate()刚初始化了一个Vue空的对象，只有默认的一些生命周期函数和默认的事件，数据和方法都没有获取到  Cerated()数据和方法都已经在内存中了，想要调用methods中的方法，或者操作data中的数据，最早只能在created中操作 然后就是编译模板放到内存  发ajax要提前，在这个时候就调，这样的话，，     beforeMount()执行这步的时候">
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-26 19:34:40" itemprop="dateModified" datetime="2019-07-26T19:34:40+08:00">2019-07-26</time>
+                <time title="修改时间：2019-07-28 20:59:22" itemprop="dateModified" datetime="2019-07-28T20:59:22+08:00">2019-07-28</time>
               
             
           </span>
@@ -813,6 +813,7 @@
 <p>在vue学习中遇到给router-link 标签添加事件@click 、@mouseover等无效的情况</p>
 <h4 id="数据响应式的问题"><a href="#数据响应式的问题" class="headerlink" title="数据响应式的问题"></a>数据响应式的问题</h4><p>一开始数据上没有赋值的话，你要是普通赋值的话会赋值不上</p>
 <p>这个时候需要用vue的显示赋值$set(你要赋值的主体，‘你要赋值的属性’，你要赋的值)</p>
+<p>可以Object.assign({},你要赋值，你赋的值)</p>
 <h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>根据Vue2.0官方文档关于父子组件通讯的原则，父组件通过prop传递数据给子组件，子组件触发事件给父组件。但父组件想在子组件上监听自己的click的话，需要加上native修饰符。</p>
 <p>所以如果在想要在router-link上添加事件的话需要@click.native这样写</p>
 <h4 id="指定版本号package-json"><a href="#指定版本号package-json" class="headerlink" title="指定版本号package.json"></a>指定版本号package.json</h4><p>（1）指定版本：比如”classnames”: “2.2.5”，表示安装2.2.5的版本</p>
