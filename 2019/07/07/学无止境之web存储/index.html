@@ -104,10 +104,13 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="Cookie限制 每个浏览器都有数量限制 每个Cookie都有大小限制，一般都在4KB左右，超过大小则无效  构成 名字：不区分大小写 值： 域：domain = “” 路径：path = “” 指定那个路径应该向服务器发送cookie 失效时间：expires = “” GMT格式 安全标志：secure 加了这个，http请求不能发送cookie，https中才可发送 httpOnly：前端无">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-13T08:11:24.070Z">
+<meta property="og:image" content="https://mrxwq.github.io/images/940884-20180423141945261-83532090.png">
+<meta property="og:image" content="https://mrxwq.github.io/images/940884-20180423141951735-912699213.png">
+<meta property="og:updated_time" content="2019-08-02T01:51:28.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之web存储">
 <meta name="twitter:description" content="Cookie限制 每个浏览器都有数量限制 每个Cookie都有大小限制，一般都在4KB左右，超过大小则无效  构成 名字：不区分大小写 值： 域：domain = “” 路径：path = “” 指定那个路径应该向服务器发送cookie 失效时间：expires = “” GMT格式 安全标志：secure 加了这个，http请求不能发送cookie，https中才可发送 httpOnly：前端无">
+<meta name="twitter:image" content="https://mrxwq.github.io/images/940884-20180423141945261-83532090.png">
 
 
 
@@ -392,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-13 16:11:24" itemprop="dateModified" datetime="2019-07-13T16:11:24+08:00">2019-07-13</time>
+                <time title="修改时间：2019-08-02 09:51:28" itemprop="dateModified" datetime="2019-08-02T09:51:28+08:00">2019-08-02</time>
               
             
           </span>
@@ -432,7 +435,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.4k</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -501,6 +504,15 @@
 <h3 id="应用程序缓存"><a href="#应用程序缓存" class="headerlink" title="应用程序缓存"></a>应用程序缓存</h3><h4 id="Manifest"><a href="#Manifest" class="headerlink" title="Manifest"></a>Manifest</h4><h5 id="html页面"><a href="#html页面" class="headerlink" title="html页面"></a>html页面</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span> = <span class="string">demo.appcache</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="demo-appcache"><a href="#demo-appcache" class="headerlink" title="demo.appcache"></a>demo.appcache</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这下面放的是要首次下载被缓存的</span></span><br><span class="line">CACHE MANIFEST</span><br><span class="line">/theme.css</span><br><span class="line">/logo.gif</span><br><span class="line">/main.js</span><br><span class="line"><span class="comment">// 上面的 manifest 文件列出了三个资源：一个 CSS 文件，一个 GIF 图像，以及一个 JavaScript 文件。当 manifest 文件被加载后，浏览器会从网站的根目录下载这三个文件。然后，无论用户何时与因特网断开连接，这些资源依然可用。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这下面放的是需要与服务器的连接的文件，且不被缓存</span></span><br><span class="line">NETWORK</span><br><span class="line">login.js</span><br><span class="line"><span class="comment">//*</span></span><br><span class="line"><span class="comment">// 上面的 NETWORK 部分规定文件 "login.js" 永远不会被缓存，且离线时是不可用的</span></span><br><span class="line"><span class="comment">// 可以用*来指示其他资源文件都需要因特网连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这下面是当页面无法访问时的回退页面</span></span><br><span class="line"><span class="comment">//用 "offline.html" 替代 /html/ 目录中的所有文件</span></span><br><span class="line">FALLBACK</span><br><span class="line">/html/ <span class="regexp">/offline.html</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/第一个是资源，第二个是替补</span></span><br></pre></td></tr></table></figure>
 <p><code>cached</code>:当离线资源存储完成之后触发这个事件<br><code>checking</code>:当浏览器对离线存储资源进行更新检查的时候会触发这个事件<br><code>downloading</code>:当浏览器开始下载离线资源的时候会触发这个事件<br><code>progress</code>:当浏览器在下载每一个资源的时候会触发这个事件，每下载一个资源就会触发一次。<br><code>updateready</code>:当浏览器对离线资源更新完成之后会触发这个事件<br><code>noupdate</code>:当浏览器检查更新之后发现没有资源更新的时候触发这个事件</p>
+<p><strong>cookie和localStorage都不支持跨域</strong></p>
+<h2 id="http缓存"><a href="#http缓存" class="headerlink" title="http缓存"></a>http缓存</h2><p>第一次请求的时候</p>
+<p><img src="/images/940884-20180423141945261-83532090.png" alt="img"></p>
+<p>第二次请求的时候</p>
+<p><img src="/images/940884-20180423141951735-912699213.png" alt="img"></p>
+<p>能缓存越多越好，能缓存越久越好。</p>
+<p>例如，</p>
+<p>很少变化的图片资源可以直接通过 HTTP Header中的Expires设置一个很长的过期头 ;</p>
+<p>变化不频繁而又可能会变的资源可以使用 Last-Modifed来做请求验证。</p>
 
       
     </div>
@@ -625,7 +637,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -694,7 +706,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -756,7 +770,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#限制"><span class="nav-number">1.1.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构成"><span class="nav-number">1.2.</span> <span class="nav-text">构成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#服务端设置-cookie"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">服务端设置 cookie</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#客户端发送cookie"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">客户端发送cookie</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storage类型"><span class="nav-number">2.</span> <span class="nav-text">Storage类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-1"><span class="nav-number">3.</span> <span class="nav-text">限制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1"><span class="nav-number">3.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">4.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">5.</span> <span class="nav-text">localStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#事件"><span class="nav-number">5.0.1.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单事例"><span class="nav-number">5.0.2.</span> <span class="nav-text">简单事例</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序缓存"><span class="nav-number">6.</span> <span class="nav-text">应用程序缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Manifest"><span class="nav-number">6.1.</span> <span class="nav-text">Manifest</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html页面"><span class="nav-number">6.1.1.</span> <span class="nav-text">html页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#demo-appcache"><span class="nav-number">6.1.2.</span> <span class="nav-text">demo.appcache</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#限制"><span class="nav-number">1.1.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构成"><span class="nav-number">1.2.</span> <span class="nav-text">构成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#服务端设置-cookie"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">服务端设置 cookie</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#客户端发送cookie"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">客户端发送cookie</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storage类型"><span class="nav-number">2.</span> <span class="nav-text">Storage类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制-1"><span class="nav-number">3.</span> <span class="nav-text">限制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1"><span class="nav-number">3.1.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">4.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">5.</span> <span class="nav-text">localStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#事件"><span class="nav-number">5.0.1.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单事例"><span class="nav-number">5.0.2.</span> <span class="nav-text">简单事例</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序缓存"><span class="nav-number">6.</span> <span class="nav-text">应用程序缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Manifest"><span class="nav-number">6.1.</span> <span class="nav-text">Manifest</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html页面"><span class="nav-number">6.1.1.</span> <span class="nav-text">html页面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#demo-appcache"><span class="nav-number">6.1.2.</span> <span class="nav-text">demo.appcache</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http缓存"><span class="nav-number"></span> <span class="nav-text">http缓存</span></a></li></div>
             
 
           </div>
@@ -788,7 +802,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">149k</span>
+    <span title="站点总字数">156k</span>
   
 
   
@@ -797,7 +811,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:22</span>
   
 </div>
 

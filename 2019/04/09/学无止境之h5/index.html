@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="debugger查看数据获取 attribute和propertyarrtribute：html标签的预定义和自定义属性 propertyjs原声对象的直接属性 布尔值时： property和attribute会同步 非布尔值时：一开始没动过property的话，会同步，一旦动了之后，修改property不会同步attribute 用户操作的是property，浏览器也是认property所以，一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T01:28:22.652Z">
+<meta property="og:updated_time" content="2019-08-04T02:24:15.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之h5">
 <meta name="twitter:description" content="debugger查看数据获取 attribute和propertyarrtribute：html标签的预定义和自定义属性 propertyjs原声对象的直接属性 布尔值时： property和attribute会同步 非布尔值时：一开始没动过property的话，会同步，一旦动了之后，修改property不会同步attribute 用户操作的是property，浏览器也是认property所以，一">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-12 09:28:22" itemprop="dateModified" datetime="2019-07-12T09:28:22+08:00">2019-07-12</time>
+                <time title="修改时间：2019-08-04 10:24:15" itemprop="dateModified" datetime="2019-08-04T10:24:15+08:00">2019-08-04</time>
               
             
           </span>
@@ -519,8 +519,12 @@
 <p>​    data：数组，每个rgba信息、</p>
 <h5 id="audio-video"><a href="#audio-video" class="headerlink" title="audio video"></a>audio video</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">格式转化</span><br><span class="line">	用 FFmpeg 制作MP4 视频</span><br><span class="line">		ffmpeg -i test.mp4 -c:v libx264 -s 1280x720 -b:v 1500k -profile:v high -level 3.1 -c:a aac -ac 2 -b:a 160k -movflags faststart OUTPUT.mp4</span><br><span class="line">	</span><br><span class="line">	用 FFmpeg 制作 WebM 视频</span><br><span class="line">		ffmpeg -i test.mp4 -c:v libvpx -s 1280x720 -b:v 1500k -c:a libvorbis -ac 2 -b:a 160k OUTPUT.webm</span><br><span class="line">	</span><br><span class="line">	FFmpeg 制作 Ogg 视频</span><br><span class="line">		ffmpeg -i test.mp4 -c:v libtheora -s 1280x720 -b:v 1500k -c:a libvorbis -ac 2 -b:a 160k OUTPUT.ogv</span><br><span class="line">	</span><br><span class="line">	FFmpeg 制作Mp3音频</span><br><span class="line">		ffmpeg -i test.mp3 -c:a libmp3lame -ac 2 -b:a 160k OUTPUT.mp3</span><br><span class="line">		</span><br><span class="line">	FFmpeg 制作Ogg音频</span><br><span class="line">		ffmpeg -i test.mp3 -c:a libvorbis -ac 2 -b:a 160k OUTPUT.ogg</span><br><span class="line">	</span><br><span class="line">	FFmpeg 制作ACC音频	</span><br><span class="line">		ffmpeg -i test.mp3 -c:a aac -ac 2 -b:a 160k OUTPUT.aac</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">width</span>=<span class="string">""</span> <span class="attr">height</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">type</span> = <span class="string">".mp4"</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">type</span> = <span class="string">".ogg"</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">type</span> = <span class="string">".webm"</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">width</span>=<span class="string">""</span> <span class="attr">height</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">type</span> = <span class="string">".mp4"</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">type</span> = <span class="string">".ogg"</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">type</span> = <span class="string">".webm"</span>&gt;</span><span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h5><h5 id="form"><a href="#form" class="headerlink" title="form"></a>form</h5><h6 id="enctype"><a href="#enctype" class="headerlink" title="enctype"></a>enctype</h6><p> 规定被提交数据的编码</p>
-<h5 id="input"><a href="#input" class="headerlink" title="input"></a>input</h5><p>multiple 可以选择多个文件</p>
+<h5 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h5><p><strong>form</strong></p>
+<p>reset：把表单的所有输入元素重置为它们的默认值</p>
+<p><strong>enctype</strong></p>
+<p> 规定被提交数据的编码</p>
+<p><strong>input</strong></p>
+<p>multiple 可以选择多个文件</p>
 <p>pattern 正则表达式验证</p>
 <h4 id="布局：定位（left）-动画：位移（transition）"><a href="#布局：定位（left）-动画：位移（transition）" class="headerlink" title="布局：定位（left） 动画：位移（transition）"></a>布局：定位（left） 动画：位移（transition）</h4>
       
@@ -646,7 +650,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -715,7 +719,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -777,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#debugger"><span class="nav-number">1.</span> <span class="nav-text">debugger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#attribute和property"><span class="nav-number">2.</span> <span class="nav-text">attribute和property</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#arrtribute："><span class="nav-number">2.1.</span> <span class="nav-text">arrtribute：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#property"><span class="nav-number">2.2.</span> <span class="nav-text">property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔值时："><span class="nav-number">2.3.</span> <span class="nav-text">布尔值时：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非布尔值时："><span class="nav-number">2.4.</span> <span class="nav-text">非布尔值时：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户操作的是property，浏览器也是认property"><span class="nav-number">2.5.</span> <span class="nav-text">用户操作的是property，浏览器也是认property</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#最好都用property"><span class="nav-number">2.5.1.</span> <span class="nav-text">最好都用property</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改类"><span class="nav-number">2.6.</span> <span class="nav-text">修改类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可编辑文本"><span class="nav-number">2.7.</span> <span class="nav-text">可编辑文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器的模式"><span class="nav-number">2.8.</span> <span class="nav-text">浏览器的模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语义化标签"><span class="nav-number">2.9.</span> <span class="nav-text">语义化标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用-article。"><span class="nav-number">2.9.1.</span> <span class="nav-text">对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 article。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#canvas"><span class="nav-number">2.10.</span> <span class="nav-text">canvas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-注意："><span class="nav-number">2.10.1.</span> <span class="nav-text">1.注意：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-画布api"><span class="nav-number">2.10.2.</span> <span class="nav-text">2.画布api</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-上下文api"><span class="nav-number">2.10.3.</span> <span class="nav-text">3.上下文api</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作像素"><span class="nav-number">2.10.4.</span> <span class="nav-text">操作像素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#audio-video"><span class="nav-number">2.10.5.</span> <span class="nav-text">audio video</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表单元素"><span class="nav-number">2.10.6.</span> <span class="nav-text">表单元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#form"><span class="nav-number">2.10.7.</span> <span class="nav-text">form</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#enctype"><span class="nav-number">2.10.7.1.</span> <span class="nav-text">enctype</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#input"><span class="nav-number">2.10.8.</span> <span class="nav-text">input</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布局：定位（left）-动画：位移（transition）"><span class="nav-number">2.11.</span> <span class="nav-text">布局：定位（left） 动画：位移（transition）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#debugger"><span class="nav-number">1.</span> <span class="nav-text">debugger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#attribute和property"><span class="nav-number">2.</span> <span class="nav-text">attribute和property</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#arrtribute："><span class="nav-number">2.1.</span> <span class="nav-text">arrtribute：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#property"><span class="nav-number">2.2.</span> <span class="nav-text">property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔值时："><span class="nav-number">2.3.</span> <span class="nav-text">布尔值时：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非布尔值时："><span class="nav-number">2.4.</span> <span class="nav-text">非布尔值时：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户操作的是property，浏览器也是认property"><span class="nav-number">2.5.</span> <span class="nav-text">用户操作的是property，浏览器也是认property</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#最好都用property"><span class="nav-number">2.5.1.</span> <span class="nav-text">最好都用property</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改类"><span class="nav-number">2.6.</span> <span class="nav-text">修改类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可编辑文本"><span class="nav-number">2.7.</span> <span class="nav-text">可编辑文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器的模式"><span class="nav-number">2.8.</span> <span class="nav-text">浏览器的模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语义化标签"><span class="nav-number">2.9.</span> <span class="nav-text">语义化标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用-article。"><span class="nav-number">2.9.1.</span> <span class="nav-text">对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 article。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#canvas"><span class="nav-number">2.10.</span> <span class="nav-text">canvas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-注意："><span class="nav-number">2.10.1.</span> <span class="nav-text">1.注意：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-画布api"><span class="nav-number">2.10.2.</span> <span class="nav-text">2.画布api</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-上下文api"><span class="nav-number">2.10.3.</span> <span class="nav-text">3.上下文api</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作像素"><span class="nav-number">2.10.4.</span> <span class="nav-text">操作像素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#audio-video"><span class="nav-number">2.10.5.</span> <span class="nav-text">audio video</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表单元素"><span class="nav-number">2.10.6.</span> <span class="nav-text">表单元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布局：定位（left）-动画：位移（transition）"><span class="nav-number">2.11.</span> <span class="nav-text">布局：定位（left） 动画：位移（transition）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -809,7 +815,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">149k</span>
+    <span title="站点总字数">156k</span>
   
 
   
@@ -818,7 +824,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:22</span>
   
 </div>
 

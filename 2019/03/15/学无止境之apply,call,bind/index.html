@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 ​    var fn = function(){     ​    } ​    var fn2 = function(){ ​    } ​    var arr = [1,2,3,4] ​    在参数可以确定的情况下，可以">
+  <meta name="description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数，因此后面还需要()来进行调用才可以。 ​    var fn = function(){     ​    } ​    var fn2 = funct">
 <meta name="keywords" content="-js语法 -prototype">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apply，call和bind">
 <meta property="og:url" content="https://Mrxwq.github.io/2019/03/15/学无止境之apply,call,bind/index.html">
 <meta property="og:site_name" content="自律使我自由">
-<meta property="og:description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 ​    var fn = function(){     ​    } ​    var fn2 = function(){ ​    } ​    var arr = [1,2,3,4] ​    在参数可以确定的情况下，可以">
+<meta property="og:description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数，因此后面还需要()来进行调用才可以。 ​    var fn = function(){     ​    } ​    var fn2 = funct">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T01:04:43.705Z">
+<meta property="og:updated_time" content="2019-08-01T14:15:17.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apply，call和bind">
-<meta name="twitter:description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 ​    var fn = function(){     ​    } ​    var fn2 = function(){ ​    } ​    var arr = [1,2,3,4] ​    在参数可以确定的情况下，可以">
+<meta name="twitter:description" content="​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法 ​    其实三者的方法都差不多，都是改变this的指向 call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数，因此后面还需要()来进行调用才可以。 ​    var fn = function(){     ​    } ​    var fn2 = funct">
 
 
 
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-27 09:04:43" itemprop="dateModified" datetime="2019-05-27T09:04:43+08:00">2019-05-27</time>
+                <time title="修改时间：2019-08-01 22:15:17" itemprop="dateModified" datetime="2019-08-01T22:15:17+08:00">2019-08-01</time>
               
             
           </span>
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">876</span>
+                <span title="本文字数">988</span>
               
 
               
@@ -468,6 +468,7 @@
       
         <p>​    他们都是属于Function.prototype的方法,所以每个Function方法实例都有这些方法</p>
 <p>​    其实三者的方法都差不多，都是改变this的指向</p>
+<p><strong>call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数，因此后面还需要()来进行调用才可以。</strong></p>
 <p>​    var fn = function(){    </p>
 <p>​    }</p>
 <p>​    var fn2 = function(){</p>
@@ -477,6 +478,7 @@
 <p>​    在不确认参数个数的时候可以使用fn.apply(fn2,arr)apply的第二个参数必须是一个数组</p>
 <p>​    这两种方法都是立马调用返回一个数的</p>
 <p>​    若不想直接调用，只是改变this的指向，则可以使用var fn3 = fn.bind(fn2) fn3(参数)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> newFn = fn.bind(thisObj);</span><br><span class="line">newFn(arg1, arg2...)</span><br></pre></td></tr></table></figure>
 <h3 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h3><h4 id="数组拼接"><a href="#数组拼接" class="headerlink" title="数组拼接"></a>数组拼接</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">[].push.apply(arr1,arr2) =&gt; <span class="built_in">Array</span>.prototype.push.apply(arr1,arr2)</span><br></pre></td></tr></table></figure>
 <h4 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.apply(arr1))<span class="comment">//[object Array]</span></span><br></pre></td></tr></table></figure>
 <h4 id="判断最大值和最小值"><a href="#判断最大值和最小值" class="headerlink" title="判断最大值和最小值"></a>判断最大值和最小值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr1)</span><br></pre></td></tr></table></figure>
@@ -607,7 +609,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -676,7 +678,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -770,7 +774,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">149k</span>
+    <span title="站点总字数">156k</span>
   
 
   
@@ -779,7 +783,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:22</span>
   
 </div>
 

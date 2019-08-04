@@ -105,7 +105,7 @@
 <meta property="og:description" content="生命周期函数  beforeCreate()刚初始化了一个Vue空的对象，只有默认的一些生命周期函数和默认的事件，数据和方法都没有获取到  Cerated()数据和方法都已经在内存中了，想要调用methods中的方法，或者操作data中的数据，最早只能在created中操作 然后就是编译模板放到内存  发ajax要提前，在这个时候就调，这样的话，，     beforeMount()执行这步的时候">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mrxwq.github.io/images/1553753746719.png">
-<meta property="og:updated_time" content="2019-07-28T12:59:22.086Z">
+<meta property="og:updated_time" content="2019-08-02T01:14:22.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之Vue">
 <meta name="twitter:description" content="生命周期函数  beforeCreate()刚初始化了一个Vue空的对象，只有默认的一些生命周期函数和默认的事件，数据和方法都没有获取到  Cerated()数据和方法都已经在内存中了，想要调用methods中的方法，或者操作data中的数据，最早只能在created中操作 然后就是编译模板放到内存  发ajax要提前，在这个时候就调，这样的话，，     beforeMount()执行这步的时候">
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-28 20:59:22" itemprop="dateModified" datetime="2019-07-28T20:59:22+08:00">2019-07-28</time>
+                <time title="修改时间：2019-08-02 09:14:22" itemprop="dateModified" datetime="2019-08-02T09:14:22+08:00">2019-08-02</time>
               
             
           </span>
@@ -508,7 +508,10 @@
 <li>数据劫持</li>
 <li>Watcher</li>
 </ol>
-<p><strong>Object.defineProperty</strong>: 给所有数据上都加个get和set，观察数据的变化</p>
+<p><strong>Object.defineProperty（参数1，参数2，参数3）</strong>: 给所有数据上都加个get和set，观察数据的变化</p>
+<p>参数1：给哪个数据定义</p>
+<p>参数2：给数据的哪个属性定义</p>
+<p>参数3：描述信息</p>
 <p><strong>createDocumentFragment</strong>: 创建文档碎片</p>
 <p><strong>nodeType</strong>: 判断类型，1是节点类型</p>
 <p><strong>attributes</strong>：获取节点的属性{key:’’ , value: ‘’}</p>
@@ -628,7 +631,8 @@
 <h5 id="数据传递"><a href="#数据传递" class="headerlink" title="数据传递"></a>数据传递</h5><h6 id="父组件向子组件传数据"><a href="#父组件向子组件传数据" class="headerlink" title="父组件向子组件传数据"></a>父组件向子组件传数据</h6><p>需要在子组件上进行数据绑定 (:parentmes = “mes”)</p>
 <p>然后子组件上有个props:[parentmes]</p>
 <p>这个时候就可以在template上使用父组件的值了</p>
-<h6 id="子组件使用父组件的方法"><a href="#子组件使用父组件的方法" class="headerlink" title="子组件使用父组件的方法"></a>子组件使用父组件的方法</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--子组件中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"$emit(closee,参数1，参数2)"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 父组件中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"close"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        data() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                flag: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        methods: &#123;</span></span><br><span class="line"><span class="undefined">            close(参数1,参数2) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'关闭了'</span> + <span class="keyword">this</span>.flag+参数<span class="number">1</span>+参数<span class="number">2</span>)</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="子组件使用父组件的方法"><a href="#子组件使用父组件的方法" class="headerlink" title="子组件使用父组件的方法"></a>子组件使用父组件的方法</h6><p>vue使用$emit时，父组件无法监听到子组件的事件的原因是$emit传入的事件名称只能使用小写，不能使用大写的驼峰规则命名</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--子组件中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"$emit(closee,参数1，参数2)"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 父组件中 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"close"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        data() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                flag: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        methods: &#123;</span></span><br><span class="line"><span class="undefined">            close(参数1,参数2) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'关闭了'</span> + <span class="keyword">this</span>.flag+参数<span class="number">1</span>+参数<span class="number">2</span>)</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h6 id="操作dom节点"><a href="#操作dom节点" class="headerlink" title="操作dom节点"></a>操作dom节点</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span> = <span class="string">"box"</span>&gt;</span></span><br><span class="line">   我是box盒子 </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="undefined">        data()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.$refs.box.style.background = <span class="string">'red'</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">     &#125;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果子组件身上也有ref，就可以利用这一点，获取子组件身上的数据和方法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.child.mes</span><br><span class="line"><span class="keyword">this</span>.$refs.child.fun</span><br></pre></td></tr></table></figure>
@@ -943,7 +947,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1012,7 +1016,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1106,7 +1112,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">149k</span>
+    <span title="站点总字数">156k</span>
   
 
   
@@ -1115,7 +1121,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:16</span>
+    <span title="站点阅读时长">2:22</span>
   
 </div>
 
