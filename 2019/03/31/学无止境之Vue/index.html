@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mrxwq.github.io/images/1553753746719.png">
 <meta property="og:image" content="https:////upload-images.jianshu.io/upload_images/8592917-b7d00f3ae3a285cf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:updated_time" content="2019-08-28T15:46:33.695Z">
+<meta property="og:updated_time" content="2019-09-08T15:32:49.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之Vue">
 <meta name="twitter:description" content="生命周期函数  beforeCreate()刚初始化了一个Vue空的对象，只有默认的一些生命周期函数和默认的事件，数据和方法都没有获取到  Cerated()数据和方法都已经在内存中了，想要调用methods中的方法，或者操作data中的数据，最早只能在created中操作 然后就是编译模板放到内存  发ajax要提前，在这个时候就调，这样的话，，     beforeMount()执行这步的时候">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-28 23:46:33" itemprop="dateModified" datetime="2019-08-28T23:46:33+08:00">2019-08-28</time>
+                <time title="修改时间：2019-09-08 23:32:49" itemprop="dateModified" datetime="2019-09-08T23:32:49+08:00">2019-09-08</time>
               
             
           </span>
@@ -729,6 +729,7 @@
 </ol>
 </blockquote>
 <h6 id="watch监听"><a href="#watch监听" class="headerlink" title="watch监听"></a>watch监听</h6><p>主要是可以监听到路由的变化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//路由监听的实例</span></span><br><span class="line">watch: &#123;</span><br><span class="line">    <span class="string">"$route.query"</span>(n, o) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(n.id != o.id) &#123;</span><br><span class="line">            <span class="comment">//变化后做的事情</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>computed和methods的结合</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watch:&#123;</span><br><span class="line">    <span class="string">'firstname'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">newName,oldName</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName = newName +<span class="string">'-'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="string">'lastname'</span>:<span class="function"><span class="keyword">function</span>(<span class="params">newName,oldName</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName =<span class="keyword">this</span>.firstname+newName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h6><p>在引用时，当作普通属性用，而不是方法去调用</p>
