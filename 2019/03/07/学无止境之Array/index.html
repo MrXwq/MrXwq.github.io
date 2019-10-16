@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-20T00:47:57.561Z">
+<meta property="og:updated_time" content="2019-10-16T02:21:06.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之Array">
 <meta name="twitter:description" content="前端开始之路​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。 腾讯的面试​">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-20 08:47:57" itemprop="dateModified" datetime="2019-09-20T08:47:57+08:00">2019-09-20</time>
+                <time title="修改时间：2019-10-16 10:21:06" itemprop="dateModified" datetime="2019-10-16T10:21:06+08:00">2019-10-16</time>
               
             
           </span>
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.7k</span>
+                <span title="本文字数">3k</span>
               
 
               
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -468,32 +468,37 @@
       
         <h3 id="前端开始之路"><a href="#前端开始之路" class="headerlink" title="前端开始之路"></a>前端开始之路</h3><p>​    怎么说呢？还记得一开始接触前端是工作室的学长带的，那个时候，还挺朦胧的，但我感觉他讲了特别多东西，很后悔那个时候没去专研进去，后来去年八月底去了东软睿道短实习三周，那三周可以说是慢慢对一个网页的前端后端有了一个初步的认识，今年一月份，大三上学期结束，正式决定要走前端这条路，然后开始自学，越学发现越多知识需要学，远远不是我一开始的印象，以为只是做做网页。。。</p>
 <h3 id="腾讯的面试"><a href="#腾讯的面试" class="headerlink" title="腾讯的面试"></a>腾讯的面试</h3><p>​    一个是线上的能力测试，一次是视频面试，经过这两次面试，我可算是真的受到打击了，深刻的认识到自己的不足。自己编程的能力真的是差，对js的了解也真的是太少了，所以我打算对js再好好的研究一番。</p>
-<h3 id="首先是数组对象"><a href="#首先是数组对象" class="headerlink" title="首先是数组对象"></a>首先是数组对象</h3><p>typeof()返回类型</p>
-<p>a instanceof Object 返回true 或 false</p>
+<h3 id="首先是数组对象"><a href="#首先是数组对象" class="headerlink" title="首先是数组对象"></a>首先是数组对象</h3><p><strong>typeof()</strong>返回类型</p>
+<p>a i<strong>nstanceof</strong> Object 返回true 或 false</p>
 <h5 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h5><p>var array = new Array()</p>
 <p>var array = new Array(20)</p>
 <p>var array = []</p>
-<h5 id="判断："><a href="#判断：" class="headerlink" title="判断："></a>判断：</h5><p>array.isArray(value)</p>
+<h5 id="判断："><a href="#判断：" class="headerlink" title="判断："></a>判断：</h5><p>array.<strong>isArray(</strong>value)</p>
 <p>转换方法：</p>
-<p>array.valueOf()返回数组本身</p>
-<p>array.toString()返回数组中的每一项，每一项中带逗号（jion（）方法可以自定义带什么符号），返回一个字符串</p>
+<p>array.<strong>valueOf</strong>()返回数组本身</p>
+<p>array.<strong>toString</strong>()返回数组中的每一项，每一项中带逗号（jion（）方法可以自定义带什么符号），返回一个字符串</p>
 <p>推入栈方法：</p>
-<p>push()可以添加任意数量的参数，将他添加到数组的末尾，<strong>并返回新数组的长度</strong>，改变原来数组的值</p>
-<p>pop()可以删除最后一项，并返回删除的元素</p>
-<p>shift()删除数组的第一项，并返回删除的元素</p>
-<p>unshift()添加任意项在前端，并返回<strong>新数组的长度</strong>，改变原数组</p>
-<h5 id="排列方法："><a href="#排列方法：" class="headerlink" title="排列方法："></a>排列方法：</h5><p>reverse()返回相反的数组，对原数组产生影响</p>
-<p>sort()升序排列数组项，对原数组产生影响，对Unicode编码排序，给它传一个参数，这个参数是函数，函数里面有两个参数,浏览器会根据回调函数的返回值来决定元素的顺序，若返回大于零的值，则元素交换位置，若小于零则位置不变，零也不变。</p>
+<p><strong>push</strong>()可以添加任意数量的参数，将他添加到数组的末尾，<strong>并返回新数组的长度</strong>，改变原来数组的值</p>
+<p><strong>pop</strong>()可以删除最后一项，并返回删除的元素</p>
+<p><strong>shift</strong>()删除数组的第一项，并返回删除的元素</p>
+<p><strong>unshift</strong>()添加任意项在前端，并返回<strong>新数组的长度</strong>，改变原数组</p>
+<h5 id="排列方法："><a href="#排列方法：" class="headerlink" title="排列方法："></a>排列方法：</h5><p><strong>reverse</strong>()返回相反的数组，对原数组产生影响</p>
+<p><strong>sort</strong>()升序排列数组项，对原数组产生影响，对Unicode编码排序，给它传一个参数，这个参数是函数，函数里面有两个参数,浏览器会根据回调函数的返回值来决定元素的顺序，若返回大于零的值，则元素交换位置，若小于零则位置不变，零也不变。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">arr=[<span class="number">5</span>,<span class="number">4</span>]</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a&gt;b)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(b&gt;a)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h6 id="乱序排序"><a href="#乱序排序" class="headerlink" title="乱序排序"></a>乱序排序</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Math</span>.random<span class="number">-0.5</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h5 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h5><p>concat()创建当前数组的一个副本，再将其参数加入到该副本，然后返回，传入多少参数都会加入新数组</p>
-<p>slice()有两参数，一个是起始位置，一个是结束位置，起始位置算入，而末尾位置不返回，<strong>不会影响原数组</strong></p>
-<p>splice()</p>
+<h5 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h5><p><strong>concat</strong>()创建当前数组的一个副本，再将其参数加入到该副本，然后返回，传入多少参数都会加入新数组</p>
+<p><strong>slice</strong>()有两参数，一个是起始位置，一个是结束位置，起始位置算入，而末尾位置不返回，<strong>不会影响原数组</strong></p>
+<p><strong>splice</strong>()</p>
 <p>删除的话，只需两个参数，第一个，是位置，从哪开始删，第二个是个数，删除多少个参数</p>
 <p>插入的话，任意参数，但前两参数跟前面的一样，后面的参数都将插入到删除之后的数组，若第二个参数为零的话，那么就不删除，直接添加。<strong>会影响原数组</strong>，原数组为删除后的，返回的为删除的元素。</p>
-<h5 id="查找位置方法"><a href="#查找位置方法" class="headerlink" title="查找位置方法"></a>查找位置方法</h5><p>indexOf()有两个参数，第一个参数是你要查的数，第二个参数是你要从什么位置开始查找，从头开始查找(可以用来做查找重复)</p>
-<p>lastIndexOf()一样，只是从末尾开始向前找</p>
-<p>没有找到的话返回-1</p>
+<h5 id="查找位置方法"><a href="#查找位置方法" class="headerlink" title="查找位置方法"></a>查找位置方法</h5><p><strong>indexOf</strong>()有两个参数，第一个参数是你要查的数，第二个参数是你要从什么位置开始查找，从头开始查找(可以用来做查找重复)如果存在则返回该元素所在索引，否则返回-1</p>
+<p><strong>lastIndexOf</strong>()一样，只是从末尾开始向前找</p>
+<h5 id="检测数组中是否包含某个元素"><a href="#检测数组中是否包含某个元素" class="headerlink" title="检测数组中是否包含某个元素"></a>检测数组中是否包含某个元素</h5><p><strong>findIndex</strong>()返回数组中满足提供的测试函数的第一个元素的索引。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>].findIndex(<span class="function"><span class="params">i</span> =&gt;</span> i == <span class="number">1</span>) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p><strong>find</strong>()返回数组中满足提供的测试函数的第一个元素的值，否则返回undefined</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'aaa'</span>,<span class="string">'bbb'</span>].find(<span class="function"><span class="params">i</span> =&gt;</span> i == <span class="string">'bbb'</span>) <span class="comment">//bbb</span></span><br></pre></td></tr></table></figure>
+<p><strong>includes</strong>()返回true或false</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>].includes(<span class="number">1</span>) <span class="comment">// true</span></span><br><span class="line">[<span class="string">'aaa'</span>,<span class="string">'bbb'</span>].includes(<span class="string">'ccc'</span>) <span class="comment">//false</span></span><br><span class="line">[<span class="literal">NaN</span>].includes(<span class="literal">NaN</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <h5 id="迭代方法-IE8及一下都不兼容"><a href="#迭代方法-IE8及一下都不兼容" class="headerlink" title="迭代方法 IE8及一下都不兼容"></a>迭代方法 IE8及一下都不兼容</h5><p>这几种方法都是对数组的遍历，里面的参数都是一个函数，函数里都是三个参数，第一个该数组的值，第二个该数组的值的位置，第三个，该数组</p>
 <p>some()，遍历所有，若有返回true的，则返回true</p>
 <p>every()，遍历数组，遍历到只要有不返回true的则返回false</p>
@@ -783,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">排列方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#乱序排序"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">乱序排序</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.5.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法-IE8及一下都不兼容"><span class="nav-number">3.0.6.</span> <span class="nav-text">迭代方法 IE8及一下都不兼容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.7.</span> <span class="nav-text">归并方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数"><span class="nav-number">3.0.8.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join"><span class="nav-number">3.0.9.</span> <span class="nav-text">join()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#slice-call"><span class="nav-number">3.0.9.1.</span> <span class="nav-text">[].slice.call()</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#类（伪）数组使用数组方法"><span class="nav-number">4.</span> <span class="nav-text">类（伪）数组使用数组方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组拼接"><span class="nav-number">5.</span> <span class="nav-text">数组拼接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数组的好处"><span class="nav-number">6.</span> <span class="nav-text">使用数组的好处</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端开始之路"><span class="nav-number">1.</span> <span class="nav-text">前端开始之路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯的面试"><span class="nav-number">2.</span> <span class="nav-text">腾讯的面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是数组对象"><span class="nav-number">3.</span> <span class="nav-text">首先是数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建数组"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断："><span class="nav-number">3.0.2.</span> <span class="nav-text">判断：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排列方法："><span class="nav-number">3.0.3.</span> <span class="nav-text">排列方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#乱序排序"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">乱序排序</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#操作方法"><span class="nav-number">3.0.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查找位置方法"><span class="nav-number">3.0.5.</span> <span class="nav-text">查找位置方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检测数组中是否包含某个元素"><span class="nav-number">3.0.6.</span> <span class="nav-text">检测数组中是否包含某个元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迭代方法-IE8及一下都不兼容"><span class="nav-number">3.0.7.</span> <span class="nav-text">迭代方法 IE8及一下都不兼容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归并方法"><span class="nav-number">3.0.8.</span> <span class="nav-text">归并方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调函数"><span class="nav-number">3.0.9.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join"><span class="nav-number">3.0.10.</span> <span class="nav-text">join()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#slice-call"><span class="nav-number">3.0.10.1.</span> <span class="nav-text">[].slice.call()</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#类（伪）数组使用数组方法"><span class="nav-number">4.</span> <span class="nav-text">类（伪）数组使用数组方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组拼接"><span class="nav-number">5.</span> <span class="nav-text">数组拼接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数组的好处"><span class="nav-number">6.</span> <span class="nav-text">使用数组的好处</span></a></li></div>
             
 
           </div>
