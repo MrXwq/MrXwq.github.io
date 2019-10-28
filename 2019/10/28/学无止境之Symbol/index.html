@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sword_32px_1163574_easyicon.net.ico?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sword_16px_1163574_easyicon.net.ico?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Symbol的新认识Symbol是什么？按ECMAScript6入门的文档说法：一种新的原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第七种数据类型。 特性Symbols 能被用作对象的key 但是不能用点（.）获取 这是 Symbols 真正有趣之处。它们和对象紧密的交织在一起。Symbols 能用作对象的 key （类似字符串 key），这意味着你可以分配无限多的具">
+<meta name="keywords" content="js,Symbol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学无止境之Symbol">
+<meta property="og:url" content="https://Mrxwq.github.io/2019/10/28/学无止境之Symbol/index.html">
+<meta property="og:site_name" content="自律使我自由">
+<meta property="og:description" content="Symbol的新认识Symbol是什么？按ECMAScript6入门的文档说法：一种新的原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第七种数据类型。 特性Symbols 能被用作对象的key 但是不能用点（.）获取 这是 Symbols 真正有趣之处。它们和对象紧密的交织在一起。Symbols 能用作对象的 key （类似字符串 key），这意味着你可以分配无限多的具">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://mrxwq.github.io/images/1572077481474.png">
+<meta property="og:updated_time" content="2019-10-28T08:26:09.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学无止境之Symbol">
+<meta name="twitter:description" content="Symbol的新认识Symbol是什么？按ECMAScript6入门的文档说法：一种新的原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第七种数据类型。 特性Symbols 能被用作对象的key 但是不能用点（.）获取 这是 Symbols 真正有趣之处。它们和对象紧密的交织在一起。Symbols 能用作对象的 key （类似字符串 key），这意味着你可以分配无限多的具">
+<meta name="twitter:image" content="https://mrxwq.github.io/images/1572077481474.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://Mrxwq.github.io/2019/10/28/学无止境之Symbol/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>学无止境之Symbol | 自律使我自由</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">自律使我自由</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/MrXwq" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Mrxwq.github.io/2019/10/28/学无止境之Symbol/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MrXwq">
+      <meta itemprop="description" content="只要弄不死我，我就在一直变强">
+      <meta itemprop="image" content="/images/IMG_0467.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自律使我自由">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学无止境之Symbol
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-28 16:12:28 / 修改时间：16:26:09" itemprop="dateCreated datePublished" datetime="2019-10-28T16:12:28+08:00">2019-10-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2019/10/28/学无止境之Symbol/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/学无止境之Symbol/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Symbol的新认识"><a href="#Symbol的新认识" class="headerlink" title="Symbol的新认识"></a>Symbol的新认识</h3><h4 id="Symbol是什么？"><a href="#Symbol是什么？" class="headerlink" title="Symbol是什么？"></a>Symbol是什么？</h4><p>按ECMAScript6入门的文档说法：一种新的原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第七种数据类型。</p>
+<h5 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h5><p><strong>Symbols 能被用作对象的key</strong></p>
+<p>但是不能用点（.）获取</p>
+<p>这是 Symbols 真正有趣之处。它们和对象紧密的交织在一起。Symbols 能用作对象的 key （类似字符串 key），这意味着你可以分配无限多的具有唯一性的 Symbols 到一个对象上，这些 key 保证不会和现有的字符串 key 冲突，或者和其他 Symbol key 冲突：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> fooSym = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> otherSym = <span class="built_in">Symbol</span>(<span class="string">'bar'</span>);</span><br><span class="line">myObj[<span class="string">'foo'</span>] = <span class="string">'bar'</span>;</span><br><span class="line">myObj[fooSym] = <span class="string">'baz'</span>;</span><br><span class="line">myObj[otherSym] = <span class="string">'bing'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(myObj.foo === <span class="string">'bar'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myObj[fooSym] === <span class="string">'baz'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myObj[otherSym] === <span class="string">'bing'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>Symbols key 无法通过 for in、for of 或者 Object.getOwnPropertyNames  Object.keys()  JSON.stringify()【 此方法也只能读取对象本身的可枚举属性，并序列化为JSON对象。 】 获得</strong></p>
+<p>创建不可枚举类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(object1, <span class="string">'property1'</span>, &#123;</span><br><span class="line">  value: <span class="number">42</span>,</span><br><span class="line">  enumerable：<span class="literal">false</span>,<span class="comment">//不可枚举</span></span><br><span class="line">  writable: <span class="literal">false</span><span class="comment">//不可以赋值</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>获得它们的唯一方式是 Object.getOwnPropertySymbols：</strong> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fooSym = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> myObj = &#123;&#125;;</span><br><span class="line">myObj[<span class="string">'foo'</span>] = <span class="string">'bar'</span>;</span><br><span class="line">myObj[fooSym] = <span class="string">'baz'</span>;</span><br><span class="line"><span class="built_in">Object</span>.keys(myObj); <span class="comment">// -&gt; [ 'foo' ]</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(myObj); <span class="comment">// -&gt; [ 'foo' ]</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertySymbols(myObj); <span class="comment">// -&gt; [ Symbol(foo) ]</span></span><br><span class="line">assert(<span class="built_in">Object</span>.getOwnPropertySymbols(myObj)[<span class="number">0</span>] === fooSym);复制代码</span><br></pre></td></tr></table></figure>
+<p><strong>但可以这样获取</strong></p>
+<p>Object.getOwnPropertySymbols(）</p>
+<p><strong>Symbols 不是私有的</strong></p>
+<p>作为双刃剑的另一面 —— 对象上所有的 Symbols 都可以直接通过 <strong>Object.getOwnPropertySymbols()</strong> 获得 —— 这不利于我们使用 Symbol 存储一些真正需要私有化的值。不要尝试使用 Symbols 存储对象中需要真正私有化的值 —— Symbol 总能被拿到。</p>
+<p><strong>Symbols 是完全唯一的……</strong></p>
+<p>默认情况下，每一个新创建的 Symbol 都有一个完全唯一的值。如果你新创建了一个 Symbol（<code>var mysym = Symbol()</code>），在 JavaScript 引擎内部，就会创建一个全新的值。如果你不保留 Symbol 对象的引用，你就无法使用它。这也意味着两个 Symbol 将绝不会等同于同一个值，即使它们有一样的描述：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo1 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> object = &#123;</span><br><span class="line">    [foo1]: <span class="number">1</span>,</span><br><span class="line">    [foo2]: <span class="number">2</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(object[foo1] === <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(object[foo2] === <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>也有例外</strong></p>
+<p> JavaScript 也有另一个创建 Symbol 的方式来轻易地实现 Symbol 的获得和重用：<code>Symbol.for()</code>  该方法在 “全局 Symbol 注册中心” 创建了一个 Symbol。额外注意的一点：这个注册中心也是跨域的，意味着 iframe 或者 service worker 中的 Symbol 会与当前 frame Symbol 相等： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> fooSym = <span class="built_in">Symbol</span>.for(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> otherSym = <span class="built_in">Symbol</span>.for(<span class="string">'foo'</span>);</span><br><span class="line">myObj[fooSym] = <span class="string">'baz'</span>;</span><br><span class="line">myObj[otherSym] = <span class="string">'bing'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(fooSym === otherSym);</span><br><span class="line"><span class="built_in">console</span>.log(myObj[fooSym] === <span class="string">'bing'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myObj[otherSym] === <span class="string">'bing'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="Symbol为什么出现？"><a href="#Symbol为什么出现？" class="headerlink" title="Symbol为什么出现？"></a>Symbol为什么出现？</h4><p>按ECMAScript6入门的文档说法：ES5的对象属性名都是字符串，这容易造成属性名的冲突。比如，你使用了一个他人提供的对象，但是又想为这个对象添加新的方法（mixin模式），新方法的名字就有可能有方法产生冲突。如果有一种机制，保证每个属性的名字都是独一无二的就好了，这样就从根本防止属性名的冲突。这就是ES6引入Symbol的原因。</p>
+<h4 id="Symbol的使用："><a href="#Symbol的使用：" class="headerlink" title="Symbol的使用："></a>Symbol的使用：</h4><p><strong>创建</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有参数的情况</span></span><br><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line">s1 === s2 <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Symbol函数可以接受一个字符串作为参数，容易区分</span></span><br><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>(<span class="string">'bar'</span>);</span><br><span class="line"></span><br><span class="line">s1 <span class="comment">// Symbol(foo)</span></span><br><span class="line">s2 <span class="comment">// Symbol(bar)</span></span><br><span class="line"></span><br><span class="line">s1.toString() <span class="comment">// "Symbol(foo)"</span></span><br><span class="line">s2.toString() <span class="comment">// "Symbol(bar)"</span></span><br></pre></td></tr></table></figure>
+<p><strong>给对象赋值</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    [name]: <span class="string">'ClickPaas'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>不能自动被转化为字符串</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sym = <span class="built_in">Symbol</span>(<span class="string">"&lt;3"</span>);</span><br><span class="line"><span class="string">"your symbol is "</span> + sym <span class="comment">// TypeError: can't convert symbol to string</span></span><br><span class="line"><span class="string">`your symbol is <span class="subst">$&#123;sym&#125;</span>`</span> <span class="comment">// TypeError: can't convert symbol to string</span></span><br></pre></td></tr></table></figure>
+<p> 应该使用这两个方法显式转化<strong>String(sym)  sym.toString()</strong> </p>
+<p> 上面的用法不是很方便。ES2019提供了一个实例属性<code>description</code>，直接返回 Symbol 的描述。 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sym = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"></span><br><span class="line">sym.description <span class="comment">// "foo"</span></span><br></pre></td></tr></table></figure>
+<p><strong>有时我们还是需要使用相同的Symbol</strong></p>
+<p><strong>Symbol.for()  Symbol()</strong></p>
+<p><code>Symbol.for()</code>与<code>Symbol()</code>这两种写法，都会生成新的 Symbol。它们的区别是，前者会被登记在全局环境中供搜索，后者不会。<code>Symbol.for()</code>不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的<code>key</code>是否已经存在，如果不存在才会新建一个值。比如，如果你调用<code>Symbol.for(&quot;cat&quot;)</code>30 次，每次都会返回同一个 Symbol 值，但是调用<code>Symbol(&quot;cat&quot;)</code>30 次，会返回 30 个不同的 Symbol 值。 </p>
+<h4 id="Symbol的应用场景"><a href="#Symbol的应用场景" class="headerlink" title="Symbol的应用场景"></a>Symbol的应用场景</h4><h5 id="1-消除魔法字符串"><a href="#1-消除魔法字符串" class="headerlink" title="1. 消除魔法字符串"></a>1. 消除魔法字符串</h5><p>指的是，在代码之中多次出现、与代码形成强耦合的某一个具体的字符串或数值。风格良好的代码，应该尽量消除魔法字符串，而由含义清晰的变量代替。 </p>
+<p> 当代码中充斥着大量的魔法字符时，纵使是原开发者在经过一段时间后再回头看也会变得难以理解，更不必说是交由后来开发者维护。 </p>
+<p>比如有一个Tabs切换的功能：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (type === <span class="string">'basic'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>basic tab<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">'super'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>super tab<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改造后：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> tabTypes = &#123;</span><br><span class="line">    basic: <span class="built_in">Symbol</span>(<span class="string">'basic'</span>), <span class="comment">//Symbol()</span></span><br><span class="line">    <span class="keyword">super</span>: <span class="built_in">Symbol</span>(<span class="string">'super'</span>), <span class="comment">//Symbol()</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (type === tabTypes.basic) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>basic tab<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (type === tabTypes.super) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>super tab<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-避免对象属性被覆盖"><a href="#2-避免对象属性被覆盖" class="headerlink" title="2. 避免对象属性被覆盖"></a>2. 避免对象属性被覆盖</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    [name]: <span class="string">'ClickPaas'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有时，把一些属于其他对象的数据存在另一个对象中事非常方便的。例如，假设你正在编写一个JS库，使用CSS中的transition来让一个DOM元素在屏幕上飞奔，你已经知道不能同时将多个transition应用在同一个div上，否则将使用的动画非常不美观，你也确实有办法来解决这个问题，但是首先你需要知道该div是否已经在移动中。</p>
+<p>怎么解决这个问题呢？</p>
+<p>其中一个方法是使用浏览器提供的API来探测元素是否处于动画状态，但杀鸡焉用牛刀，在元素设置为移动时，你的库就知道了该元素正在移动。你真正需要的时一种机制来跟踪哪些元素正在移动，你可以将正在移动的元素保存在一个数组中，每次要为一个元素设置动画时，首先检查一下这个元素是否已经在这个列表中，但是，如果你的数组非常庞大，即便是这样的线性搜索也会产生性能问题，那么，你真正想要坐的就是直接在元素上设置一个标志:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (element.isMoving) &#123;</span><br><span class="line">  smoothAnimations(element);</span><br><span class="line">&#125;</span><br><span class="line">element.isMoving = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>这存在一些潜在的问题，不得不承认这样一个事实：还有其他代码也可能操作改DOM元素。</p>
+<ol>
+<li>在其他代码中，如果另一个组件中使用了for-in 或 Object.keys()，那么那边会把你添加的这个属性也给枚举出来</li>
+<li>如果其他一些库中已经使用了同样的方式（在元素上设置了相同的属性），那么这将和你的代码发生冲突，产生不可预计的结果</li>
+<li>其他一些库可能在将来会使用同样的方式，这样与你的代码发生冲突；</li>
+<li>再夸张点，标准委员会可能会为每个元素添加一个.isMoving()原生方法，那么你的代码就彻底不能工作了。（但标准委员会应该会为了兼容以前的语法，也会使用新的Symbol吧，这样这个问题貌似也不存在）</li>
+</ol>
+<p>对于后三个问题，你可以选择一个无意义的不会有人使用到的字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (element.__$jorendorff_animation_library$PLEASE_DO_NOT_USE_THIS_PROPERTY$isMoving__) &#123;</span><br><span class="line">  smoothAnimations(element);</span><br><span class="line">&#125;</span><br><span class="line">element.__$jorendorff_animation_library$PLEASE_DO_NOT_USE_THIS_PROPERTY$isMoving__ = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>这似乎不太靠谱了，看了让人眼睛痛。</p>
+<p>你还可以加密算法来生成一个几乎唯一的字符串：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isMoving = <span class="comment">/*加密算法得出的唯一字符串*/</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">if</span> (element[isMoving]) &#123;</span><br><span class="line">  smoothAnimations(element);</span><br><span class="line">&#125;</span><br><span class="line">element[isMoving] = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>代码能正常工作，冲突几乎不可能，代码看起来也美观多了。</p>
+<p>但是这会导致糟糕的调试体验，每次使用console.log()打印出包含该属性的元素时，你回看到一个庞大的垃圾字符串，并且如果还不止一个这样的属性呢？每次刷新后属性名都发生了裱花，怎么样使这些属性看起来更加直观呢？</p>
+<p>为什么这么难？我们只是为了保存一个小小的标志位。</p>
+<p>这个时候Symbol的作用就体现出来了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.assert(<span class="keyword">typeof</span> <span class="built_in">Symbol</span>() === <span class="string">'symbol'</span>, <span class="string">'判断错误'</span>);</span><br></pre></td></tr></table></figure>
+<p> assert()函数是一个调试中经常使用的断言工具函数,他是控制台对象console的一个方法。Assert主要用来测试一些<a href="https://www.baidu.com/s?wd=逻辑判断&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">逻辑判断</a>是否成立。在具备调试工具的浏览器上（比如<a href="https://www.baidu.com/s?wd=google浏览器&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">google浏览器</a>），都可以使用console.assert()来实现一些调试功能。 </p>
+<h5 id="3-模拟类的私有方法"><a href="#3-模拟类的私有方法" class="headerlink" title="3. 模拟类的私有方法"></a>3. 模拟类的私有方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bar = <span class="built_in">Symbol</span>(<span class="string">'bar'</span>);</span><br><span class="line"><span class="keyword">const</span> snaf = <span class="built_in">Symbol</span>(<span class="string">'snaf'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">myClass</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 公有方法</span></span><br><span class="line">  foo(baz) &#123;</span><br><span class="line">    <span class="keyword">this</span>[bar](baz);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 私有方法</span></span><br><span class="line">  [bar](baz) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>[snaf] = baz;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，<code>bar</code>和<code>snaf</code>都是<code>Symbol</code>值，一般情况下无法获取到它们，因此达到了私有方法和私有属性的效果。但是也不是绝对不行，<code>Reflect.ownKeys()</code>依然可以拿到它们。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inst = <span class="keyword">new</span> myClass();</span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.ownKeys(myClass.prototype)</span><br><span class="line"><span class="comment">// [ 'constructor', 'foo', Symbol(bar) ]</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，Symbol 值的属性名依然可以从类的外部拿到。</p>
+<p><strong>目前有的提案</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为class加了私有属性。方法是在属性名之前，使用#表示。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IncreasingCounter</span> </span>&#123;</span><br><span class="line">  #count = 0;</span><br><span class="line">  get value() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Getting the current value!'</span>);</span><br><span class="line">    return this.#count;</span><br><span class="line">  &#125;</span><br><span class="line">  increment() &#123;</span><br><span class="line">    this.#count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-Symbol在ES6规范的应用"><a href="#4-Symbol在ES6规范的应用" class="headerlink" title="4. Symbol在ES6规范的应用"></a>4. Symbol在ES6规范的应用</h5><p>我们知道使用Symbol来避免代码冲突，消除新旧代码的冲突</p>
+<ul>
+<li>for(let item of myArray)内部是以调用 myArray[Symbol.iterator] () </li>
+<li>支持新类型的字符串匹配。在 ES5 中，调用 <code>str.match(myObject)</code> 时，首先会尝试将 <code>myObject</code> 转换为 <code>RegExp</code> 对象。在 ES6 中，首先将检查 <code>myObject</code> 中是否有 <code>myObject[Symbol.match](str)</code> 方法，在所有正则表达式工作的地方都可以提供一个自定义的字符串解析方法。 </li>
+</ul>
+<h4 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h4><p><img src="/images/1572077481474.png" alt="1572077481474"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/Symbol/" rel="tag"># Symbol</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/22/学无止境之JS基本数据类型BigInt/" rel="next" title="学无止境之JS基本数据类型BigInt">
+                <i class="fa fa-chevron-left"></i> 学无止境之JS基本数据类型BigInt
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/IMG_0467.JPG" alt="MrXwq">
+            
+              <p class="site-author-name" itemprop="name">MrXwq</p>
+              <p class="site-description motion-element" itemprop="description">只要弄不死我，我就在一直变强</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/MrXwq" title="GitHub &rarr; https://github.com/MrXwq" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:972197784@qq.com" title="E-Mail &rarr; mailto:972197784@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol的新认识"><span class="nav-number">1.</span> <span class="nav-text">Symbol的新认识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">Symbol是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#特性"><span class="nav-number">1.1.1.</span> <span class="nav-text">特性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol为什么出现？"><span class="nav-number">1.2.</span> <span class="nav-text">Symbol为什么出现？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的使用："><span class="nav-number">1.3.</span> <span class="nav-text">Symbol的使用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的应用场景"><span class="nav-number">1.4.</span> <span class="nav-text">Symbol的应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-消除魔法字符串"><span class="nav-number">1.4.1.</span> <span class="nav-text">1. 消除魔法字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-避免对象属性被覆盖"><span class="nav-number">1.4.2.</span> <span class="nav-text">2. 避免对象属性被覆盖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-模拟类的私有方法"><span class="nav-number">1.4.3.</span> <span class="nav-text">3. 模拟类的私有方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Symbol在ES6规范的应用"><span class="nav-number">1.4.4.</span> <span class="nav-text">4. Symbol在ES6规范的应用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容性"><span class="nav-number">1.5.</span> <span class="nav-text">兼容性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrXwq</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">205k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">3:06</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xM8mpPkjOdmfaFsc591FW9gi-gzGzoHsz',
+    appKey: '1c1gbu71euKPia87WyWhfW4x',
+    placeholder: '请疯狂吐槽，谢谢',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
