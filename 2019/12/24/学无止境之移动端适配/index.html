@@ -104,10 +104,12 @@
 <meta property="og:site_name" content="自律使我自由">
 <meta property="og:description" content="分辨率像素可以作为图片和电子屏幕的最小组成单位 屏幕分辨率一个屏幕具体由多少个像素点组成 图片分辨率图片含有的像素数，比如一张图的分辨率为800*400，那么它在垂直和水平的像素点数分别为800和400 同以尺寸的图片，分辨率越高，图片越清晰。 PPI &amp;amp;&amp;amp; DPI每英寸包含的像素点 每英寸包括的点数，一般用来描述打印机：打印点的密度 设备独立像素DIP或DP（Device Ind">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-24T15:45:31.165Z">
+<meta property="og:image" content="https://mrxwq.github.io/images/IMG_5368.PNG">
+<meta property="og:updated_time" content="2019-12-25T13:30:31.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学无止境之移动端适配">
 <meta name="twitter:description" content="分辨率像素可以作为图片和电子屏幕的最小组成单位 屏幕分辨率一个屏幕具体由多少个像素点组成 图片分辨率图片含有的像素数，比如一张图的分辨率为800*400，那么它在垂直和水平的像素点数分别为800和400 同以尺寸的图片，分辨率越高，图片越清晰。 PPI &amp;amp;&amp;amp; DPI每英寸包含的像素点 每英寸包括的点数，一般用来描述打印机：打印点的密度 设备独立像素DIP或DP（Device Ind">
+<meta name="twitter:image" content="https://mrxwq.github.io/images/IMG_5368.PNG">
 
 
 
@@ -375,12 +377,24 @@
                 
               
 
-              <time title="创建时间：2019-12-24 22:03:11 / 修改时间：23:45:31" itemprop="dateCreated datePublished" datetime="2019-12-24T22:03:11+08:00">2019-12-24</time>
+              <time title="创建时间：2019-12-24 22:03:11" itemprop="dateCreated datePublished" datetime="2019-12-24T22:03:11+08:00">2019-12-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-25 21:30:31" itemprop="dateModified" datetime="2019-12-25T21:30:31+08:00">2019-12-25</time>
               
             
           </span>
@@ -420,7 +434,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -434,7 +448,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -487,7 +501,7 @@
 <p>网站页面在移动端展示的理想大小。在浏览器调试移动端页面上给定的像素大小就是理想视口大小，它的单位正是设备独立像素</p>
 <p>页面的缩放系数 = 理想视口宽度 / 视觉视口宽度更为准确</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen.width / height <span class="comment">//获取理想视口大小</span></span><br></pre></td></tr></table></figure>
-<h4 id="Meta-viewport"><a href="#Meta-viewport" class="headerlink" title="Meta viewport"></a>Meta viewport</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt; <span class="attr">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width;initial-scale=1;maximum-scale=1;minimum-scale=1;user-scalable=no;"</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="Meta-viewport"><a href="#Meta-viewport" class="headerlink" title="Meta viewport"></a>Meta viewport</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt; <span class="attr">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width;initial-scale=1;maximum-scale=1;minimum-scale=1;user-scalable=no;"</span></span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -510,7 +524,7 @@
 <tr>
 <td>initial-scale</td>
 <td>0.0-10.0</td>
-<td>定义页面初始缩放比率</td>
+<td>定义页面初始缩放比率（理想视口宽度/视觉视口宽度）</td>
 </tr>
 <tr>
 <td>maximum-scale</td>
@@ -529,6 +543,20 @@
 </tr>
 </tbody>
 </table>
+<h3 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h3><p>device-width就等于理想视口的宽度，所以设置width=device-width就相当于让布局视口等于理想视口。</p>
+<p>由于initial-scale = 理想视口宽度 / 视觉视口宽度，所以设置initial-scale = 1；就相当于视觉视口等于理想视口。</p>
+<p>这时，一个css像素就等于1个设备独立像素。</p>
+<h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><p>width可以决定布局视口的宽度，设置initial-scale也影响布局视口，布局视口宽度取的是width和视觉视口宽度最大值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--  若理想视口宽度为400px --&gt;</span></span><br><span class="line">width=device-width initial-scale=2 </span><br><span class="line"><span class="comment">&lt;!--  视觉视口宽度 = 理想视口宽度 / initial-scale 即200px 视口布局取两者最大值即device-width 400px--&gt;</span></span><br><span class="line">width=device-width initial-scale=0.5</span><br><span class="line"><span class="comment">&lt;!--  视觉视口宽度 = 理想视口宽度 / initial-scale 即800px 视口布局取两者最大值即device-width 800px--&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取浏览器大小"><a href="#获取浏览器大小" class="headerlink" title="获取浏览器大小"></a>获取浏览器大小</h3><p><img src="/images/IMG_5368.PNG" alt="IMG_5368"></p>
+<p><strong>window.innerHeight</strong>：获取浏览器视觉视口高度（包括垂直滚动条）</p>
+<p><strong>document.documentElement.offsetHeight：</strong>布局视口宽度</p>
+<h2 id="1px问题"><a href="#1px问题" class="headerlink" title="1px问题"></a>1px问题</h2><p>为了设配各种屏幕，我们写代码时一般使用设备独立像素来对页面进行布局。</p>
+<p>而在设备像素比大于1的屏幕上，我们写的1px实际上是被多个物理像素渲染，这就会出现1px在有些屏幕上看起来很粗的现象。</p>
+<p>目前主流的屏幕DPR=2（iphone8）或者3（8p）。拿2倍屏来说，设备的物理像素要实现1像素，而DPR=2，所以css像素只能是0.5。</p>
+<h3 id="border-image-background-image"><a href="#border-image-background-image" class="headerlink" title="border-image  ||  background-image"></a>border-image  ||  background-image</h3><h3 id="transform-伪类"><a href="#transform-伪类" class="headerlink" title="transform+伪类"></a>transform+伪类</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border_1px</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">' '</span>;</span><br><span class="line">    <span class="attribute">position</span>: abosute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">0%</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (-webkit-min-device-pixel-ratio:<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border_1px</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(0.5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> only screen and (-webkit-min-device-pixel-ratio:<span class="number">3</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border_1px</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(0.33);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box-shadow</span>: 0 1<span class="selector-tag">px</span> 1<span class="selector-tag">px</span> <span class="selector-tag">-1px</span> <span class="selector-id">#ccc</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="rem-viewport"><a href="#rem-viewport" class="headerlink" title="rem+viewport"></a>rem+viewport</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> viewport = <span class="built_in">document</span>.querySelector(<span class="string">"meta[name=viewport]"</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.devicePixelRatio == <span class="number">1</span>) &#123;</span><br><span class="line">	viewport.serAttribute(<span class="string">'content'</span>,<span class="string">'width=device-width,initial-scale=1,maximum-scale=1,minmum-scale=1,user-scalable=no'</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.devicePixelRatio == <span class="number">2</span>)&#123;</span><br><span class="line">    viewport.serAttribute(<span class="string">'content'</span>,<span class="string">'width=device-width,initial-scale=0.5,maximum-scale=0.5,minmum-scale=0.5,user-scalable=no'</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.devicePixelRatio == <span class="number">3</span>)&#123;</span><br><span class="line">    viewport.serAttribute(<span class="string">'content'</span>,<span class="string">'width=device-width,initial-scale=0.333333,maximum-scale=0.333333,minmum-scale=0.333333user-scalable=no'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><h3 id="em"><a href="#em" class="headerlink" title="em"></a>em</h3><p>em作为font-size的单位，其代表父元素的font-size，em作为其他属性单位时，代表自身字体大小。</p>
 <h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>rem作用于非根元素时，相对于根元素字体大小；作用于根元素字体大小时，相对于其出初始字体大小（看浏览器，一般16px）</p>
 <h4 id="rem布局的本质是什么？"><a href="#rem布局的本质是什么？" class="headerlink" title="rem布局的本质是什么？"></a>rem布局的本质是什么？</h4><p>其实rem布局的本质是等比缩放，一般是基于宽度</p>
@@ -808,7 +836,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分辨率"><span class="nav-number">1.</span> <span class="nav-text">分辨率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#像素"><span class="nav-number">1.1.</span> <span class="nav-text">像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕分辨率"><span class="nav-number">1.2.</span> <span class="nav-text">屏幕分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片分辨率"><span class="nav-number">1.3.</span> <span class="nav-text">图片分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPI-amp-amp-DPI"><span class="nav-number">1.4.</span> <span class="nav-text">PPI &amp;&amp; DPI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备独立像素"><span class="nav-number">2.</span> <span class="nav-text">设备独立像素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设备像素比"><span class="nav-number">2.1.</span> <span class="nav-text">设备像素比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web端"><span class="nav-number">2.2.</span> <span class="nav-text">web端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕"><span class="nav-number">2.3.</span> <span class="nav-text">屏幕</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视口"><span class="nav-number">3.</span> <span class="nav-text">视口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布局视口"><span class="nav-number">3.1.</span> <span class="nav-text">布局视口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视觉视口"><span class="nav-number">3.2.</span> <span class="nav-text">视觉视口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理想视口"><span class="nav-number">3.3.</span> <span class="nav-text">理想视口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Meta-viewport"><span class="nav-number">3.3.1.</span> <span class="nav-text">Meta viewport</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单位"><span class="nav-number">4.</span> <span class="nav-text">单位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#em"><span class="nav-number">4.1.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem"><span class="nav-number">4.2.</span> <span class="nav-text">rem</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rem布局的本质是什么？"><span class="nav-number">4.2.1.</span> <span class="nav-text">rem布局的本质是什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性布局和响应式布局"><span class="nav-number">4.3.</span> <span class="nav-text">弹性布局和响应式布局</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分辨率"><span class="nav-number">1.</span> <span class="nav-text">分辨率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#像素"><span class="nav-number">1.1.</span> <span class="nav-text">像素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕分辨率"><span class="nav-number">1.2.</span> <span class="nav-text">屏幕分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片分辨率"><span class="nav-number">1.3.</span> <span class="nav-text">图片分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPI-amp-amp-DPI"><span class="nav-number">1.4.</span> <span class="nav-text">PPI &amp;&amp; DPI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备独立像素"><span class="nav-number">2.</span> <span class="nav-text">设备独立像素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设备像素比"><span class="nav-number">2.1.</span> <span class="nav-text">设备像素比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web端"><span class="nav-number">2.2.</span> <span class="nav-text">web端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕"><span class="nav-number">2.3.</span> <span class="nav-text">屏幕</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视口"><span class="nav-number">3.</span> <span class="nav-text">视口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#布局视口"><span class="nav-number">3.1.</span> <span class="nav-text">布局视口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视觉视口"><span class="nav-number">3.2.</span> <span class="nav-text">视觉视口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理想视口"><span class="nav-number">3.3.</span> <span class="nav-text">理想视口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Meta-viewport"><span class="nav-number">3.4.</span> <span class="nav-text">Meta viewport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端适配"><span class="nav-number">3.5.</span> <span class="nav-text">移动端适配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩放"><span class="nav-number">3.6.</span> <span class="nav-text">缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取浏览器大小"><span class="nav-number">3.7.</span> <span class="nav-text">获取浏览器大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1px问题"><span class="nav-number">4.</span> <span class="nav-text">1px问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#border-image-background-image"><span class="nav-number">4.1.</span> <span class="nav-text">border-image  ||  background-image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-伪类"><span class="nav-number">4.2.</span> <span class="nav-text">transform+伪类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-shadow"><span class="nav-number">4.3.</span> <span class="nav-text">box-shadow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem-viewport"><span class="nav-number">4.4.</span> <span class="nav-text">rem+viewport</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单位"><span class="nav-number">5.</span> <span class="nav-text">单位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#em"><span class="nav-number">5.1.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem"><span class="nav-number">5.2.</span> <span class="nav-text">rem</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rem布局的本质是什么？"><span class="nav-number">5.2.1.</span> <span class="nav-text">rem布局的本质是什么？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹性布局和响应式布局"><span class="nav-number">5.3.</span> <span class="nav-text">弹性布局和响应式布局</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -840,7 +868,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">217k</span>
+    <span title="站点总字数">219k</span>
   
 
   
@@ -849,7 +877,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">3:17</span>
+    <span title="站点阅读时长">3:19</span>
   
 </div>
 
